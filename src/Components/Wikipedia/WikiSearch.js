@@ -21,7 +21,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-const Search = () => {
+const WikiSearch = () => {
   const [data, setData] = useState(null);
   const [trimVal, setTrimVal] = useState('');
   const [selectedResult, setSelectedResult] = useState(null);
@@ -98,7 +98,7 @@ const Search = () => {
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
                 open={open}
-                maxWidth="sm"
+                maxWidth="xl"
               >
                 <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
                   {selectedResult.title}
@@ -134,4 +134,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default WikiSearch;
