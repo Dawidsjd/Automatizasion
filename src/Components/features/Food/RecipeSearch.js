@@ -112,7 +112,7 @@ const RecipeSearch = () => {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        maxWidth="sm"
+        maxWidth="md"
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
           {selectedRecipe.name}
