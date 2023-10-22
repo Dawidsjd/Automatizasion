@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import ChatBot from './Components/ChatBot/ChatBot';
-import RecipeSearch from './Components/Food/RecipeSearch';
-import WikiSearch from './Components/Wikipedia/WikiSearch';
-import WeatherData from './Components/Weather/WeatherData';
-import Navbar from './Components/Navbar/Navbar';
+import ChatBot from './Components/features/ChatBot/ChatBot';
+import RecipeSearch from './Components/features/Food/RecipeSearch';
+import WikiSearch from './Components/features/Wikipedia/WikiSearch';
+import WeatherData from './Components/features/Weather/WeatherData';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Home />
       {/* <ChatBot />
       <RecipeSearch /> */}
       {/* <WikiSearch /> */}
