@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import LeftPanelRouter from "./Components/features/Router/LeftPanelRouter";
 import "./index.css";
 import App from "./App";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -24,7 +23,6 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <App />
-      {/* <LeftPanelRouter /> */}
     </ThemeProvider>
   </React.StrictMode>
 );
