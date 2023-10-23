@@ -4,24 +4,25 @@ import { Link } from 'react-router-dom';
 export const StyledHeader = styled('Header')(({ theme }) => ({
   width: '100%',
   height: '80px',
-  padding: '0 40px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-evenly',
   position: 'fixed',
+  top: '0',
+  left: '0',
+  zIndex: '999',
   [theme.breakpoints.up('md')]: {
     // backgroundColor: 'blue',
   },
 }));
 
 export const StyledImageWrapper = styled('section')(({ theme }) => ({
-  height: '80px',
-  width: '120px',
+  width: '100px',
 }));
 
 export const StyledImage = styled('div')(({ theme }) => ({
-  backgroundColor: 'green',
-  height: '80px',
+  backgroundColor: 'wheat',
+  height: '50px',
 }));
 
 export const StyledNav = styled('nav')(({ theme }) => ({
@@ -40,7 +41,7 @@ export const SingleItem = styled('ul')(({ theme }) => ({
 export const StyledButtonBox = styled('div')(({ theme }) => ({}));
 
 export const StyledLinkBtn = styled(Link)(({ theme }) => ({
-  padding: '12px 25px',
+  padding: '10px 25px',
   border: 'none',
   borderRadius: '50px',
   transition: '.2s',
