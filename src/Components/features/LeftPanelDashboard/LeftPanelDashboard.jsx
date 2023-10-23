@@ -1,8 +1,19 @@
 import React from "react";
-import {} from "LeftPanelDashboard.js";
+import { Link } from "react-router-dom";
 
-const LeftPanel = () => {
-  return;
+const LeftPanelDashboard = () => {
+  return (
+    <div>
+      <ul>
+        <li>
+          <Link to="/HomeDashboard">Home</Link>
+        </li>
+        <li>
+          <Link to="/SchoolDashboard">School</Link>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
-export default LeftPanel;
+export default LeftPanelDashboard;
