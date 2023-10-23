@@ -12,9 +12,9 @@ import SchoolDashboard from "./pages/SchoolDashboard";
 function App() {
   return (
     <>
-      <Home />
       <BrowserRouter>
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/HomeDashboard" element={<HomeDashboard />} />
           <Route exact path="/SchoolDashboard" element={<SchoolDashboard />} />
         </Routes>
