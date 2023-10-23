@@ -1,21 +1,30 @@
 import React from 'react';
-import { StyledHeader, StyledImageWrapper, StyledImage } from './styles';
+import {
+  StyledHeader,
+  StyledImageWrapper,
+  StyledImage,
+  StyledNav,
+  SingleItem,
+  StyledButtonBox,
+  StyledLinkBtn,
+} from './styles';
 
 const Navbar = () => {
   return (
     <StyledHeader>
       <StyledImageWrapper>
-        <StyledImage>X</StyledImage>
+        <StyledImage></StyledImage>
       </StyledImageWrapper>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Aplication</li>
-          <li>Safety</li>
-          <li>Our team</li>
-          <li>Support</li>
-        </ul>
-      </nav>
+      <StyledNav>
+        <SingleItem>Home</SingleItem>
+        <SingleItem>Aplication</SingleItem>
+        <SingleItem>Safety</SingleItem>
+        <SingleItem>Our team</SingleItem>
+        <SingleItem>Support</SingleItem>
+      </StyledNav>
+      <StyledButtonBox>
+        <StyledLinkBtn to='/HomeDashboard'>Aplication</StyledLinkBtn>
+      </StyledButtonBox>
     </StyledHeader>
   );
 };
