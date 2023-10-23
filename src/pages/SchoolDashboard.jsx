@@ -1,7 +1,13 @@
 import React from "react";
+import LeftPanelDashboard from "../Components/features/LeftPanelDashboard/LeftPanelDashboard";
 
 const SchoolDashboard = () => {
-  return <div>SchoolDashboard</div>;
+  return (
+    <>
+      <LeftPanelDashboard />
+      <div>SchoolDashboard</div>
+    </>
+  );
 };
 
 export default SchoolDashboard;
