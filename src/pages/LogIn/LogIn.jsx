@@ -14,6 +14,7 @@ import {
 import LineLogIn from '../../assets/LineLogIn.svg';
 
 const LogIn = () => {
+  
   return (
     <StyledLogInContainer>
       <StyledLogInWrapper>
