@@ -13,6 +13,8 @@ import nerd from '../../../assets/nerd.svg';
 import travels from '../../../assets/travelers.svg';
 import wave from '../../../assets/wave.svg';
 
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
     <StyledHeroWrapper>
@@ -32,6 +34,7 @@ const Hero = () => {
           <StyledButtons>
             <StyledLink to='/HomeDashboard'>Aplication</StyledLink>
             <StyledButton>Learn more</StyledButton>
+            <Link to='/LogIn'>Links</Link>
           </StyledButtons>
         </StyledHeroContent>
 
