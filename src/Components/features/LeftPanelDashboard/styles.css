@@ -1,7 +1,31 @@
+#navbar {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+#navbar li {
+  margin: 20px;
+}
+
 .link-active {
-  color: red;
+  color: #caf0f6;
+  background: #001e3b;
+  text-decoration: none;
+  width: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .link {
-  color: green;
+  text-decoration: none;
+  color: #caf0f6;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+i {
+  margin-right: 20px;
 }
