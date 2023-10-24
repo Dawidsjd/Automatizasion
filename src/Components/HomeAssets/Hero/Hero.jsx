@@ -37,7 +37,6 @@ const Hero = () => {
             <Link to='/LogIn'>Links</Link>
           </StyledButtons>
         </StyledHeroContent>
-
         <StyledImageWave>
           <img src={wave} />
         </StyledImageWave>
