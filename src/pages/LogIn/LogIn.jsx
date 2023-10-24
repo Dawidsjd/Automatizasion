@@ -13,8 +13,6 @@ import {
 } from './styles';
 import LineLogIn from '../../assets/LineLogIn.svg';
 
-import { Link } from 'react-router-dom';
-
 const LogIn = () => {
   return (
     <StyledLogInContainer>
