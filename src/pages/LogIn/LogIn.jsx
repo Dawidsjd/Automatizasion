@@ -22,9 +22,9 @@ const LogIn = () => {
           <UserDataWrapper>
             <SocialLogIn>
               <StyledButtons>
-                <button></button>
-                <button></button>
-                <button></button>
+                <button>Log In with Google</button>
+                <button>Log In with Facebook</button>
+                <button>Log In with GitHub</button>
               </StyledButtons>
             </SocialLogIn>
             <StyledSeparate></StyledSeparate>

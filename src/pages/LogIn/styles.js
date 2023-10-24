@@ -19,6 +19,7 @@ export const StyledLogInContainer = styled('section')(({ theme }) => ({
 
 export const StyledLogInWrapper = styled('section')(({ theme }) => ({
   width: '70%',
+  maxWidth: '1200px',
   height: '75vh',
   position: 'relative',
   background: 'rgba(8, 52, 100, 0.5)',
@@ -57,7 +58,9 @@ export const SocialLogIn = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   button: {
-    padding: '28px',
+    padding: '20px',
+    fontSize: '16px',
+    fontWeight: '600',
     background: '3A61B4',
     borderRadius: '6px',
   },
@@ -87,6 +90,11 @@ export const StyledDefaultLogIn = styled('div')(({ theme }) => ({
     background: '#48CC74',
     fontSize: '16px',
     fontWeight: '600',
+    transition: '.3s',
+    '&: hover': {
+      background: '#288c44',
+      cursor: 'pointer',
+    },
   },
 }));
 
