@@ -17,13 +17,13 @@ const Navbar = () => {
       </StyledImageWrapper>
       <StyledNav>
         <SingleItem>Home</SingleItem>
-        <SingleItem>Aplication</SingleItem>
+        <SingleItem>Application</SingleItem>
         <SingleItem>Safety</SingleItem>
         <SingleItem>Our team</SingleItem>
         <SingleItem>Support</SingleItem>
       </StyledNav>
       <StyledButtonBox>
-        <StyledLinkBtn to='/HomeDashboard'>Aplication</StyledLinkBtn>
+        <StyledLinkBtn to='/HomeDashboard'>Application</StyledLinkBtn>
       </StyledButtonBox>
     </StyledHeader>
   );

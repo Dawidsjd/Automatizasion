@@ -1,26 +1,34 @@
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import HeroBackground from '../../../assets/HeroBackground.svg';
+
+export const StyledHeroContainer = styled('section')(({ theme }) => ({
+  background: '#484CEC',
+  display: 'flex',
+  justifyContent: 'center',
+}));
 
 export const StyledHeroWrapper = styled('section')(({ theme }) => ({
-  minHeight: '77vh',
-  width: '100%',
   backgroundColor: '#484CEC',
   zIndex: '0',
   display: 'flex',
   justifyContent: 'center',
   position: 'relative',
+  background: `url(${HeroBackground})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
 }));
 
 export const StyledHeroBox = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  maxwidth: '1200px',
   // border: '5px solid red',
   position: 'relative',
 }));
 
 export const StyledHeroContent = styled('section')(({ theme }) => ({
-  height: '65vh',
+  height: '40em',
   width: '45%',
   display: 'flex',
   alignItems: 'center',
