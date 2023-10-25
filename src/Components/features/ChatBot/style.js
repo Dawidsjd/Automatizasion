@@ -3,14 +3,13 @@ const styles = {
         position: 'fixed',
         bottom: '60px',
         right: '100px',
-        // border: '1px solid black',
         background: '#fff',
         width: '350px',
         height: '450px',
         overflowY: 'auto',
-        display: 'flex', // Dodane
-        flexDirection: 'column', // Dodane
-        justifyContent: 'flex-end', // Dodane
+        display: 'flex',
+        flexDirection: 'column', 
+        justifyContent: 'flex-end',
         borderRadius: '5px',
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
       },
@@ -65,10 +64,10 @@ const styles = {
         color: '#fff',
         padding: '10px 0 10px 0',
         textAlign: 'center',
-        borderRadius: '5px 5px 0 0', // Zaokrąglenie górnych krawędzi
-        position: 'absolute', // Dodane
+        borderRadius: '5px 5px 0 0',
+        position: 'absolute',
         top: '0',
-        width: '100%', // Dodane
+        width: '100%',
       },      
       
   };

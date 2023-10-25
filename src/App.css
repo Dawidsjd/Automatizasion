@@ -37,27 +37,6 @@
   }
 }
 
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #171717 #2c2a2a;
-}
-
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 16px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #2c2a2a;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #171717;
-  border-radius: 10px;
-  border: 0px solid #ffffff;
-}
 
 input,
 button {

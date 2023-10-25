@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './style';
 import ChatIcon from '@mui/icons-material/Chat';
+import CloseIcon from '@mui/icons-material/Close';
 import SendIcon from '@mui/icons-material/Send';
 import BotAvatar from '../../../assets/200.gif';
 import UserAvatar from '../../../assets/gagajhagha.jpg';
 
 function ChatBot() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { content: 'Witaj! Jestem twoim małym gnojkiem pomocnikiem. Jak mogę Ci pomóc? 😊', role: 'bot' },
+  ]);
   const [query, setQuery] = useState('');
   const [isChatOpen, setIsChatOpen] = useState(false); 
   const [isBotTyping, setIsBotTyping] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const addMessage = (content, role) => {
     setMessages(prevMessages => [...prevMessages, { content, role }]);
@@ -58,7 +72,7 @@ function ChatBot() {
 
   return (
     <div style={styles.container}>
-      {isChatOpen && (
+      {isChatOpen ? (
         <div style={styles.ChatContainer}>
           <div style={styles.Banner}>ChatBot</div>
           <div style={styles.MessagesContainer}>
@@ -99,7 +113,6 @@ function ChatBot() {
                   </>
                 ) : (
                   <>
-                    {isBotTyping && <div>Bot is typing...</div>}
                     <img
                       src={BotAvatar}
                       alt="Bot Avatar"
@@ -124,6 +137,8 @@ function ChatBot() {
                 )}
               </div>
             ))}
+            {isBotTyping && <div style={{ alignSelf: 'flex-start', color: '#999' }}>Bot is typing...</div>}
+            <div ref={messagesEndRef} />
           </div>
           <form style={styles.SendContainer} onSubmit={handleUserMessage}>
             <input
@@ -136,9 +151,11 @@ function ChatBot() {
             />
             <button style={styles.MsgSendBtn} type="submit"><SendIcon /></button>
           </form>
+          <button style={styles.toggleButton} onClick={toggleChat}><CloseIcon style={styles.chatIcon}/></button>
         </div>
+      ) : (
+        <button style={styles.toggleButton} onClick={toggleChat}><ChatIcon style={styles.chatIcon}/></button>
       )}
-      <button style={styles.toggleButton} onClick={toggleChat}><ChatIcon style={styles.chatIcon}/></button>
     </div>
   );
 }
