@@ -51,3 +51,64 @@ export const StyledNavLink = styled(NavLink)(({ theme }) => ({
   color: globalTheme.palette.textcolorsecondary.main,
   fontSize: globalTheme.typography.semismallfontsize.main,
 }));
+
+export const StyledAuthorization = styled("div")(({ theme }) => ({
+  position: "relative",
+  bottom: "-37%",
+}));
+
+export const StyledLoginBtn = styled("button")(({ theme }) => ({
+  marginLeft: "75px",
+  border: "none",
+  background: "none",
+  marginRight: "15%",
+  color: globalTheme.palette.textcolorsecondary.main,
+  fontWeight: "bold",
+}));
+
+export const StyledSeparator = styled("hr")(({ theme }) => ({
+  marginTop: "20px",
+  width: "220px",
+  height: "1px",
+  border: "none",
+  background: "#000",
+}));
+
+export const StyledUserStatus = styled("div")(({ theme }) => ({
+  marginTop: "20px",
+  marginLeft: "25px",
+  display: "flex",
+  flexDirection: "column",
+}));
+
+export const StyledUserAvatar = styled("img")(({ theme }) => ({
+  background: "#1e3d58", //tymczasowe
+  width: "45px",
+  height: "45px",
+  borderRadius: "75px",
+  position: "absolute",
+}));
+
+export const StyledStatus = styled("div")(({ theme }) => ({
+  borderRadius: "10px",
+  height: "15px",
+  width: "15px",
+  left: "60px",
+  position: "absolute",
+  top: "90px",
+}));
+
+export const StyledUserName = styled("p")(({ theme }) => ({
+  textAlign: "left",
+  marginLeft: "25%",
+  marginTop: "0",
+  color: globalTheme.palette.textcolorsecondary.main,
+  fontWeight: "bold",
+}));
+
+export const StyledStatusName = styled("p")(({ theme }) => ({
+  textAlign: "left",
+  marginLeft: "25%",
+  marginTop: "-10%",
+  color: globalTheme.palette.textcolorsecondary.main,
+}));

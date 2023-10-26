@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../../../firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import {
+  StyledAuthorization,
+  StyledLoginBtn,
+  StyledSeparator,
+  StyledUserStatus,
+  StyledUserAvatar,
+  StyledStatus,
+  StyledUserName,
+  StyledStatusName,
+} from "./../LeftPanelDashboard/styles";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -34,20 +44,34 @@ const AuthDetails = () => {
   };
 
   return (
-    <div>
+    <StyledAuthorization>
       {authUser ? (
         <>
-          <p>{`Signed In as ${authUser.displayName}`}</p>
-          <img src={authUser.photoURL} alt={authUser.displayName} />
-          <button onClick={userSignOut}>Sign Out</button>
+          <StyledLoginBtn onClick={userSignOut}>Log Out</StyledLoginBtn>
+          <StyledSeparator />
+          <StyledUserStatus>
+            <StyledUserAvatar
+              src={authUser.photoURL}
+              alt={authUser.displayName}
+            />
+            <StyledStatus style={{ background: "#36d41c" }} />
+            <StyledUserName>{`Signed In as ${authUser.displayName}`}</StyledUserName>
+            <StyledStatusName>Status: active</StyledStatusName>
+          </StyledUserStatus>
         </>
       ) : (
         <>
-          <p>Anonymus</p>
-          <button onClick={handleLogin}>Login</button>
+          <StyledLoginBtn onClick={handleLogin}>Log In</StyledLoginBtn>
+          <StyledSeparator />
+          <StyledUserStatus>
+            <StyledUserAvatar />
+            <StyledStatus style={{ background: "#D62424" }} />
+            <StyledUserName>Anonymus</StyledUserName>
+            <StyledStatusName>Status: offline</StyledStatusName>
+          </StyledUserStatus>
         </>
       )}
-    </div>
+    </StyledAuthorization>
   );
 };
 
