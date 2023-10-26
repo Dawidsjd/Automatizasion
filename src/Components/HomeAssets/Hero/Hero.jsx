@@ -27,10 +27,10 @@ const Hero = () => {
               develop skills to create a smart, automated environment around us.
             </h3>
             <StyledButtons>
-              <StyledLink to='/HomeDashboard'>Aplication</StyledLink>
+              <StyledLink to='/HomeDashboard'>Dashboard</StyledLink>
               <StyledButton>Learn more</StyledButton>
-              <Link to='/LogIn'>Links</Link>
             </StyledButtons>
+            <Link to='/LogIn'>Links</Link>
           </StyledHeroContent>
           <StyledImageWave></StyledImageWave>
         </StyledHeroBox>

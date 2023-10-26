@@ -14,16 +14,32 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/HomeDashboard' element={<HomeDashboard />} />
-          <Route exact path='/SchoolDashboard' element={<SchoolDashboard />} />
+          <Route
+            exact
+            path='/HomeDashboard'
+            element={
+              <>
+                <HomeDashboard />
+                <ChatBot />
+              </>
+            }
+          />
+          <Route
+            exact
+            path='/SchoolDashboard'
+            element={
+              <>
+                <SchoolDashboard />
+                <ChatBot />
+              </>
+            }
+          />
           <Route exact path='/logIn' element={<LogIn />} />
         </Routes>
-        
       </BrowserRouter>
-      <ChatBot />
+      {/* <ChatBot /> */}
     </>
   );
 }

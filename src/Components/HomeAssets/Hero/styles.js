@@ -53,6 +53,9 @@ export const StyledButtons = styled('div')(({ theme }) => ({
   width: '90%',
   display: 'flex',
   justifyContent: 'space-between',
+  marginTop: '15px',
+  // justifyContent: 'center',
+  // flexDirection: 'column',
 }));
 
 export const StyledLink = styled(Link)(({ theme }) => ({

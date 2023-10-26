@@ -1,6 +1,12 @@
-import React, { useState } from "react";
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider } from "firebase/auth";
-import { auth } from "../../firebase";
+import React, { useState } from 'react';
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  FacebookAuthProvider,
+} from 'firebase/auth';
+import { auth } from '../../firebase';
 import {
   StyledLogInContainer,
   StyledLogInWrapper,
@@ -11,14 +17,18 @@ import {
   SingleInput,
   StyledSeparate,
   StyledButtons,
+  StyledLinkForgotPassword,
   StyledLinkRegister,
+  StyledFcGoogle,
+  StyledBsFacebook,
+  StyledBsGithub,
 } from './styles';
 import LineLogIn from '../../assets/LineLogIn.svg';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const signIn = (e) => {
@@ -68,7 +78,7 @@ const LogIn = () => {
         console.log(error);
       });
   };
-  
+
   return (
     <StyledLogInContainer>
       <StyledLogInWrapper>
@@ -77,31 +87,45 @@ const LogIn = () => {
           <UserDataWrapper>
             <SocialLogIn>
               <StyledButtons>
-                <button onClick={signInWithGoogle}>Log In with Google</button>
-                <button onClick={signInWithFacebook}>Log In with Facebook</button>
-                <button onClick={signInWithGitHub}>Log In with GitHub</button>
+                <button onClick={signInWithGoogle}>
+                  <StyledFcGoogle /> Log In with Google
+                </button>
+                <button onClick={signInWithFacebook}>
+                  <StyledBsFacebook /> Log In with Facebook
+                </button>
+                <button onClick={signInWithGitHub}>
+                  <StyledBsGithub /> Log In with GitHub
+                </button>
               </StyledButtons>
             </SocialLogIn>
             <StyledSeparate></StyledSeparate>
+
             <StyledDefaultLogIn>
               <SingleInput>
                 <p>Username or email</p>
-                <input type='text'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} />
+                <input
+                  type='text'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </SingleInput>
               <SingleInput>
                 <p>Password</p>
-                <input type='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)} />
+                <input
+                  type='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </SingleInput>
               <button onClick={signIn}>Log In</button>
-              <StyledLinkRegister to='/register'>
+              <StyledLinkForgotPassword to='/register'>
                 Forgot password?
-              </StyledLinkRegister>
+              </StyledLinkForgotPassword>
             </StyledDefaultLogIn>
           </UserDataWrapper>
+          <StyledLinkRegister to='/register'>
+            Need an account? Sign up now!
+          </StyledLinkRegister>
         </StyledLogInContent>
       </StyledLogInWrapper>
     </StyledLogInContainer>

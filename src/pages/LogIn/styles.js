@@ -4,6 +4,9 @@ import Separate from '../../assets/LineLogIn.svg';
 
 import { Link } from 'react-router-dom';
 
+import { BsFacebook, BsGithub } from 'react-icons/bs';
+import { FcGoogle } from 'react-icons/fc';
+
 export const StyledLogInContainer = styled('section')(({ theme }) => ({
   width: '100%',
   height: '100vh',
@@ -21,6 +24,7 @@ export const StyledLogInWrapper = styled('section')(({ theme }) => ({
   width: '70%',
   maxWidth: '1200px',
   height: '75vh',
+  height: '43em',
   position: 'relative',
   background: 'rgba(8, 52, 100, 0.5)',
   backdropFilter: 'blur(5px)',
@@ -32,7 +36,7 @@ export const StyledLogInWrapper = styled('section')(({ theme }) => ({
 
 export const StyledLogInContent = styled('section')(({ theme }) => ({
   width: '80%',
-  height: '60vh',
+  // height: '60vh',
   color: 'white',
   h1: {
     margin: '0 0 35px 0 ',
@@ -43,7 +47,7 @@ export const StyledLogInContent = styled('section')(({ theme }) => ({
 
 export const UserDataWrapper = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '50vh',
+  height: '28.5em',
   display: 'flex',
   h1: {
     margin: '0',
@@ -58,10 +62,14 @@ export const SocialLogIn = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   button: {
-    padding: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    // background: '#4E6BFF',
+    background: '#2A3676',
+    color: 'white',
+    padding: '18px',
     fontSize: '16px',
     fontWeight: '600',
-    background: '3A61B4',
     borderRadius: '6px',
   },
   h1: {
@@ -121,11 +129,43 @@ export const StyledButtons = styled('div')(({ theme }) => ({
   gap: '25px',
 }));
 
-export const StyledLinkRegister = styled(Link)(({ theme }) => ({
+export const StyledLinkForgotPassword = styled(Link)(({ theme }) => ({
   display: 'flex',
-  justifyItems: 'center',
   marginTop: '10px',
   padding: '5px',
   color: '#5DC8EF',
   fontSize: '16px',
+  textDecoration: 'none',
+}));
+
+export const StyledLinkRegister = styled(Link)(({ theme }) => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  textAlign: 'center',
+  marginTop: '10px',
+  padding: '5px',
+  color: '#5DC8EF',
+  fontSize: '16px',
+  textDecoration: 'none',
+}));
+
+const StyledMediaIcons = {
+  fontSize: '27px',
+  margin: '0 15px 0 25px',
+};
+
+export const StyledFcGoogle = styled(FcGoogle)(({ theme }) => ({
+  ...StyledMediaIcons,
+  color: 'red',
+}));
+
+export const StyledBsFacebook = styled(BsFacebook)(({ theme }) => ({
+  ...StyledMediaIcons,
+  color: 'rgba(24, 172, 254, 1)',
+}));
+
+export const StyledBsGithub = styled(BsGithub)(({ theme }) => ({
+  ...StyledMediaIcons,
+  color: '#000000',
 }));

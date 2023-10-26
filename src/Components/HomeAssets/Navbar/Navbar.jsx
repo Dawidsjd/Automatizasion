@@ -22,9 +22,9 @@ const Navbar = () => {
         <SingleItem>Our team</SingleItem>
         <SingleItem>Support</SingleItem>
       </StyledNav>
-      <StyledButtonBox>
+      {/* <StyledButtonBox>
         <StyledLinkBtn to='/HomeDashboard'>Application</StyledLinkBtn>
-      </StyledButtonBox>
+      </StyledButtonBox> */}
     </StyledHeader>
   );
 };
