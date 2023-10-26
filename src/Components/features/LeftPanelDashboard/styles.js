@@ -30,4 +30,5 @@ export const StyledLogo = styled("p")(({ theme }) => ({
 export const StyledNav = styled("nav")(({ theme }) => ({
   position: "relative",
   top: "15%",
+  right: "10%",
 }));

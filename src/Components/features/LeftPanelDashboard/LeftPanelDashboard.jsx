@@ -38,7 +38,7 @@ class LeftPanelDashboard extends Component {
                 }
               >
                 <i>
-                  <AiTwotoneHome />
+                  <AiTwotoneHome style={{ width: "25px", height: "25px" }} />
                 </i>{" "}
                 Home
               </NavLink>
@@ -51,7 +51,7 @@ class LeftPanelDashboard extends Component {
                 }
               >
                 <i>
-                  <FaSchool />
+                  <FaSchool style={{ width: "25px", height: "25px" }} />
                 </i>
                 School
               </NavLink>
