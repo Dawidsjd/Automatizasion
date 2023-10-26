@@ -33,10 +33,14 @@ export const StyledNav = styled('nav')(({ theme }) => ({
   alignItems: 'center',
 }));
 
-export const SingleItem = styled('ul')(({ theme }) => ({
+export const StyledLink = styled(Link)(({ theme }) => ({
+  color: 'white',
   fontSize: '16px',
   fontWeight: '600',
   letterSpacing: '1px',
+  padding: '5px 10px',
+  margin: '0px 20px',
+  // border: '1px solid red',
 }));
 
 export const StyledButtonBox = styled('div')(({ theme }) => ({}));

@@ -4,7 +4,7 @@ import {
   StyledImageWrapper,
   StyledImage,
   StyledNav,
-  SingleItem,
+  StyledLink,
   StyledButtonBox,
   StyledLinkBtn,
 } from './styles';
@@ -13,14 +13,14 @@ const Navbar = () => {
   return (
     <StyledHeader>
       <StyledImageWrapper>
-        <StyledImage></StyledImage>
+        <StyledImage>FlowView</StyledImage>
       </StyledImageWrapper>
       <StyledNav>
-        <SingleItem>Home</SingleItem>
-        <SingleItem>Application</SingleItem>
-        <SingleItem>Safety</SingleItem>
-        <SingleItem>Our team</SingleItem>
-        <SingleItem>Support</SingleItem>
+        <StyledLink to='/'>Home</StyledLink>
+        <StyledLink to='/homeDashboard'>Dashboard</StyledLink>
+        <StyledLink to='/safety'>Safety</StyledLink>
+        <StyledLink to='/ourTeam'>Our team</StyledLink>
+        <StyledLink to='/support'>Support</StyledLink>
       </StyledNav>
       {/* <StyledButtonBox>
         <StyledLinkBtn to='/HomeDashboard'>Application</StyledLinkBtn>

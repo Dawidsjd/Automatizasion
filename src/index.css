@@ -15,6 +15,7 @@ code {
 * {
   font-family: 'Montserrat', sans-serif;
   /* font-family: 'Roboto', sans-serif; */
+  text-decoration: none;
 }
 
 p {

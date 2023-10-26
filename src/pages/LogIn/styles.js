@@ -157,7 +157,6 @@ const StyledMediaIcons = {
 
 export const StyledFcGoogle = styled(FcGoogle)(({ theme }) => ({
   ...StyledMediaIcons,
-  color: 'red',
 }));
 
 export const StyledBsFacebook = styled(BsFacebook)(({ theme }) => ({
