@@ -11,7 +11,9 @@ import {
   StyledStatus,
   StyledUserName,
   StyledStatusName,
+  StyledIcon,
 } from "./../LeftPanelDashboard/styles";
+import { BiLogOutCircle, BiLogInCircle } from "react-icons/bi";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -47,7 +49,12 @@ const AuthDetails = () => {
     <StyledAuthorization>
       {authUser ? (
         <>
-          <StyledLoginBtn onClick={userSignOut}>Log Out</StyledLoginBtn>
+          <StyledLoginBtn onClick={userSignOut}>
+            <StyledIcon>
+              <BiLogOutCircle />
+            </StyledIcon>
+            Log Out
+          </StyledLoginBtn>
           <StyledSeparator />
           <StyledUserStatus>
             <StyledUserAvatar
@@ -61,7 +68,12 @@ const AuthDetails = () => {
         </>
       ) : (
         <>
-          <StyledLoginBtn onClick={handleLogin}>Log In</StyledLoginBtn>
+          <StyledLoginBtn onClick={handleLogin}>
+            <StyledIcon>
+              <BiLogInCircle />
+            </StyledIcon>
+            Log In
+          </StyledLoginBtn>
           <StyledSeparator />
           <StyledUserStatus>
             <StyledUserAvatar />

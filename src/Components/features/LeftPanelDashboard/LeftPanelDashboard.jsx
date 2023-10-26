@@ -26,7 +26,7 @@ class LeftPanelDashboard extends Component {
     return (
       <StyledContainer>
         <StyledLogoContainer>
-          <StyledLogo>FlowVue</StyledLogo>
+          <StyledLogo>FlowView</StyledLogo>
         </StyledLogoContainer>
         <StyledNav>
           <ul
