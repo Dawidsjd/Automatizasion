@@ -11,6 +11,7 @@ export const StyledHeader = styled('Header')(({ theme }) => ({
   top: '0',
   left: '0',
   zIndex: '999',
+  background: '#484cec',
   [theme.breakpoints.up('md')]: {
     // backgroundColor: 'blue',
   },
