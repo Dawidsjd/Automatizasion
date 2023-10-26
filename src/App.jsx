@@ -10,6 +10,7 @@ import HomeDashboard from "./pages/HomeDashboard";
 import SchoolDashboard from "./pages/SchoolDashboard";
 import LogIn from "./pages/LogIn/LogIn";
 import Settings from "./pages/Settings";
+import Dziennik from "./Components/features/Dziennik/Dziennik";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
+      {/* <Dziennik /> sry chopaki na testa wjebalem */}
     </>
   );
 }
