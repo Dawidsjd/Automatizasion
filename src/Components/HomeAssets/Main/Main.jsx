@@ -1,24 +1,20 @@
 import React from 'react';
 import Introduction from './MainItems/Introduction';
-// import StyledMain from './styles';
+import AboutDashboardHome from './MainItems/AboutDashboardHome';
+import AboutDashboardSchool from './MainItems/AboutDashboardSchool';
+import { StyledMain } from './styles';
 
 const Main = () => {
   return (
-    <main>
+    <StyledMain>
       <Introduction />
-      <section>
-        <h1>Secound Content</h1>
-      </section>
-      <section>
-        <h1>Third Content</h1>
-      </section>
-      <section>
-        <h1>Third Content</h1>
-      </section>
+      <AboutDashboardHome />
+      <AboutDashboardSchool />
+
       <section>
         <h1>Fourth Content</h1>
       </section>
-    </main>
+    </StyledMain>
   );
 };
 
