@@ -1,17 +1,20 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   StyledContainer,
   StyledLogoContainer,
   StyledLogo,
   StyledNav,
+  StyledSubpages,
+  StyledLinks,
+  StyledNavLink,
 } from "./styles";
 import "./styles.css";
 import { AiTwotoneHome } from "react-icons/ai";
 import { FaSchool } from "react-icons/fa";
-
+import AuthDetails from "../LogInBackEnd/AuthDetails";
 class LeftPanelDashboard extends Component {
-  state = { clicked: false };
+  state = { clicked: false, user: null };
 
   handleClick = () => {
     const navbar = document.getElementById("navbar");
@@ -58,6 +61,11 @@ class LeftPanelDashboard extends Component {
             </li>
           </ul>
         </StyledNav>
+        <StyledSubpages>
+          <StyledNavLink to="/">Main Page</StyledNavLink>
+          <StyledNavLink to="/Settings">Settings</StyledNavLink>
+        </StyledSubpages>
+        <AuthDetails />
       </StyledContainer>
     );
   }

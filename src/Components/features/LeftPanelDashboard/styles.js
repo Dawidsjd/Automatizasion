@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+import { NavLink } from "react-router-dom";
 import globalTheme from "../GlobalStyles/GlobalTheme";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
@@ -31,4 +32,22 @@ export const StyledNav = styled("nav")(({ theme }) => ({
   position: "relative",
   top: "15%",
   right: "10%",
+}));
+
+export const StyledSubpages = styled("div")(({ theme }) => ({
+  position: "relative",
+  bottom: "-35%",
+  display: "flex",
+  flexDirection: "column",
+  right: "-30%",
+}));
+
+export const StyledNavLink = styled(NavLink)(({ theme }) => ({
+  marginTop: "25px",
+  textDecoration: "none",
+  "&:hover": {
+    textDecoration: "none",
+  },
+  color: globalTheme.palette.textcolorsecondary.main,
+  fontSize: globalTheme.typography.semismallfontsize.main,
 }));

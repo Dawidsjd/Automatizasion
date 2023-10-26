@@ -11,17 +11,18 @@
 .link-active {
   width: 200px;
   height: 50px;
-  padding-left: 20px;
+  padding-left: 10%;
   color: #caf0f6;
   background: #001e3b;
   text-decoration: none;
   border-radius: 15px;
   display: flex;
   align-items: center;
+  font-size: 16px;
 }
 
 .link {
-  padding-left: 20px;
+  padding-left: 10%;
   width: 200px;
   height: 50px;
   text-decoration: none;
@@ -29,6 +30,7 @@
   display: flex;
   align-items: center;
   text-align: left;
+  font-size: 16px;
 }
 
 i {
