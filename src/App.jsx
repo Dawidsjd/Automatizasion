@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ChatBot from "./Components/features/ChatBot/ChatBot";
 import RecipeSearch from "./Components/features/Food/RecipeSearch";
@@ -42,8 +42,12 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
+      {/* <Dziennik /> sry chopaki na testa wjebalem */}
     </>
   );
 }
 
 export default App;
+
+
+
