@@ -14,6 +14,7 @@ export const StyledDashboard = styled('div')(({ theme }) => ({
 }));
 
 export const Widgets = styled('div')(({ theme }) => ({
+  position: 'absolute',
   //tymczasowe
   // marginLeft: '17%',
   // paddingTop: '5%',
