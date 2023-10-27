@@ -1,18 +1,18 @@
 import React from "react";
 import LeftPanelDashboard from "../../Components/features/LeftPanelDashboard/LeftPanelDashboard";
-import { StyledContainer, StyledDashboard, Widgets } from "./styles";
+import { StyledDashboard, Widgets } from "./styles";
 import Welcome from "../../Components/widget/welcome/welcome";
+import WeatherData from "../../Components/widget/Weather/WeatherData";
 
 const HomeDashboard = () => {
   return (
-    <StyledContainer>
-      <StyledDashboard>
-        <LeftPanelDashboard />
-        <Widgets>
-          <Welcome />
-        </Widgets>
-      </StyledDashboard>
-    </StyledContainer>
+    <StyledDashboard>
+      <LeftPanelDashboard />
+      <Widgets>
+        {/* <Welcome /> */}
+        {/* <WeatherData /> */}
+      </Widgets>
+    </StyledDashboard>
   );
 };
 

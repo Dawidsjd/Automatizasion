@@ -1,15 +1,13 @@
 import React from "react";
 import LeftPanelDashboard from "../../Components/features/LeftPanelDashboard/LeftPanelDashboard";
-import { StyledContainer, StyledDashboard } from "./styles";
+import { StyledDashboard } from "./styles";
 
 const HomeDashboard = () => {
   return (
-    <StyledContainer>
-      <StyledDashboard>
-        <LeftPanelDashboard />
-        <div>HomeDashboard</div>
-      </StyledDashboard>
-    </StyledContainer>
+    <StyledDashboard>
+      <LeftPanelDashboard />
+      <div>HomeDashboard</div>
+    </StyledDashboard>
   );
 };
 
