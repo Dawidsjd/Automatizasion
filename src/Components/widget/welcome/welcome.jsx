@@ -5,8 +5,13 @@ import {
   StyledOverlap,
   StyledDate,
   StyledIcon,
+  StyledWelcome,
+  StyledMessage,
+  StyledDescription,
+  StyledImage,
 } from "./styles";
 import { BsFillCalendarEventFill } from "react-icons/bs";
+import HelloImg from "./../../../assets/HelloImg.svg";
 
 const getCurrentDate = () => {
   const months = [
@@ -40,15 +45,11 @@ const Welcome = () => {
           </StyledIcon>
         </StyledOverlap>
       </StyledCalendar>
-      <div className="welcome">
-        <div className="good-day-username">Good Day, &lt;username&gt;!</div>
-        <div className="div">Have a nice day!</div>
-      </div>
-      <img
-        className="undraw-fall-thyk"
-        alt="Undraw fall thyk"
-        src="undraw-fall-thyk-1.svg"
-      />
+      <StyledWelcome>
+        <StyledMessage>Good Day, &lt;username&gt;!</StyledMessage>
+        <StyledDescription>Have a nice day!</StyledDescription>
+      </StyledWelcome>
+      <StyledImage src={HelloImg} alt="hello img" />
     </StyledContainer>
   );
 };

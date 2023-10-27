@@ -1,6 +1,6 @@
 import React from "react";
 import LeftPanelDashboard from "../../Components/features/LeftPanelDashboard/LeftPanelDashboard";
-import { StyledContainer, StyledDashboard } from "./styles";
+import { StyledContainer, StyledDashboard, Widgets } from "./styles";
 import Welcome from "../../Components/widget/welcome/welcome";
 
 const HomeDashboard = () => {
@@ -8,7 +8,9 @@ const HomeDashboard = () => {
     <StyledContainer>
       <StyledDashboard>
         <LeftPanelDashboard />
-        <Welcome />
+        <Widgets>
+          <Welcome />
+        </Widgets>
       </StyledDashboard>
     </StyledContainer>
   );

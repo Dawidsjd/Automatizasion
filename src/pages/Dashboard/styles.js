@@ -12,3 +12,9 @@ export const StyledDashboard = styled("div")(({ theme }) => ({
   background: `url(${dashboardBackground})`,
   backgroundSize: "cover",
 }));
+
+export const Widgets = styled("div")(({ theme }) => ({
+  //tymczasowe
+  marginLeft: "17%",
+  paddingTop: "5%",
+}));
