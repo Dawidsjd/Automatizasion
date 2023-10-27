@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import globalTheme from "../GlobalStyles/GlobalTheme";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
-  height: "900px",
+  height: "100vh",
   width: "270px",
   background: globalTheme.palette.primary.main,
   borderRadius: "0 35px 35px 0",
@@ -63,6 +63,7 @@ export const StyledLoginBtn = styled("button")(({ theme }) => ({
   background: "none",
   color: globalTheme.palette.textcolorsecondary.main,
   fontWeight: "bold",
+  cursor: "pointer",
 }));
 
 export const StyledSeparator = styled("hr")(({ theme }) => ({
