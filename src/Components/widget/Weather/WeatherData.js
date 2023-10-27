@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import './Weather.css';
+import React, { useState, useEffect } from "react";
+import "./Weather.css";
 
 const WeatherData = () => {
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
 
@@ -35,11 +35,11 @@ const WeatherData = () => {
           });
         },
         (error) => {
-          console.error('Error getting location:', error);
+          console.error("Error getting location:", error);
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser.');
+      console.error("Geolocation is not supported by this browser.");
     }
   }, []);
 
