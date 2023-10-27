@@ -93,15 +93,15 @@ export const StyledWrapperNav = styled('div')(({ theme }) => ({
 
 export const StyledNavBurger = styled('div')(({ isOpen }) => ({ theme }) => ({
   transform: isOpen
-    ? 'translateX(calc(-74% + 15px))'
-    : 'translateX(calc(-164% - 15px))',
+    ? 'translateX(calc(-105% + 15px))'
+    : 'translateX(calc(-200% - 15px))',
   transition: '.3s',
   position: 'absolute',
   top: '0',
   height: '300vh',
   alignItems: 'center',
   justifyContent: 'center',
-  width: '60%',
+  width: '50%',
   background: '#2054a4',
   zIndex: '300',
   [theme.breakpoints.up('lg')]: {

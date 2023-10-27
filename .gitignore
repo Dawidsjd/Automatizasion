@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/server/node_modules
+/server/account.json
+/server/keystore.json
 /.pnp
 .pnp.js
 

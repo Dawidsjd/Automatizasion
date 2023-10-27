@@ -1,20 +1,30 @@
 const express = require('express');
+const setupVulcan = require('./vulcanApiExample');
+
 const app = express();
-const { Keystore, AccountTools, VulcanHebe, registerAccount } = require('vulcan-api-js');
-const fs = require('fs');
 
-// Dodaj endpoint, który zwraca dane studentów
-app.get('/api/students', (req, res) => {
-  // Tutaj umieść kod do pobierania danych studentów
-  // Na przykład, możesz wczytać dane z pliku dane_studentow.json
+const startServer = async () => {
+  const client = await setupVulcan();
 
-  const studentsData = require('./dane_studentow.json');
-  res.json(studentsData);
-});
+  app.get('/api/students', async (req, res) => {
+    // Access client here
+    // const students = await client.getStudents();
+    // console.log('students: ', students);
 
+    const lessons = await client.getLessons();
+    console.log('lessons: ', lessons);
 
-// Nasłuchiwanie na porcie 5000
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    // const studentsData = require('./dane_studentow.json');
+    res.json(lessons);
+  });
+
+  const PORT = process.env.PORT || 5000;
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+};
+
+startServer().catch((error) => {
+  console.error('Error starting the server:', error);
 });
