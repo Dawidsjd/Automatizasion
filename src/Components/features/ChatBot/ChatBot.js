@@ -1,17 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
-import styles from './style';
-import ChatIcon from '@mui/icons-material/Chat';
-import CloseIcon from '@mui/icons-material/Close';
-import SendIcon from '@mui/icons-material/Send';
-import BotAvatar from '../../../assets/200.gif';
-import UserAvatar from '../../../assets/gagajhagha.jpg';
+import React, { useState, useRef, useEffect } from "react";
+import styles from "./style";
+import ChatIcon from "@mui/icons-material/Chat";
+import CloseIcon from "@mui/icons-material/Close";
+import SendIcon from "@mui/icons-material/Send";
+import BotAvatar from "../../../assets/200.gif";
+import UserAvatar from "../../../assets/gagajhagha.jpg";
+import globalTheme from "../GlobalStyles/GlobalTheme";
 
 function ChatBot() {
   const [messages, setMessages] = useState([
-    { content: 'Witaj! Jestem twoim małym gnojkiem pomocnikiem. Jak mogę Ci pomóc? 😊', role: 'bot' },
+    {
+      content:
+        "Witaj! Jestem twoim małym gnojkiem pomocnikiem. Jak mogę Ci pomóc? 😊",
+      role: "bot",
+    },
   ]);
-  const [query, setQuery] = useState('');
-  const [isChatOpen, setIsChatOpen] = useState(false); 
+  const [query, setQuery] = useState("");
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [isBotTyping, setIsBotTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
@@ -26,40 +31,40 @@ function ChatBot() {
   }, [messages]);
 
   const addMessage = (content, role) => {
-    setMessages(prevMessages => [...prevMessages, { content, role }]);
+    setMessages((prevMessages) => [...prevMessages, { content, role }]);
   };
 
   const handleUserMessage = async (e) => {
     e.preventDefault();
-    if (query.trim() !== '') {
-      setQuery('');
-      addMessage(query, 'user');
+    if (query.trim() !== "") {
+      setQuery("");
+      addMessage(query, "user");
       await fetchData(query);
     }
   };
 
   const fetchData = async (userMessage) => {
     setIsBotTyping(true);
-    const url = 'https://lemurbot.p.rapidapi.com/chat';
+    const url = "https://lemurbot.p.rapidapi.com/chat";
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
-        'X-RapidAPI-Key': 'c1fa8c4c47mshc735e397e60a5dfp16d672jsn213805a23649',
-        'X-RapidAPI-Host': 'lemurbot.p.rapidapi.com'
+        "content-type": "application/json",
+        "X-RapidAPI-Key": "c1fa8c4c47mshc735e397e60a5dfp16d672jsn213805a23649",
+        "X-RapidAPI-Host": "lemurbot.p.rapidapi.com",
       },
       body: JSON.stringify({
-        bot: 'dilly',
-        client: 'd531e3bd-b6c3-4f3f-bb58-a6632cbed5e2',
-        message: userMessage
-      })
+        bot: "dilly",
+        client: "d531e3bd-b6c3-4f3f-bb58-a6632cbed5e2",
+        message: userMessage,
+      }),
     };
 
     try {
       const response = await fetch(url, options);
       const result = await response.json();
       setIsBotTyping(false);
-      addMessage(result.data.conversation.output, 'bot');
+      addMessage(result.data.conversation.output, "bot");
     } catch (error) {
       setIsBotTyping(false);
       console.error(error);
@@ -80,22 +85,23 @@ function ChatBot() {
               <div
                 key={index}
                 style={{
-                  marginBottom: '10px',
+                  marginBottom: "10px",
                   fontSize: "14px",
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: message.role === 'user' ? 'flex-end' : 'flex-start',
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent:
+                    message.role === "user" ? "flex-end" : "flex-start",
                 }}
               >
-                {message.role === 'user' ? (
+                {message.role === "user" ? (
                   <>
                     <div
                       style={{
-                        backgroundColor: 'purple',
-                        color: '#fff',
-                        padding: '5px 10px',
-                        borderRadius: '5px',
-                        maxWidth: '60%',
+                        backgroundColor: globalTheme.palette.primary.dark,
+                        color: "#fff",
+                        padding: "5px 10px",
+                        borderRadius: "5px",
+                        maxWidth: "60%",
                       }}
                     >
                       {message.content}
@@ -104,10 +110,10 @@ function ChatBot() {
                       src={UserAvatar}
                       alt="User Avatar"
                       style={{
-                        width: '30px',
-                        height: '30px',
-                        borderRadius: '50%',
-                        marginLeft: '10px',
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                        marginLeft: "10px",
                       }}
                     />
                   </>
@@ -117,18 +123,18 @@ function ChatBot() {
                       src={BotAvatar}
                       alt="Bot Avatar"
                       style={{
-                        width: '30px',
-                        height: '30px',
-                        borderRadius: '50%',
-                        marginRight: '10px',
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                        marginRight: "10px",
                       }}
                     />
                     <div
                       style={{
-                        backgroundColor: '#f0f0f0',
-                        padding: '5px 10px',
-                        borderRadius: '5px',
-                        maxWidth: '60%',
+                        backgroundColor: "#f0f0f0",
+                        padding: "5px 10px",
+                        borderRadius: "5px",
+                        maxWidth: "60%",
                       }}
                     >
                       {message.content}
@@ -137,7 +143,11 @@ function ChatBot() {
                 )}
               </div>
             ))}
-            {isBotTyping && <div style={{ alignSelf: 'flex-start', color: '#999' }}>Bot is typing...</div>}
+            {isBotTyping && (
+              <div style={{ alignSelf: "flex-start", color: "#999" }}>
+                Bot is typing...
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
           <form style={styles.SendContainer} onSubmit={handleUserMessage}>
@@ -147,14 +157,23 @@ function ChatBot() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter your message"
-              disabled={messages.length > 0 && messages[messages.length - 1].role === 'user'}
+              disabled={
+                messages.length > 0 &&
+                messages[messages.length - 1].role === "user"
+              }
             />
-            <button style={styles.MsgSendBtn} type="submit"><SendIcon /></button>
+            <button style={styles.MsgSendBtn} type="submit">
+              <SendIcon />
+            </button>
           </form>
-          <button style={styles.toggleButton} onClick={toggleChat}><CloseIcon style={styles.chatIcon}/></button>
+          <button style={styles.toggleButton} onClick={toggleChat}>
+            <CloseIcon style={styles.chatIcon} />
+          </button>
         </div>
       ) : (
-        <button style={styles.toggleButton} onClick={toggleChat}><ChatIcon style={styles.chatIcon}/></button>
+        <button style={styles.toggleButton} onClick={toggleChat}>
+          <ChatIcon style={styles.chatIcon} />
+        </button>
       )}
     </div>
   );
