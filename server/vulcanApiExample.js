@@ -29,7 +29,7 @@ const setupVulcan = async () => {
   fs.writeFileSync('account.json', AccountTools.dumpToJsonString(account), {
     encoding: 'utf-8',
   });
-
+  // https://www.youtube.com/watch?v=zv9NlofgVSA
   const client = new VulcanHebe(
     keystore,
     AccountTools.loadFromJsonString(

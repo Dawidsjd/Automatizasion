@@ -59,7 +59,7 @@ export const StyledButtons = styled('div')(({ theme }) => ({
 }));
 
 export const StyledLink = styled(Link)(({ theme }) => ({
-  width: '320px',
+  width: '50%',
   height: '60px',
   textDecoration: 'none',
   color: 'white',
@@ -76,7 +76,7 @@ export const StyledLink = styled(Link)(({ theme }) => ({
 }));
 
 export const StyledButton = styled('button')(({ theme }) => ({
-  width: '320px',
+  width: '50%',
   height: '50px',
   color: 'black',
   background: '#dfe6e9',
