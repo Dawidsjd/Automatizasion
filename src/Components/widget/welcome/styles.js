@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import globalTheme from "../../features/GlobalStyles/GlobalTheme";
+import HelloImg from "./../../../assets/HelloImg.svg";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
   webkitBackdropFilter: "blur(20px) brightness(100%)",
@@ -20,7 +21,7 @@ export const StyledCalendar = styled("div")(({ theme }) => ({
 }));
 
 export const StyledOverlap = styled("div")(({ theme }) => ({
-  backgroundColor: globalTheme.palette.tiles.main,
+  backgroundColor: globalTheme.palette.secondary.main,
   borderRadius: "10px",
   boxShadow: "0px 4px 20px 2px #00000040",
   height: "40px",
@@ -54,7 +55,6 @@ export const StyledWelcome = styled("div")(({ theme }) => ({
   left: "25px",
   position: "absolute",
   top: "160px",
-  width: "240px",
 }));
 
 export const StyledMessage = styled("div")(({ theme }) => ({
@@ -68,7 +68,6 @@ export const StyledMessage = styled("div")(({ theme }) => ({
   position: "absolute",
   top: 0,
   whiteSpace: "nowrap",
-  width: "230px",
 }));
 
 export const StyledDescription = styled("div")(({ theme }) => ({
@@ -84,8 +83,11 @@ export const StyledDescription = styled("div")(({ theme }) => ({
   width: "230px",
 }));
 
-export const StyledImage = styled("img")(({ theme }) => ({
-  height: "230px",
+export const StyledImage = styled("div")(({ theme }) => ({
+  background: `url(${HelloImg})`,
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  height: "220px",
   left: "365px",
   position: "absolute",
   top: "0",

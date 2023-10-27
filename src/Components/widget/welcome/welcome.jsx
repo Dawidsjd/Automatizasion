@@ -11,7 +11,6 @@ import {
   StyledImage,
 } from "./styles";
 import { BsFillCalendarEventFill } from "react-icons/bs";
-import HelloImg from "./../../../assets/HelloImg.svg";
 
 const getCurrentDate = () => {
   const months = [
@@ -49,7 +48,7 @@ const Welcome = () => {
         <StyledMessage>Good Day, &lt;username&gt;!</StyledMessage>
         <StyledDescription>Have a nice day!</StyledDescription>
       </StyledWelcome>
-      <StyledImage src={HelloImg} alt="hello img" />
+      <StyledImage />
     </StyledContainer>
   );
 };
