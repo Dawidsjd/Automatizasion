@@ -56,19 +56,27 @@ export const StyledButtons = styled('div')(({ theme }) => ({
   marginTop: '15px',
   // justifyContent: 'center',
   // flexDirection: 'column',
+  columnGap: 10,
 }));
 
-export const StyledLink = styled(Link)(({ theme }) => ({
-  width: '50%',
+const SharedStylesButtons = {
+  width: '45%',
   height: '60px',
   textDecoration: 'none',
-  color: 'white',
+  border: 'none',
   fontSize: '20px',
-  background: '#23272A',
-  borderRadius: '100px',
   display: 'flex',
-  alignItems: 'center',
+  borderRadius: '100px',
   justifyContent: 'center',
+  transition: '.3s',
+  fontWeight: '600',
+};
+
+export const StyledLink = styled(Link)(({ theme }) => ({
+  ...SharedStylesButtons,
+  color: 'white',
+  background: '#23272A',
+  alignItems: 'center',
   transition: '.3s',
   '&: hover': {
     background: '#2d3436',
@@ -76,17 +84,10 @@ export const StyledLink = styled(Link)(({ theme }) => ({
 }));
 
 export const StyledButton = styled('button')(({ theme }) => ({
-  width: '50%',
-  height: '50px',
+  ...SharedStylesButtons,
   color: 'black',
   background: '#dfe6e9',
-  border: 'none',
-  fontSize: '20px',
-  borderRadius: '100px',
-  display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  transition: '.3s',
   '&: hover': {
     background: '#b2bec3',
   },

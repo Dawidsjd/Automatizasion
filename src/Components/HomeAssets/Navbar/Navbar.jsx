@@ -9,6 +9,7 @@ import {
   ResponsiveBurger,
   BurgerBox,
   StyledWrapperNav,
+  StyledHeaderContent,
 } from './styles';
 
 import { Sling as Hamburger } from 'hamburger-react';
@@ -23,28 +24,30 @@ const Navbar = () => {
 
   return (
     <StyledHeader>
-      <StyledImageWrapper>
-        <StyledImage>FlowView</StyledImage>
-      </StyledImageWrapper>
+      <StyledHeaderContent>
+        <StyledImageWrapper>
+          <StyledImage>FlowView</StyledImage>
+        </StyledImageWrapper>
 
-      <ResponsiveBurger>
-        <Hamburger toggled={isOpen} toggle={handleToggle} color='#fff' />
-      </ResponsiveBurger>
+        <ResponsiveBurger>
+          <Hamburger toggled={isOpen} toggle={handleToggle} color='#fff' />
+        </ResponsiveBurger>
 
-      <StyledNavBurger isOpen={isOpen ? 'open' : ''}>
-        <StyledWrapperNav>
-          <BurgerBox>
-            <Hamburger toggled={isOpen} toggle={handleToggle} color='#fff' />
-          </BurgerBox>
-          <StyledNav>
-            <StyledLink to='/'>Home</StyledLink>
-            <StyledLink to='/homeDashboard'>Dashboard</StyledLink>
-            <StyledLink to='/safety'>Safety</StyledLink>
-            <StyledLink to='/ourTeam'>Our team</StyledLink>
-            <StyledLink to='/support'>Support</StyledLink>
-          </StyledNav>
-        </StyledWrapperNav>
-      </StyledNavBurger>
+        <StyledNavBurger isOpen={isOpen ? 'open' : ''}>
+          <StyledWrapperNav>
+            <BurgerBox>
+              <Hamburger toggled={isOpen} toggle={handleToggle} color='#fff' />
+            </BurgerBox>
+            <StyledNav>
+              <StyledLink to='/'>Home</StyledLink>
+              <StyledLink to='/homeDashboard'>Dashboard</StyledLink>
+              <StyledLink to='/safety'>Safety</StyledLink>
+              <StyledLink to='/ourTeam'>Our team</StyledLink>
+              <StyledLink to='/support'>Support</StyledLink>
+            </StyledNav>
+          </StyledWrapperNav>
+        </StyledNavBurger>
+      </StyledHeaderContent>
     </StyledHeader>
   );
 };

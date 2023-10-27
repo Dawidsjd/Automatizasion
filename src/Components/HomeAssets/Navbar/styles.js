@@ -2,26 +2,32 @@ import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
 export const StyledHeader = styled('header')(({ theme }) => ({
-  marginLeft: 'auto',
-  marginRight: 'auto',
   width: '100%',
   height: '80px',
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   position: 'fixed',
   top: '0',
+  boxSizing: 'border-box',
   left: '0',
   zIndex: '999',
   background: '#484cec',
-  flexDirection: 'row-reverse',
-  [theme.breakpoints.up('md')]: {
-    // backgroundColor: 'blue',
-  },
+
   [theme.breakpoints.up('lg')]: {
     width: '100%',
+  },
+}));
+
+export const StyledHeaderContent = styled('div')(({ theme }) => ({
+  width: '100%',
+  height: '80px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexDirection: 'row-reverse',
+  [theme.breakpoints.up('lg')]: {
+    maxWidth: '65%',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
   },
 }));
 
@@ -43,13 +49,13 @@ export const StyledLink = styled(Link)(({ theme }) => ({
   fontSize: '16px',
   fontWeight: '600',
   letterSpacing: '1px',
+  whiteSpace: 'nowrap',
   padding: '5px',
   margin: '10px',
   [theme.breakpoints.up('lg')]: {
     padding: '5px 10px',
     margin: '0px 20px',
   },
-  // border: '1px solid red',
 }));
 
 export const StyledButtonBox = styled('div')(({ theme }) => ({}));
@@ -92,13 +98,12 @@ export const StyledWrapperNav = styled('div')(({ theme }) => ({
 }));
 
 export const StyledNavBurger = styled('div')(({ isOpen }) => ({ theme }) => ({
-  transform: isOpen
-    ? 'translateX(calc(-105% + 15px))'
-    : 'translateX(calc(-200% - 15px))',
+  transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
   transition: '.3s',
   position: 'absolute',
   top: '0',
-  height: '300vh',
+  left: 0,
+  height: '100vh',
   alignItems: 'center',
   justifyContent: 'center',
   width: '50%',
@@ -108,11 +113,12 @@ export const StyledNavBurger = styled('div')(({ isOpen }) => ({ theme }) => ({
     height: '80px',
     position: 'relative',
     background: 'none',
-    transform: 'translateX(calc(0%))',
+    transform: 'none',
   },
 }));
 
 export const ResponsiveBurger = styled('div')(({ theme }) => ({
+  position: 'relative',
   marginLeft: '25px',
   [theme.breakpoints.up('lg')]: {
     display: 'none',
