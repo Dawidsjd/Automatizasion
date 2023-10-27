@@ -4,4 +4,5 @@
 
 
 
-![Uploading atitit.gif…]()
+
+![uszaty_skurwiel](https://github.com/Dawidsjd/Automatizasion/assets/53567837/003974fb-3153-4648-91fb-a7b6185519ad)
