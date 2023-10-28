@@ -89,18 +89,25 @@ export const StyledContent = styled('section')(({ theme }) => ({
 export const WrapperActivities = styled('div')(({ theme }) => ({
   width: '100%',
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'space-between',
   alignItems: 'center',
+  [theme.breakpoints.up('lg')]: {
+    flexDirection: 'row',
+  },
 }));
 
 export const StyledVisualSection = styled('div')(({ theme }) => ({
-  width: '50%',
+  width: '95%',
   height: '350px',
   position: 'relative',
   background: 'orange',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+  [theme.breakpoints.up('lg')]: {
+    width: '50%',
+  },
 }));
 
 // NewsLetter

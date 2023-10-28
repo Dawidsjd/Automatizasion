@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   StyledFooterWrapper,
+  StyledpositioningFooter,
   AboutShortContent,
   InfoLinks,
   SingleLinks,
@@ -8,6 +9,7 @@ import {
   RestInformations,
   StyledQuickLinks,
   StyledLinkQuickMedia,
+  StyledInfoLinks,
 } from './styles';
 
 import { RiTwitterXFill } from 'react-icons/ri';
@@ -20,7 +22,7 @@ import {
 const Footer = () => {
   return (
     <StyledFooterWrapper>
-      <div style={{ maxWidth: 1250 }}>
+      <StyledpositioningFooter>
         <InfoContentWrapper>
           <AboutShortContent>
             <h3>FlowView</h3>
@@ -33,8 +35,8 @@ const Footer = () => {
           <InfoLinks>
             <SingleLinks>
               <h3>AboutUs</h3>
-              <p>Our team</p>
-              <p>Safety</p>
+              <StyledInfoLinks to='/OurTeam'>Our team</StyledInfoLinks>
+              <StyledInfoLinks to='/Safety'>Safety</StyledInfoLinks>
             </SingleLinks>
             <SingleLinks>
               <h3>Contact</h3>
@@ -43,8 +45,12 @@ const Footer = () => {
             </SingleLinks>
             <SingleLinks>
               <h3>Useful links</h3>
-              <p>Privacy Policy</p>
-              <p>Terms and Conditions</p>
+              <StyledInfoLinks to='/PrivacyPolicy'>
+                Privacy Policy
+              </StyledInfoLinks>
+              <StyledInfoLinks to='/TermsAndConditions'>
+                Terms and Conditions
+              </StyledInfoLinks>
             </SingleLinks>
           </InfoLinks>
         </InfoContentWrapper>
@@ -67,7 +73,7 @@ const Footer = () => {
           <hr />
           <p>© FlowView. All rights reserved</p>
         </RestInformations>
-      </div>
+      </StyledpositioningFooter>
     </StyledFooterWrapper>
   );
 };
