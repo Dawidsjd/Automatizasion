@@ -19,6 +19,10 @@ export const StyledWrapperItem = styled('section')(({ theme }) => ({
   '&:nth-child(2), &:last-child': {
     background: '#e7e7e7',
   },
+  '&:last-child': {
+    padding: 0,
+  },
+
   [theme.breakpoints.up('md')]: {
     padding: '125px 0',
   },
@@ -80,4 +84,14 @@ export const StyledContent = styled('section')(({ theme }) => ({
       fontWeight: '600',
     },
   },
+}));
+
+// last child of Main Items
+
+export const WrapperActivities = styled('div')(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
 }));
