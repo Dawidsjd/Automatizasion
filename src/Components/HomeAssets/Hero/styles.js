@@ -41,7 +41,7 @@ export const StyledHeroContent = styled('section')(({ theme }) => ({
     fontSize: '32px',
     fontWeight: '900',
     letterSpacing: '5px',
-    margin: '10px',
+    margin: '10 0px',
   },
   '& h3': {
     fontSize: '18px',
@@ -53,8 +53,8 @@ export const StyledHeroContent = styled('section')(({ theme }) => ({
     height: '40em',
     width: '80%',
     '& h1': {
-      fontSize: '56px',
-      margin: '40px',
+      fontSize: '54px',
+      margin: '20px 0',
     },
     '& h3': {
       fontSize: '20px',
