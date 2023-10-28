@@ -19,3 +19,7 @@ export const Widgets = styled("div")(({ theme }) => ({
   gap: "20px",
   padding: "20px",
 }));
+
+export const CookingAssistantWrapper = styled("div")(({ theme }) => ({
+  alignSelf: "flex-start", // Ustawiamy align-self na flex-start
+}));

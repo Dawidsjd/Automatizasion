@@ -11,7 +11,7 @@ function ChatBot() {
   const [messages, setMessages] = useState([
     {
       content:
-        "Witaj! Jestem twoim małym gnojkiem pomocnikiem. Jak mogę Ci pomóc? 😊",
+        "Hello! I'm your little helper. How can I help you? 😊",
       role: "bot",
     },
   ]);

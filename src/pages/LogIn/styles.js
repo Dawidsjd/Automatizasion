@@ -117,7 +117,7 @@ export const SingleInput = styled('div')(({ theme }) => ({
   input: {
     padding: '13px',
     fontSize: '16px',
-    width: '92%',
+    width: '100%',
     borderRadius: '6px',
   },
 }));

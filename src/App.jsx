@@ -39,6 +39,11 @@ function App() {
           />
           <Route exact path="/logIn" element={<LogIn />} />
           <Route exact path="/Settings" element={<Settings />} />
+          <Route
+            exact
+            path="/HomeDashboard/CookingAssistant"  // Dodaj nową ścieżkę
+            element={<RecipeSearch />}  // Dodaj komponent CookingAssistant
+          />
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
