@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import newsletter from '../../../assets/newsLetter.svg';
 
 // Main.jsx
 export const StyledMain = styled('main')(({ theme }) => ({
@@ -15,12 +16,9 @@ export const StyledWrapperItem = styled('section')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  padding: '75px 0 ',
-  '&:nth-child(2), &:last-child': {
+  padding: '75px 0',
+  '&:nth-child(2), &:nth-child(4)': {
     background: '#e7e7e7',
-  },
-  '&:last-child': {
-    padding: 0,
   },
 
   [theme.breakpoints.up('md')]: {
@@ -90,8 +88,33 @@ export const StyledContent = styled('section')(({ theme }) => ({
 
 export const WrapperActivities = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+}));
+
+export const StyledVisualSection = styled('div')(({ theme }) => ({
+  width: '50%',
+  height: '350px',
+  position: 'relative',
+  background: 'orange',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+}));
+
+// NewsLetter
+
+export const StyledNewsLetterWrapper = styled('section')(({ theme }) => ({
+  maxWidth: 1250,
+  width: '100%',
+  height: '450px',
+  padding: '75px',
+  // background: `url(${newsletter})`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  [theme.breakpoints.up('lg')]: {
+    margin: '125px 0',
+  },
 }));
