@@ -43,7 +43,12 @@ function App() {
           <Route
             exact
             path="/HomeDashboard/CookingAssistant"
-            element={<RecipeSearch />}
+            element={
+              <>
+            <RecipeSearch />
+            <ChatBot />
+            </>
+          }
           />
           <Route exact path="/HomeDashboard/ToDoList" element={<ToDoList />} />
         </Routes>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './scrollbar.css';
 import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
@@ -12,6 +13,10 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import styles from "./style";
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -74,28 +79,81 @@ const RecipeSearch = () => {
   };
 
   return (
+    <div style={styles.RecipeSearchContainer}>
+      <Link to="/HomeDashboard">
+        <button
+          style={{
+            position: "absolute",
+            top: "10px",
+            left: "10px",
+            background: "purple",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            fontSize: "1.5em",
+            padding: "10px 30px"
+          }}
+        >
+          <KeyboardBackspaceIcon />
+        </button>
+      </Link>
     <div
       style={{
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
         flexDirection: "column",
+        borderRadius: "16px",
+        maxWidth: "80%",
+        padding: "20px",
+        background: "rgba(34, 34, 34, 0.14)",
+        backdropFilter: "blur(9.3px)",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
       }}
     >
+      
       <h1>Tasty Recipes</h1>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search..."
-      />
-      <button onClick={handleSearch}>Search</button>
+      <div style={{ display: "flex", margin: "20px" }}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search... (e.g. Chicken)"
+          style={{
+            width: "100%",
+            padding: "8px",
+            border: "none", // Usunięcie obramowania
+            outline: "none", // Usunięcie obramowania po najechaniu
+          }}
+        />
+        <button
+          onClick={handleSearch}
+          style={{
+            padding: "10px 20px",
+            fontSize: "1em",
+            fontWeight: "bold",
+            background: "purple",
+            color: "#fff",
+            border: "none",
+            borderTopRightRadius: "8px",
+            borderBottomRightRadius: "8px",
+            cursor: "pointer",
+          }}
+        >
+          Search
+        </button>
+      </div>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
           gap: "10px",
           justifyContent: "center",
+          maxHeight: "60vh", // Dodaj maksymalną wysokość
+          overflowY: "auto", // Dodaj suwak
         }}
       >
         {recipes.map((recipe) => (
@@ -242,6 +300,7 @@ const RecipeSearch = () => {
           </DialogActions>
         </BootstrapDialog>
       )}
+    </div>
     </div>
   );
 };
