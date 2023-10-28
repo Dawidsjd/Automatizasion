@@ -108,7 +108,7 @@ export const StyledVisualSection = styled('div')(({ theme }) => ({
 export const StyledNewsLetterWrapper = styled('section')(({ theme }) => ({
   maxWidth: 1250,
   width: '100%',
-  height: '450px',
+  height: '530px',
   padding: '75px',
   background: `url(${newsletter})`,
   backgroundSize: 'cover',
@@ -116,5 +116,40 @@ export const StyledNewsLetterWrapper = styled('section')(({ theme }) => ({
   backgroundPosition: 'center',
   [theme.breakpoints.up('lg')]: {
     margin: '125px 0',
+  },
+}));
+
+export const StyledNewsletterContent = styled('div')(({ theme }) => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  [theme.breakpoints.up('lg')]: {},
+}));
+
+export const ContentBox = styled('div')(({ theme }) => ({
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  textAlign: 'center',
+  '& h2': {
+    padding: 0,
+    margin: 0,
+  },
+  '& p': {
+    padding: 0,
+    margin: 0,
+    width: '45%',
+    lineHeight: '25px',
+  },
+  input: {
+    width: '34%',
+    borderRadius: '15px',
+    marginTop: '20px',
+    padding: '15px',
+    fontSize: '17px',
   },
 }));

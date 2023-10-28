@@ -3,8 +3,9 @@ import Introduction from './MainItems/Introduction';
 import AboutHome from './MainItems/AboutHome';
 import AboutSchool from './MainItems/AboutSchool';
 import Activities from './MainItems/Activities';
-import { StyledMain } from './styles';
 import Newsletter from './MainItems/Newsletter';
+import Footer from '../Footer/Footer';
+import { StyledMain } from './styles';
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
       <AboutSchool />
       <Activities />
       <Newsletter />
+      <Footer />
     </StyledMain>
   );
 };
