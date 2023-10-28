@@ -62,7 +62,9 @@ const AuthDetails = () => {
               alt={authUser.displayName}
             />
             <StyledStatus style={{ background: "#36d41c" }} />
-            <StyledUserName>{`Signed In as ${authUser.displayName || authUser.reloadUserInfo.screenName}`}</StyledUserName>
+            <StyledUserName>{`Signed In as ${
+              authUser.displayName || authUser.reloadUserInfo.screenName
+            }`}</StyledUserName>
             <StyledStatusName>Status: active</StyledStatusName>
           </StyledUserStatus>
         </>

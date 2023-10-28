@@ -1,7 +1,6 @@
 #navbar {
   list-style: none;
   padding: 0 20px;
-  position: relative;
 }
 
 #navbar li {
@@ -9,30 +8,30 @@
 }
 
 .link-active {
-  width: 200px;
+  width: 100%;
   height: 50px;
-  padding-left: 10%;
   color: #caf0f6;
   background: #001e3b;
   text-decoration: none;
   border-radius: 15px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
   font-size: 16px;
 }
 
 .link {
-  padding-left: 10%;
   width: 200px;
   height: 50px;
   text-decoration: none;
   color: #caf0f6;
   display: flex;
   align-items: center;
-  text-align: left;
+  justify-content: center;
   font-size: 16px;
 }
 
 i {
-  margin-right: 20px;
+  margin-right: 10px;
 }
