@@ -27,6 +27,16 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   },
 }));
 
+const tileStyles = {
+  backgroundColor: "rgba(34, 34, 34, 0.1)",
+  backdropFilter: "blur(9.3px)",
+  color: "#fff",
+  borderRadius: "8px",
+  "&:hover": {
+    boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
+  },
+};
+
 const RecipeSearch = () => {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -161,6 +171,7 @@ const RecipeSearch = () => {
             <Card
               sx={{ maxWidth: 345 }}
               onClick={() => handleClickOpen(recipe)}
+              style={tileStyles}
             >
               <CardActionArea>
                 {recipe.thumbnail_url && (
