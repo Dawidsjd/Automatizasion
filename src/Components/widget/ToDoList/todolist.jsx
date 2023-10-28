@@ -13,7 +13,7 @@ import Notes from "../../../assets/Notes.svg";
 import EastIcon from "@mui/icons-material/East";
 import { Link } from "react-router-dom"; // Dodaj import Link
 
-const CookingAssistant = () => {
+const ToDoList = () => {
   return (
     <StyledContainer>
       <div
@@ -51,4 +51,4 @@ const CookingAssistant = () => {
   );
 };
 
-export default CookingAssistant;
+export default ToDoList;
