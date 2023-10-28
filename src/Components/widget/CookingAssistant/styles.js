@@ -9,23 +9,23 @@ export const StyledContainer = styled("div")(({ theme }) => ({
   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
   background: globalTheme.palette.tiles.light,
   backdropFilter: "blur(6.2px)",
-  padding: "40px", // Zwiększamy padding
-  maxWidth: "650px", // Zwiększamy maksymalną szerokość
+  padding: "74px", 
+  maxWidth: "650px",
   margin: "20px auto",
   textAlign: "left",
 }));
 
 export const Title = styled("div")(({ theme }) => ({
-  fontSize: globalTheme.typography.semibigfontsize.main, // Zwiększamy rozmiar tytułu
+  fontSize: globalTheme.typography.semibigfontsize.main,
   fontWeight: "bold",
   color: globalTheme.palette.textcolorprimary.main,
-  marginBottom: "10px", // Zwiększamy odstęp
+  marginBottom: "10px", 
 }));
 
 export const Subtitle = styled("div")(({ theme }) => ({
-  fontSize: globalTheme.typography.semimediumfontsize.main, // Zwiększamy rozmiar podtytułu
+  fontSize: globalTheme.typography.semimediumfontsize.main, 
   color: globalTheme.palette.textcolorprimary.main,
-  marginBottom: "20px", // Zwiększamy odstęp
+  marginBottom: "20px",
 }));
 
 export const Button = styled("button")(({ theme }) => ({
