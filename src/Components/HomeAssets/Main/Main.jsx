@@ -4,6 +4,7 @@ import AboutHome from './MainItems/AboutHome';
 import AboutSchool from './MainItems/AboutSchool';
 import Activities from './MainItems/Activities';
 import { StyledMain } from './styles';
+import Newsletter from './MainItems/Newsletter';
 
 const Main = () => {
   return (
@@ -12,10 +13,7 @@ const Main = () => {
       <AboutHome />
       <AboutSchool />
       <Activities />
-
-      <section>
-        <h1>NEWSLETTER</h1>
-      </section>
+      <Newsletter />
     </StyledMain>
   );
 };

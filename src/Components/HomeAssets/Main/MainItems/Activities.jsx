@@ -2,7 +2,7 @@ import React from 'react';
 import {
   StyledWrapperItem,
   WrapperActivities,
-  StyledAssets,
+  StyledVisualSection,
   StyledContent,
 } from '../styles';
 
@@ -19,7 +19,7 @@ const Activities = () => {
               is designed to make using it a pure pleasure.
             </p>
           </StyledContent>
-          <StyledAssets>IMAGE DASHOBARD</StyledAssets>
+          <StyledVisualSection>Keyframes or idk</StyledVisualSection>
         </WrapperActivities>
       </div>
     </StyledWrapperItem>
