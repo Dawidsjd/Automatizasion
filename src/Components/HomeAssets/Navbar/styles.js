@@ -8,11 +8,9 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   justifyContent: 'center',
   position: 'fixed',
   top: '0',
-  boxSizing: 'border-box',
   left: '0',
   zIndex: '999',
   background: '#484cec',
-
   [theme.breakpoints.up('lg')]: {
     width: '100%',
   },
@@ -26,8 +24,12 @@ export const StyledHeaderContent = styled('div')(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'row-reverse',
   [theme.breakpoints.up('lg')]: {
-    maxWidth: '65%',
+    maxWidth: 1250,
     flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  [theme.breakpoints.up('lx')]: {
+    justifyContent: 'space-between',
   },
 }));
 
@@ -53,6 +55,10 @@ export const StyledLink = styled(Link)(({ theme }) => ({
   padding: '5px',
   margin: '10px',
   [theme.breakpoints.up('lg')]: {
+    padding: '5px 5px',
+    margin: '5px 20px',
+  },
+  [theme.breakpoints.up('xl')]: {
     padding: '5px 10px',
     margin: '0px 20px',
   },
@@ -101,7 +107,7 @@ export const StyledNavBurger = styled('div')(({ isOpen }) => ({ theme }) => ({
   transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
   transition: '.3s',
   position: 'absolute',
-  top: '0',
+  top: 0,
   left: 0,
   height: '100vh',
   alignItems: 'center',
