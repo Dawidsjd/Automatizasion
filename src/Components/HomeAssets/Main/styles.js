@@ -14,44 +14,70 @@ export const StyledMain = styled('main')(({ theme }) => ({
 export const StyledWrapperItem = styled('section')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  width: '95%',
-  padding: '125px 0 125px 0',
+  width: '100%',
+  padding: '75px 0 ',
   '&:nth-child(2), &:last-child': {
     background: '#e7e7e7',
   },
   [theme.breakpoints.up('md')]: {
-    width: '100%',
+    padding: '125px 0',
   },
 }));
 
 export const WrapperItem = styled('div')(({ theme }) => ({
-  width: '100%',
+  width: '95%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
+  alignItems: 'center',
+  [theme.breakpoints.up('md')]: {
+    width: '60%',
+    margin: 'auto',
+  },
   [theme.breakpoints.up('lg')]: {
     flexDirection: 'unset',
+    alignItems: 'unset',
+    width: '90%',
+  },
+  [theme.breakpoints.up('xl')]: {
+    width: '100%',
   },
 }));
 
 export const StyledAssets = styled('section')(({ theme }) => ({
-  width: '45%',
+  width: '95%',
   height: '350px',
   background: 'blue',
   color: 'white',
+  [theme.breakpoints.up('lg')]: {
+    flexDirection: 'unset',
+    width: '45%',
+  },
 }));
 
 export const StyledContent = styled('section')(({ theme }) => ({
-  width: '45%',
+  width: '95%',
   color: '#1F2224',
+
   h2: {
-    fontSize: '2.4em',
+    fontSize: '1.7em',
     fontWeight: '800',
     marginTop: '0',
+    marginBottom: '0px',
   },
   p: {
-    fontSize: '1.2em',
+    fontSize: '1em',
     fontWeight: '600',
+    marginTop: '5px 0',
   },
-  [theme.breakpoints.up('md')]: {},
+  [theme.breakpoints.up('lg')]: {
+    width: '45%',
+    h2: {
+      fontSize: '2.4em',
+    },
+    p: {
+      fontSize: '1.2em',
+      fontWeight: '600',
+    },
+  },
 }));

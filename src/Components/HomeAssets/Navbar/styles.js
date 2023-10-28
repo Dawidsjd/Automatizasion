@@ -24,12 +24,12 @@ export const StyledHeaderContent = styled('div')(({ theme }) => ({
   alignItems: 'center',
   flexDirection: 'row-reverse',
   [theme.breakpoints.up('lg')]: {
-    maxWidth: 1250,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-  [theme.breakpoints.up('lx')]: {
+  [theme.breakpoints.up('xl')]: {
     justifyContent: 'space-between',
+    maxWidth: 1250,
   },
 }));
 

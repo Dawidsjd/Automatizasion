@@ -28,8 +28,8 @@ export const StyledHeroBox = styled('div')(({ theme }) => ({
 }));
 
 export const StyledHeroContent = styled('section')(({ theme }) => ({
-  height: '40em',
-  width: '45%',
+  height: '45em',
+  width: '90%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -37,15 +37,35 @@ export const StyledHeroContent = styled('section')(({ theme }) => ({
   color: 'white',
   zIndex: 1,
   '& h1': {
-    fontSize: '56px',
+    textAlign: 'center',
+    fontSize: '32px',
     fontWeight: '900',
     letterSpacing: '5px',
-    margin: '40px',
+    margin: '10px',
   },
   '& h3': {
-    fontSize: '20px',
+    fontSize: '18px',
     textAlign: 'center',
     fontWeight: '500',
+    lineHeight: '35px',
+  },
+  [theme.breakpoints.up('md')]: {
+    height: '40em',
+    width: '80%',
+    '& h1': {
+      fontSize: '56px',
+      margin: '40px',
+    },
+    '& h3': {
+      fontSize: '20px',
+    },
+  },
+  [theme.breakpoints.up('lg')]: {
+    height: '40em',
+    width: '70%',
+  },
+  [theme.breakpoints.up('xl')]: {
+    width: '45%',
   },
 }));
 
@@ -61,10 +81,10 @@ export const StyledButtons = styled('div')(({ theme }) => ({
 
 const SharedStylesButtons = {
   width: '45%',
-  height: '60px',
+  height: '40px',
   textDecoration: 'none',
   border: 'none',
-  fontSize: '20px',
+  fontSize: '16px',
   display: 'flex',
   borderRadius: '100px',
   justifyContent: 'center',
@@ -81,6 +101,10 @@ export const StyledLink = styled(Link)(({ theme }) => ({
   '&: hover': {
     background: '#2d3436',
   },
+  [theme.breakpoints.up('md')]: {
+    height: '60px',
+    fontSize: '20px',
+  },
 }));
 
 export const StyledButton = styled('button')(({ theme }) => ({
@@ -90,6 +114,10 @@ export const StyledButton = styled('button')(({ theme }) => ({
   alignItems: 'center',
   '&: hover': {
     background: '#b2bec3',
+  },
+  [theme.breakpoints.up('md')]: {
+    height: '60px',
+    fontSize: '20px',
   },
 }));
 
