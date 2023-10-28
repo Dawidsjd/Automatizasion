@@ -110,7 +110,7 @@ export const StyledNewsLetterWrapper = styled('section')(({ theme }) => ({
   width: '100%',
   height: '450px',
   padding: '75px',
-  // background: `url(${newsletter})`,
+  background: `url(${newsletter})`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
