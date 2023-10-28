@@ -20,6 +20,6 @@ export const Widgets = styled("div")(({ theme }) => ({
   padding: "20px",
 }));
 
-export const CookingAssistantWrapper = styled("div")(({ theme }) => ({
-  alignSelf: "flex-start", // Ustawiamy align-self na flex-start
+export const WidgetWrapper = styled("div")(({ theme }) => ({
+  alignSelf: "flex-start",
 }));

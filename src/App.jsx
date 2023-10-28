@@ -3,6 +3,7 @@ import "./App.css";
 import ChatBot from "./Components/features/ChatBot/ChatBot";
 import RecipeSearch from "./Components/features/Food/RecipeSearch";
 import WikiSearch from "./Components/features/Wikipedia/WikiSearch";
+import ToDoList from "./Components/ToDoList/ToDoList";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeDashboard from "./pages/Dashboard/HomeDashboard";
@@ -41,9 +42,10 @@ function App() {
           <Route exact path="/Settings" element={<Settings />} />
           <Route
             exact
-            path="/HomeDashboard/CookingAssistant"  // Dodaj nową ścieżkę
-            element={<RecipeSearch />}  // Dodaj komponent CookingAssistant
+            path="/HomeDashboard/CookingAssistant"
+            element={<RecipeSearch />}
           />
+          <Route exact path="/HomeDashboard/ToDoList" element={<ToDoList />} />
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
@@ -53,6 +55,3 @@ function App() {
 }
 
 export default App;
-
-
-

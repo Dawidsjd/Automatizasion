@@ -109,7 +109,7 @@ export const StyledStatus = styled("div")(({ theme }) => ({
   width: "15px",
   left: "15%",
   position: "absolute",
-  top: "95px",
+  top: "85px",
 }));
 
 export const StyledUserName = styled("p")(({ theme }) => ({

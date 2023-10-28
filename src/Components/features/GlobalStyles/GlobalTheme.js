@@ -14,6 +14,7 @@ const globalTheme = createTheme({
     },
     tiles: {
       main: "#083464",
+      light: "rgba(8, 52, 100, 0.5)",
     },
     textcolorprimary: {
       main: "#ffffff",
