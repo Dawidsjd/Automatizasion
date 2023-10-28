@@ -4,7 +4,7 @@ import globalTheme from "../GlobalStyles/GlobalTheme";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
   height: "100vh",
-  maxWidth: "17%",
+  maxWidth: "15%",
   background: globalTheme.palette.primary.main,
   borderRadius: "0 35px 35px 0",
   display: "flex",
@@ -79,9 +79,7 @@ export const StyledLoginBtn = styled("button")(({ theme }) => ({
 }));
 
 export const StyledSeparator = styled("hr")(({ theme }) => ({
-  marginTop: "20px",
-  width: "100%",
-  marginLeft: "0",
+  width: "92.5%",
   height: "1px",
   border: "none",
   background: "#000",

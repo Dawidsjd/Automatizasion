@@ -8,10 +8,14 @@ export const StyledDashboard = styled("div")(({ theme }) => ({
   background: `url(${dashboardBackground})`,
   backgroundSize: "cover",
   position: "relative",
+  display: "flex",
 }));
 
 export const Widgets = styled("div")(({ theme }) => ({
-  //tymczasowe
-  // marginLeft: "17%",
-  // paddingTop: "5%",
+  border: "1px solid red",
+  width: "85%",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "20px",
+  padding: "20px",
 }));

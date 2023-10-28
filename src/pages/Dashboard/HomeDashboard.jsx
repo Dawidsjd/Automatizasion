@@ -3,6 +3,8 @@ import LeftPanelDashboard from "../../Components/features/LeftPanelDashboard/Lef
 import { StyledDashboard, Widgets } from "./styles";
 import Welcome from "../../Components/widget/welcome/welcome";
 import WeatherData from "../../Components/widget/Weather/WeatherData";
+import CookingAssistant from "../../Components/widget/Cooking Assistant/cookingAssistant";
+import ToDoList from "../../Components/widget/ToDoList/ToDoList";
 
 const HomeDashboard = () => {
   useEffect(() => {
@@ -12,8 +14,10 @@ const HomeDashboard = () => {
     <StyledDashboard>
       <LeftPanelDashboard />
       <Widgets>
-        {/* <Welcome /> */}
-        {/* <WeatherData /> */}
+        <Welcome />
+        <WeatherData />
+        <CookingAssistant />
+        <ToDoList />
       </Widgets>
     </StyledDashboard>
   );
