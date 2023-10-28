@@ -19,11 +19,20 @@ import styles from "./style";
 
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialog-paper": {
+    background: "#707c94", // Zmiana koloru tła
+  },
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
   },
   "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
+  },
+  "& .MuiButton-textPrimary": {
+    color: "#fff", // Zmiana koloru napisu w przycisku "Close"
+  },
+  "& .MuiSvgIcon-root": {
+    fill: "#fff", // Zmiana koloru ikony "X"
   },
 }));
 
