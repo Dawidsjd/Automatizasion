@@ -22,10 +22,9 @@ export const StyledLogInContainer = styled('section')(({ theme }) => ({
 }));
 
 export const StyledLogInWrapper = styled('section')(({ theme }) => ({
-  width: '70%',
+  width: '90%',
   maxWidth: '1200px',
-  height: '75vh',
-  height: '43em',
+  height: '49em',
   position: 'relative',
   background: 'rgba(8, 52, 100, 0.5)',
   backdropFilter: 'blur(5px)',
@@ -33,22 +32,34 @@ export const StyledLogInWrapper = styled('section')(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: '28px',
+  [theme.breakpoints.up('lg')]: {
+    width: '70%',
+    height: '43em',
+  },
 }));
 
 export const StyledLogInContent = styled('section')(({ theme }) => ({
-  width: '80%',
+  width: '95%',
   // height: '60vh',
   color: 'white',
   h1: {
-    margin: '0 0 35px 0 ',
+    margin: '0 0 25px 20px ',
     color: 'white',
-    fontSize: '45px',
+    fontSize: '32px',
+  },
+  [theme.breakpoints.up('lg')]: {
+    width: '80%',
+    h1: {
+      margin: '0 0 35px 0 ',
+      color: 'white',
+      fontSize: '45px',
+    },
   },
 }));
 
 export const UserDataWrapper = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '28.5em',
+  height: '40em',
   display: 'flex',
   flexDirection: 'column',
   h1: {
@@ -58,6 +69,7 @@ export const UserDataWrapper = styled('div')(({ theme }) => ({
   },
   [theme.breakpoints.up('lg')]: {
     flexDirection: 'row',
+    height: '28.5em',
   },
 }));
 
@@ -74,8 +86,8 @@ export const SocialLogIn = styled('div')(({ theme }) => ({
     // background: '#4E6BFF',
     background: '#2A3676',
     color: 'white',
-    padding: '18px',
-    fontSize: '16px',
+    padding: '12px',
+    fontSize: '14px',
     fontWeight: '600',
     borderRadius: '6px',
     cursor: 'pointer',
@@ -88,6 +100,13 @@ export const SocialLogIn = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     width: '50%',
     alignItems: 'unset',
+    button: {
+      display: 'flex',
+      alignItems: 'center',
+      padding: '18px',
+      fontSize: '16px',
+      fontWeight: '600',
+    },
   },
 }));
 
@@ -217,12 +236,14 @@ export const StyledBsGithub = styled(BsGithub)(({ theme }) => ({
 
 export const StyledLinkPrevent = styled(Link)(({ theme }) => ({
   color: '#fff',
+  marginBottom: '-20px',
   textAlign: 'center',
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'start',
   alignItems: 'center',
   letterSpacing: '1px',
   fontWeight: '600',
+  fontSize: '15px',
   p: {
     margin: 0,
     padding: 0,
