@@ -27,6 +27,7 @@ import {
 } from './styles';
 import LineLogIn from '../../assets/LineLogIn.svg';
 import { useNavigate } from 'react-router-dom';
+import { IoReturnUpBackOutline } from 'react-icons/io5';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -98,8 +99,13 @@ const Register = () => {
                 <button onClick={signInWithGitHub}>
                   <StyledBsGithub /> Log In with GitHub
                 </button>
-                <StyledLinkPrevent to='/'>
-                  Return to home Dashboard
+                <StyledLinkPrevent to='/homeDashboard'>
+                  <IoReturnUpBackOutline size={23} />
+                  <p>Back to home Dashboard</p>
+                </StyledLinkPrevent>
+                <StyledLinkPrevent to='/login'>
+                  <IoReturnUpBackOutline size={23} />
+                  <p>Back to log in</p>
                 </StyledLinkPrevent>
               </StyledButtons>
             </SocialLogIn>
