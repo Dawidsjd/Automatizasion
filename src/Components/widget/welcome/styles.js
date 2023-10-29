@@ -1,95 +1,75 @@
 import { styled } from "@mui/material/styles";
 import globalTheme from "../../features/GlobalStyles/GlobalTheme";
-import HelloImg from "./../../../assets/HelloImg.svg";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
-  webkitBackdropFilter: "blur(20px) brightness(100%)",
-  backdropFilter: "blur(20px) brightness(100%)",
-  backgroundColor: "#02122394",
-  borderRadius: "20px",
-  height: "230px",
-  position: "relative",
-  width: "730px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "left",
+  borderRadius: "16px",
+  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+  background: globalTheme.palette.tiles.main,
+  backdropFilter: "blur(6.2px)",
+  paddingTop: "30px",
+  paddingLeft: "30px",
+  maxWidth: "730px",
+  margin: "20px auto",
+  textAlign: "left",
 }));
 
 export const StyledCalendar = styled("div")(({ theme }) => ({
-  height: "40px",
-  left: "25px",
-  position: "absolute",
-  top: "20px",
-  width: "170px",
-}));
-
-export const StyledOverlap = styled("div")(({ theme }) => ({
   backgroundColor: globalTheme.palette.secondary.main,
+  height: "30px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   borderRadius: "10px",
-  boxShadow: "0px 4px 20px 2px #00000040",
-  height: "40px",
-  position: "relative",
   width: "170px",
+  color: globalTheme.palette.textcolorprimary.main,
+  fontSize: globalTheme.typography.semimediumfontsize.main,
 }));
 
 export const StyledDate = styled("div")(({ theme }) => ({
-  color: globalTheme.palette.textcolorprimary.main,
-  fontWeight: 400,
-  height: "30px",
-  left: "30px",
-  letterSpacing: 0,
-  lineHeight: "normal",
-  position: "absolute",
-  textAlign: "center",
-  top: "10px",
-  width: "130px",
+  marginLeft: "10px",
 }));
 
 export const StyledIcon = styled("i")(({ theme }) => ({
-  fontSize: "20px",
-  color: globalTheme.palette.textcolorprimary.main,
-  left: "10px",
-  position: "absolute",
-  top: "10px",
+  display: "flex",
+  alignItems: "center",
 }));
 
 export const StyledWelcome = styled("div")(({ theme }) => ({
-  height: "40px",
-  left: "25px",
-  position: "absolute",
-  top: "160px",
+  marginTop: "100px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "left",
+  flex: 1,
 }));
 
 export const StyledMessage = styled("div")(({ theme }) => ({
+  fontSize: globalTheme.typography.mediumfontsize.main,
+  fontWeight: "bold",
   color: globalTheme.palette.textcolorprimary.main,
-  fontSize: "20px",
-  fontWeight: 700,
-  height: "20px",
-  left: 0,
-  letterSpacing: 0,
-  lineHeight: "normal",
-  position: "absolute",
-  top: 0,
-  whiteSpace: "nowrap",
+  marginBottom: "0",
 }));
 
-export const StyledDescription = styled("div")(({ theme }) => ({
+export const StyledDescription = styled("p")(({ theme }) => ({
+  fontSize: globalTheme.typography.semimediumfontsize.main,
   color: globalTheme.palette.textcolorprimary.main,
-  fontSize: "16px",
-  fontWeight: 400,
-  height: "20px",
-  left: 0,
-  letterSpacing: 0,
-  lineHeight: "normal",
-  position: "absolute",
-  top: "20px",
-  width: "230px",
+  marginBottom: "0",
+  marginTop: "0",
 }));
 
-export const StyledImage = styled("div")(({ theme }) => ({
-  background: `url(${HelloImg})`,
-  backgroundSize: "contain",
-  backgroundRepeat: "no-repeat",
+export const StyledImage = styled("img")(({ theme }) => ({
+  width: "auto",
   height: "220px",
-  left: "365px",
-  position: "absolute",
-  top: "0",
-  width: "280px",
+  userSelect: "none",
+  pointerEvents: "none",
+}));
+
+export const StyledContent = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  marginRight: "25px",
+  marginBottom: "25px",
 }));

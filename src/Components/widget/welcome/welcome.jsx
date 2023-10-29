@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import {
   StyledContainer,
   StyledCalendar,
-  StyledOverlap,
   StyledDate,
   StyledIcon,
   StyledWelcome,
   StyledMessage,
   StyledDescription,
   StyledImage,
+  StyledContent,
 } from "./styles";
 import { BsFillCalendarEventFill } from "react-icons/bs";
 import HelloImg from "./../../../assets/HelloImg.svg";
@@ -56,21 +56,28 @@ const Welcome = () => {
 
   return (
     <StyledContainer>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      ></div>
       <StyledCalendar>
-        <StyledOverlap>
-          <StyledDate>{getCurrentDate()}</StyledDate>
-          <StyledIcon>
-            <BsFillCalendarEventFill />
-          </StyledIcon>
-        </StyledOverlap>
+        <StyledIcon>
+          <BsFillCalendarEventFill />
+        </StyledIcon>
+        <StyledDate>{getCurrentDate()}</StyledDate>
       </StyledCalendar>
-      <StyledWelcome>
-        <StyledMessage>
-          {username ? `Good Day, ${username}!` : "Good Day!"}
-        </StyledMessage>
-        <StyledDescription>Have a nice day!</StyledDescription>
-      </StyledWelcome>
-      <StyledImage src={HelloImg} alt="hello img" />
+      <StyledContent>
+        <StyledWelcome>
+          <StyledMessage>
+            {username ? `Good Day, ${username}!` : "Good Day!"}
+          </StyledMessage>
+          <StyledDescription>Have a nice day!</StyledDescription>
+        </StyledWelcome>
+        <StyledImage src={HelloImg} />
+      </StyledContent>
     </StyledContainer>
   );
 };
