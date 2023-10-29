@@ -57,7 +57,6 @@ const Navbar = () => {
             <StyledNav>
               <StyledLink to='/'>Home</StyledLink>
               <StyledLink to='/homeDashboard'>Dashboard</StyledLink>
-              <StyledLink to='/safety'>Safety</StyledLink>
               <StyledLink to='/ourTeam'>Our team</StyledLink>
               <StyledLink to='/support'>Support</StyledLink>
             </StyledNav>

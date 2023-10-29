@@ -16,15 +16,17 @@ import {
   StyledDefaultLogIn,
   SingleInput,
   StyledSeparate,
+  StyledSeparateMobile,
   StyledButtons,
   StyledLinkForgotPassword,
   StyledLinkRegister,
   StyledFcGoogle,
   StyledBsFacebook,
   StyledBsGithub,
+  StyledLinkPrevent,
 } from './styles';
-import LineLogIn from '../../assets/LineLogIn.svg';
 import { useNavigate } from 'react-router-dom';
+import { IoReturnUpBackOutline } from 'react-icons/io5';
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -96,9 +98,15 @@ const LogIn = () => {
                 <button onClick={signInWithGitHub}>
                   <StyledBsGithub /> Log In with GitHub
                 </button>
+                <StyledLinkPrevent to='/homeDashboard'>
+                  <IoReturnUpBackOutline size={23} />{' '}
+                  <p>Back to home Dashboard</p>
+                </StyledLinkPrevent>
               </StyledButtons>
             </SocialLogIn>
+
             <StyledSeparate></StyledSeparate>
+            <StyledSeparateMobile></StyledSeparateMobile>
 
             <StyledDefaultLogIn>
               <SingleInput>

@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
-import loginBackground from '../../assets/loginBackground.svg';
+import loginBackground from '../../assets/loginBackground2.svg';
 import Separate from '../../assets/LineLogIn.svg';
+import SeparateMobile from '../../assets/LineLineLogInMobile.svg';
 
 import { Link } from 'react-router-dom';
 
@@ -49,18 +50,24 @@ export const UserDataWrapper = styled('div')(({ theme }) => ({
   width: '100%',
   height: '28.5em',
   display: 'flex',
+  flexDirection: 'column',
   h1: {
     margin: '0',
     color: 'white',
     fontSize: '45px',
   },
+  [theme.breakpoints.up('lg')]: {
+    flexDirection: 'row',
+  },
 }));
 
 export const SocialLogIn = styled('div')(({ theme }) => ({
-  width: '50%',
+  width: '100%',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
   button: {
     display: 'flex',
     alignItems: 'center',
@@ -71,11 +78,16 @@ export const SocialLogIn = styled('div')(({ theme }) => ({
     fontSize: '16px',
     fontWeight: '600',
     borderRadius: '6px',
+    cursor: 'pointer',
   },
   h1: {
     margin: '0',
     color: 'white',
     fontSize: '45px',
+  },
+  [theme.breakpoints.up('lg')]: {
+    width: '50%',
+    alignItems: 'unset',
   },
 }));
 
@@ -85,11 +97,31 @@ export const StyledSeparate = styled('div')(({ theme }) => ({
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   width: '60px',
+  display: 'none',
+  [theme.breakpoints.up('lg')]: {
+    display: 'block',
+  },
+}));
+
+export const StyledSeparateMobile = styled('div')(({ theme }) => ({
+  background: `url(${SeparateMobile})`,
+  backgroundSize: 'contain',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  width: '100%',
+  display: 'block',
+  [theme.breakpoints.up('lg')]: {
+    display: 'none',
+  },
 }));
 
 export const StyledDefaultLogIn = styled('div')(({ theme }) => ({
-  marginLeft: '5em',
-  width: '35%',
+  marginLeft: 0,
+  width: '85%',
+  margin: 'auto',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
   button: {
     width: '100%',
     color: 'white',
@@ -104,6 +136,13 @@ export const StyledDefaultLogIn = styled('div')(({ theme }) => ({
       cursor: 'pointer',
     },
   },
+  [theme.breakpoints.up('lg')]: {
+    width: '35%',
+    marginLeft: '5em',
+    button: {
+      width: '100%',
+    },
+  },
 }));
 
 export const SingleInput = styled('div')(({ theme }) => ({
@@ -113,7 +152,6 @@ export const SingleInput = styled('div')(({ theme }) => ({
     fontSize: '15px',
     fontWeight: '600',
   },
-
   input: {
     padding: '13px',
     fontSize: '16px',
@@ -136,6 +174,10 @@ export const StyledLinkForgotPassword = styled(Link)(({ theme }) => ({
   color: '#5DC8EF',
   fontSize: '16px',
   textDecoration: 'none',
+  transition: '.2s',
+  '&:hover': {
+    color: '#0097e6',
+  },
 }));
 
 export const StyledLinkRegister = styled(Link)(({ theme }) => ({
@@ -148,6 +190,10 @@ export const StyledLinkRegister = styled(Link)(({ theme }) => ({
   color: '#5DC8EF',
   fontSize: '16px',
   textDecoration: 'none',
+  transition: '.2s',
+  '&:hover': {
+    color: '#0097e6',
+  },
 }));
 
 const StyledMediaIcons = {
@@ -167,4 +213,22 @@ export const StyledBsFacebook = styled(BsFacebook)(({ theme }) => ({
 export const StyledBsGithub = styled(BsGithub)(({ theme }) => ({
   ...StyledMediaIcons,
   color: '#000000',
+}));
+
+export const StyledLinkPrevent = styled(Link)(({ theme }) => ({
+  color: '#fff',
+  textAlign: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  letterSpacing: '1px',
+  fontWeight: '600',
+  p: {
+    margin: 0,
+    padding: 0,
+    marginLeft: '10px',
+  },
+  '&:hover': {
+    color: '#5cc5ec',
+  },
 }));
