@@ -5,6 +5,7 @@ import {
   StyledAssets,
   StyledContent,
 } from '../styles';
+import Home3D from '../../../Model3D/Home3D';
 
 const AboutDashboardHome = () => {
   return (
@@ -22,7 +23,7 @@ const AboutDashboardHome = () => {
             </p>
           </StyledContent>
           <StyledAssets>
-            <h1>model 3d</h1>
+            <Home3D />
           </StyledAssets>
         </WrapperItem>
       </div>

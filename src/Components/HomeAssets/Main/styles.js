@@ -49,7 +49,7 @@ export const WrapperItem = styled('div')(({ theme }) => ({
 export const StyledAssets = styled('section')(({ theme }) => ({
   width: '95%',
   height: '350px',
-  background: 'blue',
+  background: 'none',
   color: 'white',
   [theme.breakpoints.up('lg')]: {
     flexDirection: 'unset',

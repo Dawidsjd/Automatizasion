@@ -5,6 +5,7 @@ import {
   StyledAssets,
   StyledContent,
 } from '../styles';
+import School3D from '../../../Model3D/School3D';
 
 const AboutDashboardHome = () => {
   return (
@@ -12,7 +13,7 @@ const AboutDashboardHome = () => {
       <div style={{ maxWidth: 1250 }}>
         <WrapperItem>
           <StyledAssets>
-            <h1>model 3d</h1>
+            <School3D />
           </StyledAssets>
           <StyledContent>
             <h2>School Dashboard</h2>
