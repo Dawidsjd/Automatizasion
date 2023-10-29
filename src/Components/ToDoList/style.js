@@ -1,8 +1,9 @@
+
 import ContentBackground from '../../assets/content.svg';
 
 const styles = {
     BackgroundSVG: {
-      background: `#707c94 url(${ContentBackground}) no-repeat center center fixed`,
+      background: `#677bab url(${ContentBackground}) no-repeat center center fixed`,
       backgroundSize: 'cover',
       width: '100%',
       height: '100vh',
@@ -10,22 +11,34 @@ const styles = {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      
     },
+    Background:
+    {
+    backgroundColor: '#88a2c4',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    width: '600px',
+    minHeight: '800px',
+    background: 'white',
+    textAlign: 'center',
+    margin: '128px auto',
+    borderRadius: '10px', 
+    paddingBottom: '32px',
+    },
+
     span: {
         color: '#ffffff',
         fontSize: '1.2rem',
         fontWeight: 'bold',
         backgroundColor: '#4a5568', 
         padding: '0.5rem 1rem', 
-        borderRadius: '10px', 
+        borderRadius: '10px',
+        justifyContent: `left`,
        
       },
-      listItem: {
-        margin: '1.5rem 0',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center' 
-      },
+      
       deleteButton: {
         background: '#f44336', 
         color: '#fff', 
@@ -41,20 +54,34 @@ const styles = {
         marginLeft: '1rem', 
       },
     title: {
+      
       fontSize: '2rem',
       marginBottom: '1rem', 
+      color: `white`,
+     
     },
     input: {
-      width: '200px', 
-      padding: '0.5rem', 
-      marginBottom: '1rem',
-      outline: "none"
+      width: '600px', 
+      padding: '10px', 
+      marginBottom: '5px',
+      outline: "none",
+      justifyContent: 'center',
     },
     button: {
       padding: '0.5rem 1rem',
       fontSize: '1rem',
-      cursor: "pointer"
+      cursor: "pointer",
+      backgroundColor: `#003366`,
+      color: `white`,
     },
+      listItem:
+      {
+        margin: '1.5rem 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'left',
+      },
+    
     exitBtn:{
         position: "absolute",
         top: "10px",
@@ -67,7 +94,7 @@ const styles = {
         display: "flex",
         alignItems: "center",
         fontSize: "1.5em",
-        padding: "10px 30px"
+        padding: "10px 30px",
     }
   };
   

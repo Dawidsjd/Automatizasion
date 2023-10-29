@@ -26,6 +26,7 @@ function ToDoList() {
 
   return (
     <div style={styles.BackgroundSVG}>
+      <div style={styles.Background}>
       <Link to="/HomeDashboard">
         <button
           style={styles.exitBtn}
@@ -33,7 +34,7 @@ function ToDoList() {
           <KeyboardBackspaceIcon />
         </button>
       </Link>
-      <h1 style={styles.title}>Todo List</h1>
+      <h1 style={styles.title}>To-do List</h1>
       <input
         type='text'
         value={input}
@@ -48,6 +49,7 @@ function ToDoList() {
       <button onClick={() => addtolist(input)} style={styles.button}>
         Add
       </button>
+      
       <ul>
         {list.map((todo) => (
           <li key={todo.id} style={styles.listItem}>
@@ -56,6 +58,8 @@ function ToDoList() {
           </li>
         ))}
       </ul>
+      
+      </div>
     </div>
   );
 }
