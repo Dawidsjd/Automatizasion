@@ -4,8 +4,9 @@
 
 <h3>Szybki host loginu: https://zippy-pasca-b55f6c.netlify.app</h3> <br />
 
-![atitit](https://github.com/Dawidsjd/Automatizasion/assets/53567837/a15a596d-0a63-4e95-afa5-66556a0b13a1)
 
+
+![american-psycho-patrick-bateman](https://github.com/Dawidsjd/Automatizasion/assets/53567837/0544d988-c260-448b-a7b8-2a1d8a4d6277)
 
 
 
