@@ -32,6 +32,7 @@ const LogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
 
   const signIn = (e) => {
     e.preventDefault();
@@ -41,7 +42,17 @@ const LogIn = () => {
         navigate('/HomeDashboard');
       })
       .catch((error) => {
-        console.log(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        if (errorCode === 'auth/wrong-password') {
+          setError('Nieprawidłowe hasło.');
+        } else if (errorCode === 'auth/user-not-found') {
+          setError('Użytkownik o podanym adresie email nie istnieje.');
+        } else {
+          console.error(errorMessage);
+          setError('Wystąpił nieznany błąd.');
+        }
       });
   };
 
@@ -126,6 +137,7 @@ const LogIn = () => {
                 />
               </SingleInput>
               <button onClick={signIn}>Log In</button>
+              {error && <p style={{ color: 'red' }}>{error}</p>}
               <StyledLinkForgotPassword to='/register'>
                 Forgot password?
               </StyledLinkForgotPassword>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
@@ -32,17 +32,36 @@ import { IoReturnUpBackOutline } from 'react-icons/io5';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const signIn = (e) => {
+  const signUp = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    if (password !== repeatPassword) {
+      setError("Hasła nie są takie same");
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
         navigate('/HomeDashboard');
       })
       .catch((error) => {
-        console.log(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        if (errorCode === 'auth/email-already-in-use') {
+          setError('Konto o podanym adresie email już istnieje.');
+        } else if (errorCode === 'auth/invalid-email') {
+          setError('Podano niepoprawny adres email.');
+        } else if (errorCode === 'auth/weak-password') {
+          setError('Hasło jest za słabe.');
+        } else {
+          console.error(errorMessage);
+          setError('Wystąpił nieznany błąd.');
+        }
       });
   };
 
@@ -134,11 +153,12 @@ const Register = () => {
                 <p>Repeat password</p>
                 <input
                   type='password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={repeatPassword}
+                  onChange={(e) => setRepeatPassword(e.target.value)}
                 />
               </SingleInput>
-              <button onClick={signIn}>Register</button>
+              <button onClick={signUp}>Register</button>
+              {error && <p style={{ color: 'red' }}>{error}</p>}
             </StyledDefaultLogIn>
           </UserDataWrapper>
         </StyledLogInContent>
