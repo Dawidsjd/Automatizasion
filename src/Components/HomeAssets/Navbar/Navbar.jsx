@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyledHeader,
   StyledImageWrapper,
@@ -16,14 +16,30 @@ import { Sling as Hamburger } from 'hamburger-react';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(null);
 
   const handleToggle = () => {
     setOpen((prev) => !prev);
   };
-  console.log(isOpen);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    if (scrollY === 0) {
+      setHeaderHeight(100);
+    } else {
+      setHeaderHeight(80);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <StyledHeader>
+    <StyledHeader style={{ height: `${headerHeight}px` }}>
       <StyledHeaderContent>
         <StyledImageWrapper>
           <StyledImage>FlowView</StyledImage>

@@ -14,6 +14,14 @@ import {
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
+  const handleClick = () => {
+    const scrolledY = window.scrollY + 580;
+    window.scrollTo({
+      top: scrolledY,
+      behavior: 'smooth', // Użyj smooth, aby uzyskać płynne przejście
+    });
+  };
+
   return (
     <StyledHeroContainer>
       <StyledHeroWrapper>
@@ -28,9 +36,8 @@ const Hero = () => {
             </h3>
             <StyledButtons>
               <StyledLink to='/HomeDashboard'>Dashboard</StyledLink>
-              <StyledButton>Learn more</StyledButton>
+              <StyledButton onClick={handleClick}>Learn more</StyledButton>
             </StyledButtons>
-            <Link to='/LogIn'>Links</Link>
           </StyledHeroContent>
           <StyledImageWave></StyledImageWave>
         </StyledHeroBox>

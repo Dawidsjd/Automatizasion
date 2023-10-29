@@ -6,11 +6,13 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   height: '80px',
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'center',
   position: 'fixed',
   top: '0',
   left: '0',
   zIndex: '999',
   background: '#484cec',
+  transition: '.3s',
   [theme.breakpoints.up('lg')]: {
     width: '100%',
   },
@@ -54,6 +56,10 @@ export const StyledLink = styled(Link)(({ theme }) => ({
   whiteSpace: 'nowrap',
   padding: '5px',
   margin: '10px',
+  transition: '.2s',
+  '&: hover': {
+    color: '#ced6e0',
+  },
   [theme.breakpoints.up('lg')]: {
     padding: '5px 5px',
     margin: '5px 20px',
