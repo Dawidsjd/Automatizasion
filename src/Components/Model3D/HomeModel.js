@@ -8,7 +8,7 @@ const Model = () => {
   const modelRef = useRef();
 
   let mixer = null;
-  const { scene, animations } = useLoader(GLTFLoader, "/import3D/final_house.glb");
+  const { scene, animations } = useLoader(GLTFLoader, "/import3D/house.glb");
   //console.log(scene.animations);
     
     scene.traverse(function(node){
@@ -27,7 +27,7 @@ const Model = () => {
     modelRef.current.rotation.y += 0.003;
   });
 
-  return <primitive object={scene} ref={modelRef} scale={[0.4, 0.4, 0.4]} position={[0, -1, 0]} />;
+  return <primitive object={scene} ref={modelRef} scale={[0.2, 0.2, 0.2]} position={[0, -1, 0]} />;
 };
 
 export default Model;

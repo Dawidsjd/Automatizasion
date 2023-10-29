@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./Weather.css";
+import {
+  StyledContainer,
+  StyledColumn,
+  StyledIcon,
+  StyledDescription,
+  StyledTemp,
+  StyledCity,
+} from "./styles";
 
 const WeatherData = () => {
   const [city, setCity] = useState("");
@@ -61,35 +68,23 @@ const WeatherData = () => {
   }, [userLocation]);
 
   return (
-    <div className="weather-app">
-      {/* <div className="search">
-        <input
-          type="text"
-          className="search-bar"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          onKeyUp={(e) => e.key === 'Enter' && search()}
-          placeholder="Enter city..."
-        />
-        <button onClick={search}>Search</button>
-      </div> */}
+    <>
       {weatherData && (
-        <div className="weather">
-          <div className="column">
-            <img
-              className="icon"
+        <StyledContainer>
+          <StyledColumn>
+            <StyledIcon
               src={`https://openweathermap.org/img/wn/${weatherData.icon}.png`}
               alt="Weather icon"
             />
-            <p className="description">{weatherData.description}</p>
-          </div>
-          <div className="column">
-            <h2 className="temp">{weatherData.temp}°C</h2>
-            <p className="city">{weatherData.name}</p>
-          </div>
-        </div>
+            <StyledDescription>{weatherData.description}</StyledDescription>
+          </StyledColumn>
+          <StyledColumn>
+            <StyledTemp>{weatherData.temp}°C</StyledTemp>
+            <StyledCity>{weatherData.name}</StyledCity>
+          </StyledColumn>
+        </StyledContainer>
       )}
-    </div>
+    </>
   );
 };
 
