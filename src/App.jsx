@@ -51,7 +51,12 @@ function App() {
               </>
             }
           />
-          <Route exact path="/HomeDashboard/ToDoList" element={<ToDoList />} />
+          <Route exact path="/HomeDashboard/ToDoList" element={
+          <>
+          <ToDoList />
+          <ChatBot/>
+          </>
+          } />
           <Route exact path="/Support" element={<Support />} />
         </Routes>
       </BrowserRouter>
