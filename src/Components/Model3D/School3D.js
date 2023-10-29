@@ -41,7 +41,7 @@ const ThreeScene = () => {
       <button onClick={handlePreviousModel}>Poprzedni Model</button>
       <button onClick={handleNextModel}>Następny Model</button> */}
 
-    <Canvas shadows style={{ width: '100%', height: '100%', }}>
+    <Canvas shadows style={{ width: '100%', height: '100%',}}>
       
       <Suspense fallback={null}>
         

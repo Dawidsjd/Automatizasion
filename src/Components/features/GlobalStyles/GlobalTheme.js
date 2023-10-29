@@ -43,7 +43,7 @@ const globalTheme = createTheme({
       main: "30px",
     },
     bigfontsize: {
-      main: "50px",
+      main: "64px",
     },
   },
 });
