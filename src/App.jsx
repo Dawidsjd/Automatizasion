@@ -10,6 +10,7 @@ import HomeDashboard from "./pages/Dashboard/HomeDashboard";
 import SchoolDashboard from "./pages/Dashboard/SchoolDashboard";
 import LogIn from "./pages/LogIn/LogIn";
 import Settings from "./pages/Settings";
+import Support from "./pages/Support";
 import Dziennik from "./Components/features/Dziennik/Dziennik";
 
 function App() {
@@ -45,12 +46,13 @@ function App() {
             path="/HomeDashboard/CookingAssistant"
             element={
               <>
-            <RecipeSearch />
-            <ChatBot />
-            </>
-          }
+                <RecipeSearch />
+                <ChatBot />
+              </>
+            }
           />
           <Route exact path="/HomeDashboard/ToDoList" element={<ToDoList />} />
+          <Route exact path="/Support" element={<Support />} />
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}

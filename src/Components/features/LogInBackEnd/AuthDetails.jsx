@@ -4,16 +4,15 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import {
   StyledAuthorization,
-  StyledLoginBtn,
-  StyledSeparator,
-  StyledUserStatus,
   StyledUserAvatar,
-  StyledStatus,
+  StyledProfile,
   StyledUserName,
   StyledStatusName,
-  StyledIcon,
+  StyledLoginBtn,
+  StyledLoginIcon,
 } from "./../LeftPanelDashboard/styles";
 import { BiLogOutCircle, BiLogInCircle } from "react-icons/bi";
+import Tooltip from "@mui/material/Tooltip";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -33,6 +32,16 @@ const AuthDetails = () => {
     };
   }, []);
 
+  const [tooltipText, setTooltipText] = useState("");
+
+  useEffect(() => {
+    if (authUser) {
+      setTooltipText("LogOut");
+    } else {
+      setTooltipText("LogIn");
+    }
+  }, [authUser]);
+
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -49,42 +58,35 @@ const AuthDetails = () => {
     <StyledAuthorization>
       {authUser ? (
         <>
-          <StyledLoginBtn onClick={userSignOut}>
-            <StyledIcon>
-              <BiLogOutCircle />
-            </StyledIcon>
-            Log Out
-          </StyledLoginBtn>
-          <StyledSeparator />
-          <StyledUserStatus>
-            <StyledUserAvatar
-              src={authUser.photoURL}
-              alt={authUser.displayName}
-            />
-            <StyledStatus style={{ background: "#36d41c" }} />
-            <StyledUserName>{`Signed In as ${
+          <StyledUserAvatar
+            src={authUser.photoURL}
+            alt={authUser.displayName}
+          />
+          <StyledProfile>
+            <StyledUserName>{`${
               authUser.displayName || authUser.reloadUserInfo.screenName
             }`}</StyledUserName>
             <StyledStatusName>Status: active</StyledStatusName>
-          </StyledUserStatus>
+          </StyledProfile>
+          <StyledLoginBtn onClick={userSignOut} />
         </>
       ) : (
         <>
-          <StyledLoginBtn onClick={handleLogin}>
-            <StyledIcon>
-              <BiLogInCircle />
-            </StyledIcon>
-            Log In
-          </StyledLoginBtn>
-          <StyledSeparator />
-          <StyledUserStatus>
-            <StyledUserAvatar />
-            <StyledStatus style={{ background: "#D62424" }} />
+          <StyledUserAvatar />
+          <StyledProfile>
             <StyledUserName>Anonymus</StyledUserName>
             <StyledStatusName>Status: offline</StyledStatusName>
-          </StyledUserStatus>
+          </StyledProfile>
+          <StyledLoginBtn onClick={handleLogin} />
         </>
       )}
+      <Tooltip title={tooltipText}>
+        <StyledLoginBtn onClick={authUser ? userSignOut : handleLogin}>
+          <StyledLoginIcon>
+            {authUser ? <BiLogOutCircle /> : <BiLogInCircle />}
+          </StyledLoginIcon>
+        </StyledLoginBtn>
+      </Tooltip>
     </StyledAuthorization>
   );
 };

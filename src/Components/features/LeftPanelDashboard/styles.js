@@ -1,6 +1,6 @@
+import globalTheme from "../GlobalStyles/GlobalTheme";
 import { styled } from "@mui/material/styles";
 import { NavLink } from "react-router-dom";
-import globalTheme from "../GlobalStyles/GlobalTheme";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
   height: "100vh",
@@ -9,137 +9,134 @@ export const StyledContainer = styled("div")(({ theme }) => ({
   borderRadius: "0 35px 35px 0",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
-  position: "relative",
   justifyContent: "space-between",
 }));
 
 export const StyledLogoContainer = styled("div")(({ theme }) => ({
   background: globalTheme.palette.primary.dark,
-  margin: "20px 0",
-  height: "60px",
-  width: "85%",
+  borderRadius: "0 10px 10px 0",
   display: "flex",
-  justifyContent: "center",
+  width: "90%",
+  height: "90px",
+  padding: "0 10px",
   alignItems: "center",
-  borderRadius: "10px",
+  justifyContent: "space-between",
+  position: "relative",
+  top: "40px",
+}));
+
+export const StyledLogoImage = styled("img")(({ theme }) => ({
+  display: "flex",
+  width: "90px",
+  height: "auto",
 }));
 
 export const StyledLogo = styled("p")(({ theme }) => ({
+  display: "flex",
   color: globalTheme.palette.textcolorsecondary.main,
   fontWeight: "bolder",
   fontSize: globalTheme.typography.semimediumfontsize.main,
   margin: "0",
 }));
 
-export const StyledNav = styled("nav")(({ theme }) => ({
+export const StyledNav = styled("div")(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: "100%",
-  flex: 0.8,
-}));
-
-export const StyledLinks = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: "100%",
-  marginTop: "100px",
-}));
-
-export const StyledNavLink = styled(NavLink)(({ theme }) => ({
-  marginTop: "25px",
-  textDecoration: "none",
-  "&:hover": {
-    textDecoration: "none",
-  },
-  color: globalTheme.palette.textcolorsecondary.main,
-  fontSize: globalTheme.typography.semismallfontsize.main,
-  display: "flex",
+  width: "90%",
+  height: "auto",
+  margin: "60px 0",
   alignItems: "center",
   justifyContent: "center",
 }));
 
-export const StyledAuthorization = styled("div")(({ theme }) => ({
-  position: "relative",
-  bottom: "5%",
+export const StyledItem = styled("li")(({ theme }) => ({
+  display: "flex",
+  height: "40px",
+  width: "100%",
+  margin: "5px 0",
+  borderRadius: "7px",
+  color: "red",
 }));
 
-export const StyledLoginBtn = styled("button")(({ theme }) => ({
+export const StyledNavbar = styled("ul")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
-  textAlign: "center",
-  margin: "0 auto",
-  background: "none",
-  color: globalTheme.palette.textcolorsecondary.main,
-  fontWeight: "bold",
-  cursor: "pointer",
-}));
-
-export const StyledSeparator = styled("hr")(({ theme }) => ({
-  width: "92.5%",
-  height: "1px",
-  border: "none",
-  background: "#000",
-}));
-
-export const StyledUserStatus = styled("div")(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  marginTop: "auto",
-  width: "140%",
-  bottom: "0",
-  marginLeft: "0px",
-}));
-
-export const StyledUserAvatar = styled("img")(({ theme }) => ({
-  background: "#1e3d58", //tymczasowe
-  width: "45px",
-  height: "45px",
-  borderRadius: "75px",
-  position: "absolute",
-  left: "5%",
-}));
-
-export const StyledStatus = styled("div")(({ theme }) => ({
-  borderRadius: "10px",
-  height: "15px",
-  width: "15px",
-  left: "15%",
-  position: "absolute",
-  top: "85px",
-}));
-
-export const StyledUserName = styled("p")(({ theme }) => ({
-  textAlign: "left",
-  marginLeft: "20%",
-  marginTop: "0",
-  color: globalTheme.palette.textcolorsecondary.main,
-  fontWeight: "bold",
-  fontSize: globalTheme.typography.semismallfontsize.main,
-}));
-
-export const StyledStatusName = styled("p")(({ theme }) => ({
-  textAlign: "left",
-  marginLeft: "20%",
-  marginTop: "-20px", // Adjusted the margin-top to create a 5px spacing
-  color: globalTheme.palette.textcolorsecondary.main,
-  fontSize: globalTheme.typography.semismallfontsize.main,
+  height: "100%",
+  width: "100%",
+  alignItems: "flex-start",
+  justifyContent: "center",
 }));
 
 export const StyledIcon = styled("i")(({ theme }) => ({
-  marginRight: "0",
+  display: "flex",
+  margin: "0 15px",
 }));
 
-export const StyledWrapper = styled("div")(({ theme }) => ({
+export const StyledPanel = styled("img")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  height: "auto",
+  marginTop: "20px",
+}));
+
+export const StyledAuthorization = styled("div")(({ theme }) => ({
+  display: "flex",
+  width: "100%",
+  height: "100px",
+  background: globalTheme.palette.primary.dark,
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "0 0 35px 0",
+}));
+
+export const StyledUserAvatar = styled("img")(({ theme }) => ({
+  background: "grey",
+  display: "flex",
+  width: "50px",
+  height: "50px",
+  margin: "10px 0",
+  marginLeft: "10px",
+  borderRadius: "5px",
+}));
+
+export const StyledProfile = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  flex: 1,
-  justifyContent: "space-between",
+  width: "120px",
+  padding: "5px",
+  margin: "0 10px",
 }));
 
-export const StyledSubpages = styled("div")(({ theme }) => ({
-  bottom: "0",
+export const StyledUserName = styled("p")(({ theme }) => ({
+  display: "flex",
+  fontSize: globalTheme.typography.semismallfontsize.main,
+  color: globalTheme.palette.textcolorsecondary.main,
+  fontWeight: "bolder",
+  margin: "0",
+}));
+
+export const StyledStatusName = styled("span")(({ theme }) => ({
+  display: "flex",
+  fontSize: globalTheme.typography.semismallfontsize.main,
+  color: globalTheme.palette.textcolorsecondary.main,
+  margin: "0",
+}));
+
+export const StyledLoginBtn = styled("button")(({ theme }) => ({
+  background: "none",
+  display: "flex",
+  height: "40px",
+  width: "40px",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "7px",
+}));
+
+export const StyledLoginIcon = styled("i")(({ theme }) => ({
+  display: "flex",
+  fontSize: globalTheme.typography.mediumfontsize.main,
+  color: globalTheme.palette.textcolorsecondary.main,
+  fontWeight: "bolder",
+  cursor: "pointer",
 }));

@@ -4,7 +4,7 @@ import { WidgetWrapper, StyledDashboard, Widgets } from "./styles";
 import Welcome from "../../Components/widget/welcome/welcome";
 import WeatherData from "../../Components/widget/Weather/WeatherData";
 import CookingAssistant from "../../Components/widget/CookingAssistant/CookingAssistant";
-import ToDoList from "../../Components/widget/ToDoList/ToDoList";
+import ToDoList from "../../Components/widget/ToDoList/Todolist";
 
 const HomeDashboard = () => {
   useEffect(() => {
