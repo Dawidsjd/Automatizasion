@@ -28,15 +28,30 @@ export const Widgets = styled('div')(({ theme }) => ({
 
 export const WidgetWrapper = styled('div')(({ theme }) => ({
   '&:nth-child(1)': {
-    width: '55%',
+    width: '95%',
   },
   '&:nth-child(2)': {
-    width: '40%',
+    width: '95%',
   },
   '&:nth-child(3)': {
-    width: '49%',
+    width: '95%',
   },
   '&:nth-child(4)': {
-    width: '49%',
+    width: '95%',
+  },
+
+  [theme.breakpoints.up('lg')]: {
+    '&:nth-child(1)': {
+      width: '55%',
+    },
+    '&:nth-child(2)': {
+      width: '43%',
+    },
+    '&:nth-child(3)': {
+      width: '49%',
+    },
+    '&:nth-child(4)': {
+      width: '49%',
+    },
   },
 }));

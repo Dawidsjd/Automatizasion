@@ -95,7 +95,7 @@ const LeftPanelDashboard = () => {
           </StyledItem>
         </StyledNavbar>
       </StyledNav>
-      <StyledPanel src={PanelImage} />
+      {/* <StyledPanel src={PanelImage} /> */}
       <AuthDetails />
     </StyledContainer>
   );
