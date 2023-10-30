@@ -11,6 +11,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import style from './style';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -26,6 +29,7 @@ const WikiSearch = () => {
   const [trimVal, setTrimVal] = useState('');
   const [selectedResult, setSelectedResult] = useState(null);
   const [open, setOpen] = React.useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,7 +42,7 @@ const WikiSearch = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${trimVal}`);
+        const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${trimVal}&sroffset=${(currentPage - 1) * 20}`);
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -47,10 +51,25 @@ const WikiSearch = () => {
     };
 
     fetchData();
+  }, [trimVal, currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(1);
   }, [trimVal]);
 
   const handleInputChange = (e) => {
-    setTrimVal(e.target.value);
+    const value = e.target.value;
+    setTrimVal(value);
+    if (value === '') {
+      setData(null);
+      setCurrentPage(1);
+    }
+  };
+
+  const handleResultClick = async (pageId, title) => {
+    const content = await fetchFullPageContent(pageId);
+    setSelectedResult({ pageId, title, content });
+    handleClickOpen();
   };
 
   const fetchFullPageContent = async (pageId) => {
@@ -64,30 +83,50 @@ const WikiSearch = () => {
     }
   };
 
-  const handleResultClick = async (pageId, title) => {
-    const content = await fetchFullPageContent(pageId);
-    setSelectedResult({ pageId, title, content });
-    handleClickOpen();
+  const handleNextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prevPage => prevPage - 1);
+    }
+  };
+
+  let hasMoreResults = false;
+  if (data && data.query && data.query.search.length === 20) {
+    hasMoreResults = true;
+  }
+
+  const prevButtonStyle = {
+    color: 'black',
+    opacity: currentPage > 1 && trimVal !== '' ? 1 : 0.5,
+  };
+
+  const nextButtonStyle = {
+    color: 'black',
+    opacity: hasMoreResults && trimVal !== '' ? 1 : 0.5,
   };
 
   return (
-    <div>
+    <div style={style.WikiSearchContainer}>
       <input
         type="text"
         value={trimVal}
         onChange={handleInputChange}
         placeholder="Wyszukaj..."
+        style={style.searchBar}
       />
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={style.cardContainer}>
         {data && data.query && data.query.search.map(item => (
-          <div key={item.pageid} style={{ width: '300px', margin: '10px' }}>
-            <Card sx={{ maxWidth: 345 }} onClick={() => handleResultClick(item.pageid, item.title, item.snippet)}>
+          <div key={item.pageid} style={style.card}>
+            <Card sx={{ maxWidth: 345, margin: '0 auto' }} onClick={() => handleResultClick(item.pageid, item.title, item.snippet)}>
               <CardActionArea>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" style={{ fontSize: '1.2em', lineHeight: '1.4', fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <Typography gutterBottom variant="h5" component="div" style={style.cardContent}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxHeight: '2.4em' }}>
+                  <Typography variant="body2" color="text.secondary" style={style.cardSnippet}>
                     <p dangerouslySetInnerHTML={{ __html: item.snippet }} />
                   </Typography>
                 </CardContent>
@@ -100,22 +139,17 @@ const WikiSearch = () => {
                 open={open}
                 maxWidth="xl"
               >
-                <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+                <DialogTitle sx={style.dialogTitle} id="customized-dialog-title">
                   {selectedResult.title}
                 </DialogTitle>
                 <IconButton
                   aria-label="close"
                   onClick={handleClose}
-                  sx={{
-                    position: 'absolute',
-                    right: 8,
-                    top: 8,
-                    color: (theme) => theme.palette.grey[500],
-                  }}
+                  sx={style.dialogCloseButton}
                 >
                   <CloseIcon />
                 </IconButton>
-                <DialogContent dividers style={{ overflowY: 'auto', maxHeight: '70vh' }}>
+                <DialogContent dividers style={style.dialogContent}>
                   <Typography gutterBottom>
                     <p dangerouslySetInnerHTML={{ __html: selectedResult.content }} />
                   </Typography>
@@ -130,6 +164,17 @@ const WikiSearch = () => {
           </div>
         ))}
       </div>
+      {trimVal !== '' && (
+        <div style={style.paginationContainer}>
+          <Button onClick={handlePrevPage} disabled={currentPage === 1} style={prevButtonStyle}>
+            <NavigateBeforeIcon />
+          </Button>
+          <p style={style.paginationPageNumber}>Strona {currentPage}</p>
+          <Button onClick={handleNextPage} style={nextButtonStyle} disabled={!hasMoreResults}>
+            <NavigateNextIcon />
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

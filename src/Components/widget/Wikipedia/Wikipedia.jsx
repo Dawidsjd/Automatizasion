@@ -20,7 +20,7 @@ const Wikipedia = () => {
             Encyclopedia
           </Subtitle>
           {/* Podłączyć tu link do wikipedi */}
-          <Link to="">
+          <Link to="/SchoolDashboard/Wikipedia">
             <Button>
               Search
               <EastIcon style={{ marginLeft: "5px" }} />

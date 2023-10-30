@@ -66,6 +66,7 @@ function App() {
             }
           />
           <Route exact path='/Support' element={<Support />} />
+          <Route exact path='//SchoolDashboard/Wikipedia' element={<WikiSearch />} />
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
