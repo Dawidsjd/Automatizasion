@@ -38,9 +38,7 @@ const styles = {
     marginBottom: '1rem',
     outline: 'none',
   },
- todoList: {
-  float: 'left',
- },
+ 
 editButton: {
   backgroundColor: '#003366',
   width: '50px',
@@ -60,6 +58,12 @@ deleteButton: {
 },
 
 
+hr: {
+    border: '1px solid black',
+    width: '85%',
+  },
+
+
   title: {
     fontSize: '2rem',
     marginBottom: '1rem',
@@ -72,7 +76,8 @@ deleteButton: {
     cursor: 'pointer',
     backgroundColor: '#003366',
     color: 'white',
-    borderRadius: '50px',
+    borderRadius: '70px',
+    
   },
   
   saveButton:
@@ -109,6 +114,7 @@ deleteButton: {
     fontSize: '1.5rem',
     padding: '10px 30px',
   },
+  
 };
 
 export default styles;
