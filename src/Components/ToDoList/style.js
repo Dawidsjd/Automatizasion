@@ -16,12 +16,32 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    width: '700px',
+    maxWidth: '700px',
+    width: '90%',
     minHeight: '900px',
     textAlign: 'center',
     margin: '128px auto',
     borderRadius: '10px',
     paddingBottom: '32px',
+    overflowY: 'auto', 
+  },
+     bulletList: {
+    listStyleType: 'none', 
+    padding: 0,
+    
+  },
+  bulletListItem: {
+    color: 'black',
+    position: 'relative',
+    paddingLeft: '20px', 
+  },
+  bulletPoint: {
+    color: '#E5FFCF', 
+    position: 'absolute',
+    left: '0', 
+    fontSize: '200px', 
+    top: '-120px', 
+    
   },
   span: {
     color: '#ffffff',
@@ -80,8 +100,7 @@ hr: {
     
   },
   
-  saveButton:
-  {
+  saveButton: {
     width: "100px",
     height: "30px",
     padding: '0.5rem 1rem',
@@ -90,14 +109,12 @@ hr: {
     backgroundColor: '#003366',
     color: 'white',
     borderRadius: '50px',
-    with: '30px',
-    display: 'block', 
-    margin: '0 auto', 
-    position: 'absolute', 
-    bottom: '90px', 
+    position: 'absolute',
+    bottom: '50px', 
     left: '50%', 
     transform: 'translateX(-50%)', 
   },
+
 
 
   exitBtn: { 
@@ -114,7 +131,13 @@ hr: {
     fontSize: '1.5rem',
     padding: '10px 30px',
   },
-  
+
+  '@media (max-width: 768px)': {
+    Background: {
+      width: '95%', 
+      margin: '64px auto', 
+    },
+  },
 };
 
 export default styles;

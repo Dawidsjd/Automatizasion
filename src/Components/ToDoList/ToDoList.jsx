@@ -72,33 +72,33 @@ function ToDoList() {
         </button>
 
         <div style={styles.todoList}>
-          <ul style={styles.ul}>
-            {list.map((todo, index) => (
-              <li key={todo.id} style={styles.listItem}>
-                {editIndex === index && isEditing ? (
-                  <div style={styles.editBox}>
-                    <input
-                      type="text"
-                      value={editText}
-                      onChange={(e) => setEditText(e.target.value)}
-                    />
-                    <button onClick={() => saveEdit(index)}>Save</button>
-                  </div>
-                ) : (
-                  <div style={styles.listItemLeft}>
-                    <span>{todo.todo}</span>
-                    <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>Edit</button>
-                    <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
-                      X
-                    </button>
-                  </div>
-                )}
-                <hr style={styles.hr} />
-                
-              
-              </li>
-            ))}
-          </ul>
+          <ul style={styles.bulletList}>
+  {list.map((todo, index) => (
+    <li key={todo.id} style={styles.bulletListItem}>
+      <span style={styles.bulletPoint}>•</span> 
+      {editIndex === index && isEditing ? (
+        <div style={styles.editBox}>
+          <input
+            type="text"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+          />
+          <button onClick={() => saveEdit(index)}>Save</button>
+        </div>
+      ) : (
+        <div style={styles.listItemLeft}>
+          <span>{todo.todo}</span>
+          <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>Edit</button>
+          <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
+            X
+          </button>
+        </div>
+      )}
+      <hr style={styles.hr} />
+    </li>
+  ))}
+</ul>
+
         </div>
         
         <button onClick={() => setIsEditing(true)} style={styles.saveButton}>
