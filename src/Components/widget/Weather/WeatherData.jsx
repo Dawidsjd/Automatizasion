@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   StyledContainer,
   StyledColumn,
@@ -6,15 +6,15 @@ import {
   StyledDescription,
   StyledTemp,
   StyledCity,
-} from "./styles";
+} from './styles';
 
 const WeatherData = () => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
 
   const fetchWeather = () => {
-    const apiKey = "718dca3aeb9e485aab7b391d17d0a610";
+    const apiKey = '718dca3aeb9e485aab7b391d17d0a610';
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
     )
@@ -42,17 +42,17 @@ const WeatherData = () => {
           });
         },
         (error) => {
-          console.error("Error getting location:", error);
+          console.error('Error getting location:', error);
         }
       );
     } else {
-      console.error("Geolocation is not supported by this browser.");
+      console.error('Geolocation is not supported by this browser.');
     }
   }, []);
 
   useEffect(() => {
     if (userLocation) {
-      const apiKey = "718dca3aeb9e485aab7b391d17d0a610";
+      const apiKey = '718dca3aeb9e485aab7b391d17d0a610';
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${userLocation.latitude}&lon=${userLocation.longitude}&units=metric&appid=${apiKey}`
       )
@@ -74,7 +74,7 @@ const WeatherData = () => {
           <StyledColumn>
             <StyledIcon
               src={`https://openweathermap.org/img/wn/${weatherData.icon}.png`}
-              alt="Weather icon"
+              alt='Weather icon'
             />
             <StyledDescription>{weatherData.description}</StyledDescription>
           </StyledColumn>

@@ -132,11 +132,7 @@ const Register = () => {
               </SingleInput>
               <SingleInput>
                 <p>Repeat password</p>
-                <input
-                  type='password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <input type='password' />
               </SingleInput>
               <button onClick={signIn}>Register</button>
             </StyledDefaultLogIn>

@@ -15,7 +15,6 @@ import {
   StyledIcon,
   StyledPanel,
 } from './styles';
-import './styles.css';
 import Logo from './../../../assets/logo.svg';
 import PanelImage from './../../../assets/PanelImage.svg';
 import AuthDetails from '../LogInBackEnd/AuthDetails';

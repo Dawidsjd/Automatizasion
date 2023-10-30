@@ -23,7 +23,7 @@ const AboutDashboardHome = () => {
             </p>
           </StyledContent>
           <StyledAssets>
-            <Home3D />
+            {/* <Home3D />  przepraszam ale kompa mi wywali */}
           </StyledAssets>
         </WrapperItem>
       </div>

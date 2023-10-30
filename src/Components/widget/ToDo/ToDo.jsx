@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyledContainer,
   Title,
@@ -8,19 +8,19 @@ import {
   CheckStatus,
   ListContent,
   Line,
-} from "./styles";
-import Notes from "../../../assets/Notes.svg";
-import EastIcon from "@mui/icons-material/East";
-import { Link } from "react-router-dom"; // Dodaj import Link
+} from './styles';
+import Notes from '../../../assets/Notes.svg';
+import EastIcon from '@mui/icons-material/East';
+import { Link } from 'react-router-dom'; // Dodaj import Link
 
 const ToDo = () => {
   return (
     <StyledContainer>
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <div>
@@ -40,12 +40,12 @@ const ToDo = () => {
             <ListContent>To do something 3</ListContent>
           </CheckList>
           <Line />
-          <StyledLink to="/HomeDashboard/ToDoList">
+          <StyledLink to='/HomeDashboard/ToDoList'>
             Check list
-            <EastIcon style={{ marginLeft: "5px" }} />
+            <EastIcon style={{ marginLeft: '5px' }} />
           </StyledLink>
         </div>
-        <Icon src={Notes} alt="Notes Icon" />
+        <Icon src={Notes} alt='Notes Icon' />
       </div>
     </StyledContainer>
   );

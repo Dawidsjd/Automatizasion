@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   StyledContainer,
   StyledCalendar,
@@ -9,26 +9,26 @@ import {
   StyledDescription,
   StyledImage,
   StyledContent,
-} from "./styles";
-import { BsFillCalendarEventFill } from "react-icons/bs";
-import HelloImg from "./../../../assets/HelloImg.svg";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../../firebase";
+} from './styles';
+import { BsFillCalendarEventFill } from 'react-icons/bs';
+import HelloImg from './../../../assets/HelloImg.svg';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../../firebase';
 
 const getCurrentDate = () => {
   const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
   const currentDate = new Date();
   const day = currentDate.getDate();
@@ -56,13 +56,6 @@ const Welcome = () => {
 
   return (
     <StyledContainer>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      ></div>
       <StyledCalendar>
         <StyledIcon>
           <BsFillCalendarEventFill />
@@ -72,7 +65,7 @@ const Welcome = () => {
       <StyledContent>
         <StyledWelcome>
           <StyledMessage>
-            {username ? `Good Day, ${username}!` : "Good Day!"}
+            {username ? `Good Day, ${username}!` : 'Good Day!'}
           </StyledMessage>
           <StyledDescription>Have a nice day!</StyledDescription>
         </StyledWelcome>

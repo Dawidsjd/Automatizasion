@@ -13,7 +13,7 @@ const AboutDashboardHome = () => {
       <div style={{ maxWidth: 1250 }}>
         <WrapperItem>
           <StyledAssets>
-            <School3D />
+            {/* <School3D />  sorry ale kompa mi wywali zara*/}
           </StyledAssets>
           <StyledContent>
             <h2>School Dashboard</h2>

@@ -67,6 +67,7 @@ export const SingleLinks = styled('div')(({ theme }) => ({
   ...SharedStyles,
   display: 'flex',
   flexDirection: 'column',
+
   h3: {
     padding: '5px 0',
     width: '100%',
@@ -74,6 +75,7 @@ export const SingleLinks = styled('div')(({ theme }) => ({
   },
   p: {
     lineHeight: '25px',
+    fontSize: '14px',
   },
   width: '100%',
   '&:nth-child(1)': {
@@ -117,5 +119,6 @@ export const StyledInfoLinks = styled(Link)(({ theme }) => ({
   },
   [theme.breakpoints.up('lg')]: {
     lineHeight: '30px',
+    fontSize: '14px',
   },
 }));
