@@ -6,7 +6,8 @@
 
 
 
-![american-psycho-patrick-bateman](https://github.com/Dawidsjd/Automatizasion/assets/53567837/0544d988-c260-448b-a7b8-2a1d8a4d6277)
 
 
 
+
+![giphy](https://github.com/Dawidsjd/Automatizasion/assets/95742362/613ce77e-9b44-4875-885a-d3ce19033389)
