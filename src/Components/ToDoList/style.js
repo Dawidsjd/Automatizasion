@@ -18,7 +18,6 @@ const styles = {
     justifyContent: 'flex-start',
     width: '600px',
     minHeight: '800px',
-    background: 'white',
     textAlign: 'center',
     margin: '128px auto',
     borderRadius: '10px',
@@ -31,6 +30,7 @@ const styles = {
     backgroundColor: '#4a5568',
     padding: '0.5rem 1rem',
     borderRadius: '10px',
+    justifyContent: 'right',
   },
   deleteButton: {
     background: '#f44336',
@@ -68,7 +68,7 @@ const styles = {
     margin: '1rem 0',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'left',
   },
   exitBtn: {
     position: 'absolute',

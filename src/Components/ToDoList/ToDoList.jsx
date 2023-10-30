@@ -68,29 +68,31 @@ function ToDoList() {
           Add
         </button>
 
-        <ul>
-          {list.map((todo, index) => (
-            <li key={todo.id} style={styles.listItem}>
-              {editIndex === index ? (
-                <>
-                  <input
-                    type="text"
-                    value={editText}
-                    onChange={(e) => setEditText(e.target.value)}
-                  />
-                  <button onClick={() => saveEdit(index)}>Save</button>
-                </>
-              ) 
-              :(
-                <>
-                  <span style={styles.span}>{todo.todo}</span>
-                  <button onClick={() => startEdit(index, todo.todo)}>Edit</button>
-                  <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>&times;</button>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
+        <div style={styles.todoList}>
+          <ul>
+            {list.map((todo, index) => (
+              <li key={todo.id}>
+                {editIndex === index ? (
+                  <>
+                    <input
+                      type="text"
+                      value={editText}
+                      onChange={(e) => setEditText(e.target.value)}
+                    />
+                    <button onClick={() => saveEdit(index)}>Save</button>
+                  </>
+                ) 
+                :(
+                  <>
+                    <span>{todo.todo}</span>
+                    <button onClick={() => startEdit(index, todo.todo)}>Edit</button>
+                    <button onClick={() => deleteTodo(todo.id)}>&times;</button>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
