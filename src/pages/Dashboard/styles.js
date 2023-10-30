@@ -23,5 +23,4 @@ export const WidgetWrapper = styled("div")(({ theme }) => ({
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "space-evenly",
-  marginTop: "10px",
 }));

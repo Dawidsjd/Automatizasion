@@ -1,6 +1,5 @@
 import globalTheme from "../GlobalStyles/GlobalTheme";
 import { styled } from "@mui/material/styles";
-import { NavLink } from "react-router-dom";
 
 export const StyledContainer = styled("div")(({ theme }) => ({
   height: "100vh",

@@ -11,7 +11,7 @@ import {
 import Fork from "../../../assets/Fork.svg";
 import FoodIcon from "../../../assets/FoodIcon.svg";
 import EastIcon from "@mui/icons-material/East";
-import { Link } from "react-router-dom"; // Dodaj import Link
+import { Link } from "react-router-dom";
 
 const CookingAssistant = () => {
   return (

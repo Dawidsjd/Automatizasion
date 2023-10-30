@@ -11,7 +11,6 @@ import {
 } from "./styles";
 import Notes from "../../../assets/Notes.svg";
 import EastIcon from "@mui/icons-material/East";
-import { Link } from "react-router-dom"; // Dodaj import Link
 
 const ToDo = () => {
   return (
