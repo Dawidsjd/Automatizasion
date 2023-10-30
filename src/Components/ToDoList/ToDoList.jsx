@@ -72,7 +72,7 @@ function ToDoList() {
         </button>
 
         <div style={styles.todoList}>
-          <ul>
+          <ul style={styles.ul}>
             {list.map((todo, index) => (
               <li key={todo.id} style={styles.listItem}>
                 {editIndex === index && isEditing ? (
@@ -93,6 +93,9 @@ function ToDoList() {
                     </button>
                   </div>
                 )}
+                <hr style={styles.hr} />
+                
+              
               </li>
             ))}
           </ul>
