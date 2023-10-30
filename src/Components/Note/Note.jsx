@@ -31,11 +31,9 @@ function Notepad() {
   );
 
   function saveNote() {
-    // Tutaj można dodać kod do zapisania notatki, na przykład do bazy danych lub pliku.
-    // Możesz użyć tytułu (title) i treści (content) notatki.
+    //tu podłączenie do bazy
     console.log('Zapisano notatkę:', title, content);
   }
 }
 
 export default Notepad;
-// export default Notepad;

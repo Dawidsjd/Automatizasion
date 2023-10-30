@@ -100,6 +100,7 @@ function ToDoList() {
             ))}
           </ul>
         </div>
+        
         <button onClick={() => setIsEditing(true)} style={styles.saveButton}>
           Save
         </button>
@@ -107,5 +108,8 @@ function ToDoList() {
     </div>
   );
 }
-
+function saveTODO() {
+    //tu podłączenie do bazy
+    console.log('Zapisano listę To-do:', title, content);
+  }
 export default ToDoList;
