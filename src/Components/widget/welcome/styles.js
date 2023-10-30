@@ -11,8 +11,9 @@ export const StyledContainer = styled("div")(({ theme }) => ({
   backdropFilter: "blur(6.2px)",
   paddingTop: "30px",
   paddingLeft: "30px",
-  maxWidth: "730px",
-  margin: "20px auto",
+  width: "800px",
+  marginTop: "50px",
+  marginLeft: "5%",
   textAlign: "left",
 }));
 

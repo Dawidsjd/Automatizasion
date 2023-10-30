@@ -13,12 +13,15 @@ export const StyledDashboard = styled("div")(({ theme }) => ({
 
 export const Widgets = styled("div")(({ theme }) => ({
   width: "85%",
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "20px",
+  display: "flex",
+  flexDirection: "column",
   padding: "20px",
 }));
 
 export const WidgetWrapper = styled("div")(({ theme }) => ({
-  alignSelf: "flex-start",
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-evenly",
+  marginTop: "10px",
 }));

@@ -10,8 +10,9 @@ export const StyledContainer = styled("div")(({ theme }) => ({
   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
   background: globalTheme.palette.tiles.light,
   backdropFilter: "blur(6.2px)",
-  maxWidth: "400px",
-  margin: "20px auto",
+  width: "500px",
+  marginTop: "50px",
+  marginRight: "5%",
   padding: "32.5px",
 }));
 

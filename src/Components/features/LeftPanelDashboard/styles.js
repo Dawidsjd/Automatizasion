@@ -113,6 +113,7 @@ export const StyledUserName = styled("p")(({ theme }) => ({
   fontSize: globalTheme.typography.semismallfontsize.main,
   color: globalTheme.palette.textcolorsecondary.main,
   fontWeight: "bolder",
+  lineHeight: "15px",
   margin: "0",
 }));
 
