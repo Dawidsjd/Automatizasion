@@ -30,10 +30,11 @@ const LeftPanelDashboard = () => {
 
   return (
     <StyledContainer>
-      <StyledLogoContainer>
-        <StyledLogoImage src={Logo} />
-        <StyledLogo>FlowView</StyledLogo>
-      </StyledLogoContainer>
+      <NavLink to="/">
+        <StyledLogoContainer>
+          <StyledLogoImage src={Logo} /> <StyledLogo>FlowView</StyledLogo>
+        </StyledLogoContainer>
+      </NavLink>
       <StyledNav>
         <StyledNavbar className={clicked ? "nav_active" : "navbar"}>
           <StyledItem>
@@ -58,18 +59,6 @@ const LeftPanelDashboard = () => {
                 <BiSolidSchool style={{ width: "25px", height: "25px" }} />
               </StyledIcon>
               School
-            </NavLink>
-          </StyledItem>
-          <StyledItem>
-            <NavLink
-              to="/"
-              activeClassName="active"
-              className={({ isActive }) => (isActive ? "link-active" : "link")}
-            >
-              <StyledIcon>
-                <IoReturnUpBack style={{ width: "25px", height: "25px" }} />
-              </StyledIcon>
-              Main Page
             </NavLink>
           </StyledItem>
           <StyledItem>
