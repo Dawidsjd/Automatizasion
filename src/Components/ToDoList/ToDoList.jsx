@@ -110,6 +110,6 @@ function ToDoList() {
 }
 function saveTODO() {
     //tu podłączenie do bazy
-    console.log('Zapisano listę To-do:');
+   
   }
 export default ToDoList;
