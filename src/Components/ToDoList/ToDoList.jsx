@@ -8,6 +8,7 @@ function ToDoList() {
   const [input, setInput] = useState('');
   const [editIndex, setEditIndex] = useState(-1);
   const [editText, setEditText] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
 
   const addtolist = (todo) => {
     if (todo.trim() !== '') {
@@ -28,6 +29,7 @@ function ToDoList() {
   const startEdit = (index, text) => {
     setEditIndex(index);
     setEditText(text);
+    setIsEditing(true);
   };
 
   const saveEdit = (index) => {
@@ -41,6 +43,7 @@ function ToDoList() {
       setList(updatedList);
       setEditIndex(-1);
       setEditText('');
+      setIsEditing(false);
     }
   };
 
@@ -65,34 +68,38 @@ function ToDoList() {
           }}
         />
         <button onClick={() => addtolist(input)} style={styles.button}>
-          Add
+          ADD
         </button>
 
         <div style={styles.todoList}>
           <ul>
             {list.map((todo, index) => (
-              <li key={todo.id}>
-                {editIndex === index ? (
-                  <>
+              <li key={todo.id} style={styles.listItem}>
+                {editIndex === index && isEditing ? (
+                  <div style={styles.editBox}>
                     <input
                       type="text"
                       value={editText}
                       onChange={(e) => setEditText(e.target.value)}
                     />
                     <button onClick={() => saveEdit(index)}>Save</button>
-                  </>
-                ) 
-                :(
-                  <>
+                  </div>
+                ) : (
+                  <div style={styles.listItemLeft}>
                     <span>{todo.todo}</span>
-                    <button onClick={() => startEdit(index, todo.todo)}>Edit</button>
-                    <button onClick={() => deleteTodo(todo.id)}>&times;</button>
-                  </>
+                    <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>Edit</button>
+                    <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
+                      X
+                    </button>
+                  </div>
                 )}
               </li>
             ))}
           </ul>
         </div>
+        <button onClick={() => setIsEditing(true)} style={styles.saveButton}>
+          Save
+        </button>
       </div>
     </div>
   );
