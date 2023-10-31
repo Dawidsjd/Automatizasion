@@ -17,15 +17,12 @@ const HomeDashboard = () => {
         <WidgetWrapper>
           <Welcome />
         </WidgetWrapper>
-
         <WidgetWrapper>
           <WeatherData />
         </WidgetWrapper>
-
         <WidgetWrapper>
           <CookingAssistant />
         </WidgetWrapper>
-
         <WidgetWrapper>
           <ToDo />
         </WidgetWrapper>

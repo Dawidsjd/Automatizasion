@@ -12,9 +12,12 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   paddingTop: '30px',
   paddingLeft: '30px',
   width: '100%',
-  minHeight: '300px',
+  maxHeight: '300px',
   margin: '20px auto',
   textAlign: 'left',
+  [theme.breakpoints.up('lg')]: {
+    maxHeight: '300px',
+  },
 }));
 
 export const StyledCalendar = styled('div')(({ theme }) => ({
@@ -39,19 +42,25 @@ export const StyledIcon = styled('i')(({ theme }) => ({
 }));
 
 export const StyledWelcome = styled('div')(({ theme }) => ({
-  marginTop: '100px',
+  marginTop: '5%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'left',
   flex: 1,
+  [theme.breakpoints.up('lg')]: {
+    marginTop: '100px',
+  },
 }));
 
 export const StyledMessage = styled('div')(({ theme }) => ({
-  fontSize: globalTheme.typography.mediumfontsize.main,
+  fontSize: '18px',
   fontWeight: 'bold',
   color: globalTheme.palette.textcolorprimary.main,
   marginBottom: '0',
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '24px',
+  },
 }));
 
 export const StyledDescription = styled('p')(({ theme }) => ({
@@ -62,10 +71,13 @@ export const StyledDescription = styled('p')(({ theme }) => ({
 }));
 
 export const StyledImage = styled('img')(({ theme }) => ({
-  width: 'auto',
-  height: '220px',
+  width: '50%',
+  // height: '220px',
   userSelect: 'none',
   pointerEvents: 'none',
+  [theme.breakpoints.up('lg')]: {
+    width: '300px',
+  },
 }));
 
 export const StyledContent = styled('div')(({ theme }) => ({

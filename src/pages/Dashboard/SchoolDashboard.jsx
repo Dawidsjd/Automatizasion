@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import LeftPanelDashboard from '../../Components/features/LeftPanelDashboard/LeftPanelDashboard';
-import { WidgetWrapper, StyledDashboard, Widgets } from './styles';
+import { WidgetWrapperS, StyledDashboard, Widgets } from './styles';
 import Reminders from '../../Components/widget/Reminders/Reminders';
 import SchoolDiary from '../../Components/widget/SchoolDiary/SchoolDiary';
 import Wikipedia from '../../Components/widget/Wikipedia/Wikipedia';
@@ -14,23 +14,18 @@ const SchoolDashboard = () => {
     <StyledDashboard>
       <LeftPanelDashboard />
       <Widgets>
-        <WidgetWrapper>
-          <WidgetWrapper>
-            <Reminders />
-          </WidgetWrapper>
-
-          <WidgetWrapper>
-            <SchoolDiary />
-          </WidgetWrapper>
-
-          <WidgetWrapper>
-            <Wikipedia />
-          </WidgetWrapper>
-
-          <WidgetWrapper>
-            <Notes />
-          </WidgetWrapper>
-        </WidgetWrapper>
+        <WidgetWrapperS>
+          <Reminders />
+        </WidgetWrapperS>
+        <WidgetWrapperS>
+          <SchoolDiary />
+        </WidgetWrapperS>
+        <WidgetWrapperS>
+          <Wikipedia />
+        </WidgetWrapperS>
+        <WidgetWrapperS>
+          <Notes />
+        </WidgetWrapperS>
       </Widgets>
     </StyledDashboard>
   );

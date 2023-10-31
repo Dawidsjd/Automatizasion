@@ -11,7 +11,6 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   background: globalTheme.palette.tiles.light,
   backdropFilter: 'blur(6.2px)',
   padding: '40px',
-  maxWidth: '650px',
   minHeight: '200px',
   margin: '20px auto',
   textAlign: 'left',

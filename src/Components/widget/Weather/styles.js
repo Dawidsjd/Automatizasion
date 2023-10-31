@@ -12,9 +12,12 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   backdropFilter: 'blur(6.2px)',
   // maxWidth: '700px',
   width: '100%',
-  minHeight: '300px',
   margin: '20px auto',
   padding: '32.5px',
+  maxHeight: '200px',
+  [theme.breakpoints.up('lg')]: {
+    minHeight: '300px',
+  },
 }));
 
 export const StyledColumn = styled('div')(({ theme }) => ({
@@ -27,18 +30,29 @@ export const StyledIcon = styled('img')(({ theme }) => ({
 }));
 
 export const StyledDescription = styled('p')(({ theme }) => ({
-  fontSize: globalTheme.typography.semimediumfontsize.main,
   color: globalTheme.palette.textcolorprimary.main,
   textTransform: 'capitalize',
+  fontSize: '24px',
+  [theme.breakpoints.up('up')]: {
+    fontSize: globalTheme.typography.semimediumfontsize.main,
+  },
 }));
 
 export const StyledTemp = styled('p')(({ theme }) => ({
   marginBottom: '0',
-  fontSize: globalTheme.typography.bigfontsize.main,
-  color: globalTheme.palette.textcolorprimary.main,
+  fontSize: '24px',
+  color: 'white',
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '46px',
+  },
 }));
 
 export const StyledCity = styled('p')(({ theme }) => ({
   color: globalTheme.palette.textcolorprimary.main,
-  fontSize: globalTheme.typography.semibigfontsize.main,
+  fontSize: '24px',
+  color: 'white',
+  marginTop: '40px',
+  [theme.breakpoints.up('lg')]: {
+    fontSize: '26px',
+  },
 }));

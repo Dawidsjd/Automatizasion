@@ -17,10 +17,10 @@ export const Widgets = styled('section')(({ theme }) => ({
   width: '100%',
   display: 'flex',
   alignSelf: 'self-start',
-  // flexFlow: 'nowrap',
   gap: '20px',
   padding: '20px',
   flexDirection: 'column',
+  alignItems: 'start',
   [theme.breakpoints.up('lg')]: {
     flexDirection: 'row',
     flexFlow: 'wrap',
@@ -55,6 +55,28 @@ export const WidgetWrapper = styled('div')(({ theme }) => ({
       height: 'min-content',
     },
     '&:nth-child(4)': {
+      width: '49%',
+      height: 'min-content',
+    },
+  },
+}));
+
+export const WidgetWrapperS = styled('div')(({ theme }) => ({
+  '&:nth-child(1)': {
+    width: '95%',
+  },
+  '&:nth-child(2)': {
+    width: '95%',
+  },
+  '&:nth-child(3)': {
+    width: '95%',
+  },
+  '&:nth-child(4)': {
+    width: '95%',
+  },
+
+  [theme.breakpoints.up('xl')]: {
+    '&:nth-child(-n+4)': {
       width: '49%',
       height: 'min-content',
     },
