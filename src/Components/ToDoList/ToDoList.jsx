@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './style';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Link } from 'react-router-dom';
 import punkt from '../../assets/punkt.svg';
+import { db } from '../../firebase';
+import { set, ref, onValue } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 
 function ToDoList() {
   const [list, setList] = useState([]);
@@ -10,6 +14,21 @@ function ToDoList() {
   const [editIndex, setEditIndex] = useState(-1);
   const [editText, setEditText] = useState('');
   const [isEditing, setIsEditing] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Obserwuj zmiany w stanie autoryzacji
+    const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
+      if (user) {
+        setUser(user);
+        getListFromFirebase(user.uid); // Pobierz listę zadań dla obecnie zalogowanego użytkownika
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const addToList = (todo) => {
     if (todo.trim() !== '') {
@@ -19,12 +38,22 @@ function ToDoList() {
       };
       setInput('');
       setList([...list, newTodoList]);
+
+      if (user) {
+        const userId = user.uid;
+        saveListToFirebase(userId, [...list, newTodoList]); // Zapisz listę zadań do Firebase
+      }
     }
   };
 
   const deleteTodo = (id) => {
     const newList = list.filter((todo) => todo.id !== id);
     setList(newList);
+
+    if (user) {
+      const userId = user.uid;
+      saveListToFirebase(userId, newList); // Zapisz zaktualizowaną listę zadań do Firebase
+    }
   };
 
   const startEdit = (index, text) => {
@@ -45,7 +74,25 @@ function ToDoList() {
       setEditIndex(-1);
       setEditText('');
       setIsEditing(false);
+
+      if (user) {
+        const userId = user.uid;
+        saveListToFirebase(userId, updatedList); // Zapisz zaktualizowaną listę zadań do Firebase
+      }
     }
+  };
+
+  const saveListToFirebase = (userId, list) => {
+    set(ref(db, `todoList/${userId}`), list);
+  };
+
+  const getListFromFirebase = (userId) => {
+    onValue(ref(db, `todoList/${userId}`), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        setList(data);
+      }
+    });
   };
 
   return (
@@ -75,37 +122,33 @@ function ToDoList() {
         <div style={styles.todoList}>
           <ul style={styles.bulletList}>
             {list.map((todo, index) => (
-  <li key={todo.id} style={styles.bulletListItem}>
-    <img src={punkt} alt="Obraz" style={styles.imageBulletPoint} />
-    {editIndex === index && isEditing ? (
-      <div style={styles.editBox}>
-        <input
-          type="text"
-          value={editText}
-          onChange={(e) => setEditText(e.target.value)}
-        />
-        <button onClick={() => saveEdit(index)}>Save</button>
-      </div>
-    ) : (
-      <div style={styles.listItem}>
-        <span style={styles.todoText}>{todo.todo}</span>
-        <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>
-          Edit
-        </button>
-        <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
-          X
-        </button>
-      </div>
-    )}
-    <hr style={styles.hr} />
-  </li>
-))}
+              <li key={todo.id} style={styles.bulletListItem}>
+                <img src={punkt} alt="Obraz" style={styles.imageBulletPoint} />
+                {editIndex === index && isEditing ? (
+                  <div style={styles.editBox}>
+                    <input
+                      type="text"
+                      value={editText}
+                      onChange={(e) => setEditText(e.target.value)}
+                    />
+                    <button onClick={() => saveEdit(index)}>Save</button>
+                  </div>
+                ) : (
+                  <div style={styles.listItem}>
+                    <span style={styles.todoText}>{todo.todo}</span>
+                    <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>
+                      Edit
+                    </button>
+                    <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
+                      X
+                    </button>
+                  </div>
+                )}
+                <hr style={styles.hr} />
+              </li>
+            ))}
           </ul>
         </div>
-                
-        <button onClick={() => setIsEditing(true)} style={styles.saveButton}>
-          Save
-        </button>
       </div>
     </div>
   );

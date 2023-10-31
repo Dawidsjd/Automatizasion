@@ -9,16 +9,16 @@ const style = {
     height: '100vh',
     background: `#90a4c4 url(${ContentBackground}) no-repeat center center fixed`,
     backgroundSize: 'cover',
-    padding: '10px', /* Dodano wewnętrzny padding */
-    boxSizing: 'border-box', /* Dodano box-sizing */
+    padding: '10px', 
+    boxSizing: 'border-box', 
   },
     customIcon: {
     marginBottom: "2%"
   },
   searchBar: {
-    width: '100%', /* Rozciągnięcie na szerokość kontenera */
-    maxWidth: '400px', /* Maksymalna szerokość */
-    margin: '10px 0', /* Trochę większy margines */
+    width: '100%',
+    maxWidth: '400px', 
+    margin: '10px 0',
     padding: '10px',
     fontSize: '1.2em',
     border: 'none',
@@ -32,8 +32,8 @@ const style = {
     justifyContent: 'center',
     maxWidth: '100%',
     margin: '0 auto',
-    overflowY: 'auto', /* Dodano pionowy scrollbar */
-    maxHeight: '60vh', /* Dodano maksymalną wysokość, aby uniknąć zasłaniania pozostałej zawartości */
+    overflowY: 'auto', 
+    maxHeight: '60vh',
   },
   card: {
     width: '300px',
