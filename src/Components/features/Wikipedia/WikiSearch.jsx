@@ -13,16 +13,27 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import { Link } from "react-router-dom";
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import style from './style';
+import customIcon from '../../../assets/social.png';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
+    backgroundColor: '#8295b3', // Dodany kolor tła
   },
   '& .MuiDialogActions-root': {
     padding: theme.spacing(1),
+    backgroundColor: '#8295b3', // Dodany kolor tła
   },
 }));
+
+const StyledCard = styled(Card)({
+  backgroundColor: '#8295b3', // Dodany kolor tła
+  maxWidth: 345,
+  margin: '0 auto',
+});
 
 const WikiSearch = () => {
   const [data, setData] = useState(null);
@@ -41,6 +52,12 @@ const WikiSearch = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+
+      if (trimVal.length < 2) {
+        setData(null);
+        return;
+      }
+
       try {
         const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${trimVal}&sroffset=${(currentPage - 1) * 20}`);
         const result = await response.json();
@@ -110,6 +127,27 @@ const WikiSearch = () => {
 
   return (
     <div style={style.WikiSearchContainer}>
+      <Link to="/SchoolDashboard">
+        <button
+          style={{
+            position: "absolute",
+            top: "10px",
+            left: "10px",
+            background: "purple",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            fontSize: "1.5em",
+            padding: "10px 30px"
+          }}
+        >
+          <KeyboardBackspaceIcon />
+        </button>
+      </Link>
+      <img src={customIcon} alt="Custom Icon" style={style.customIcon} />
       <input
         type="text"
         value={trimVal}
@@ -120,18 +158,19 @@ const WikiSearch = () => {
       <div style={style.cardContainer}>
         {data && data.query && data.query.search.map(item => (
           <div key={item.pageid} style={style.card}>
-            <Card sx={{ maxWidth: 345, margin: '0 auto' }} onClick={() => handleResultClick(item.pageid, item.title, item.snippet)}>
+            <StyledCard onClick={() => handleResultClick(item.pageid, item.title, item.snippet)}>
               <CardActionArea>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" style={style.cardContent}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" style={style.cardSnippet}>
-                    <p dangerouslySetInnerHTML={{ __html: item.snippet }} />
-                  </Typography>
+                  <Typography variant="body2" color="text.secondary" style={{ ...style.cardSnippet, ...style.cardDescription }}>
+  <p dangerouslySetInnerHTML={{ __html: item.snippet }} />
+</Typography>
+
                 </CardContent>
               </CardActionArea>
-            </Card>
+            </StyledCard>
             {selectedResult && selectedResult.pageId === item.pageid && (
               <BootstrapDialog
                 onClose={handleClose}
@@ -139,7 +178,7 @@ const WikiSearch = () => {
                 open={open}
                 maxWidth="xl"
               >
-                <DialogTitle sx={style.dialogTitle} id="customized-dialog-title">
+                 <DialogTitle sx={style.dialogTitle} id="customized-dialog-title">
                   {selectedResult.title}
                 </DialogTitle>
                 <IconButton
@@ -155,7 +194,7 @@ const WikiSearch = () => {
                   </Typography>
                 </DialogContent>
                 <DialogActions>
-                  <Button autoFocus onClick={handleClose}>
+                  <Button autoFocus onClick={handleClose} style={{ color: '#333' }}>
                     Close
                   </Button>
                 </DialogActions>
@@ -164,7 +203,7 @@ const WikiSearch = () => {
           </div>
         ))}
       </div>
-      {trimVal !== '' && (
+      {trimVal.length > 1 && (
         <div style={style.paginationContainer}>
           <Button onClick={handlePrevPage} disabled={currentPage === 1} style={prevButtonStyle}>
             <NavigateBeforeIcon />
