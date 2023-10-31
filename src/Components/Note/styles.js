@@ -6,7 +6,7 @@ export const styles = {
     justifyContent: "center",
     width: "100%",
     height: "100vh",
-    backgroundColor: "white", // Poprawione
+    backgroundColor: "white",
   },
   notepadHeader: {
     width: "100%",
@@ -36,5 +36,9 @@ export const styles = {
     alignItems: 'center',
     fontSize: '1.5rem',
     padding: '10px 30px',
+  },
+  input: {
+    border: '2px solid black', // Dodaj to pole, aby dodać czarne obramowanie
+    
   },
 };

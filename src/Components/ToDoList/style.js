@@ -53,10 +53,9 @@ const styles = {
     top: '-8px',
   },
   todoText: {
-    color: '#ffffff',
+    color: 'black',
     fontSize: '1.2rem',
     fontWeight: 'bold',
-    backgroundColor: '#4a5568',
     padding: '0.5rem 1rem',
     borderRadius: '10px',
   },
@@ -71,6 +70,9 @@ const styles = {
     padding: '10px',
     marginBottom: '1rem',
     outline: 'none',
+    border: '2px solid black', // Dodanie czarnego obramowania
+    borderRadius: '5px',
+    
   },
   editButton: {
     backgroundColor: '#003366',
@@ -109,7 +111,7 @@ editBox: {
   title: {
     fontSize: '2rem',
     marginBottom: '1rem',
-    color: 'white',
+    color: 'black',
   },
   button: {
     padding: '0.5rem 1rem',
@@ -129,7 +131,7 @@ editBox: {
     color: 'white',
     borderRadius: '50px',
     position: 'absolute',
-    bottom: '50px',
+    bottom: '38px',
     left: '50%',
     transform: 'translateX(-50%)',
   },
