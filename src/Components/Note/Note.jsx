@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import styles from './style';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import {} from "./styles";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Link } from "react-router-dom";
 
 function Notepad() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   return (
     <div className="notepad">
@@ -32,7 +32,7 @@ function Notepad() {
 
   function saveNote() {
     //tu podłączenie do bazy
-    console.log('Zapisano notatkę:', title, content);
+    console.log("Zapisano notatkę:", title, content);
   }
 }
 

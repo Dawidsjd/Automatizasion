@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BiSolidSchool, BiSupport } from "react-icons/bi";
-import { IoReturnUpBack } from "react-icons/io5";
 import { FiSettings } from "react-icons/fi";
 import {
   StyledContainer,
@@ -16,7 +15,7 @@ import {
   StyledPanel,
 } from "./styles";
 import "./styles.css";
-import Logo from "./../../../assets/logo.svg";
+import Logo from "./../../../assets/Logo.svg";
 import PanelImage from "./../../../assets/PanelImage.svg";
 import AuthDetails from "../LogInBackEnd/AuthDetails";
 const LeftPanelDashboard = () => {

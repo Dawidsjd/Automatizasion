@@ -1,7 +1,8 @@
 import React from "react";
-import { StyledContainer, Title, Subtitle, Button } from "./styles";
+import { StyledContainer, Title, Subtitle, Button, Icon } from "./styles";
 import { Link } from "react-router-dom";
 import EastIcon from "@mui/icons-material/East";
+import SchoolImage from "../../../assets/SchoolImage.svg";
 
 const SchoolDiary = () => {
   return (
@@ -24,6 +25,7 @@ const SchoolDiary = () => {
             </Button>
           </Link>
         </div>
+        <Icon src={SchoolImage} alt="School Image" />
       </div>
     </StyledContainer>
   );

@@ -56,13 +56,6 @@ const Welcome = () => {
 
   return (
     <StyledContainer>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      ></div>
       <StyledCalendar>
         <StyledIcon>
           <BsFillCalendarEventFill />
