@@ -13,10 +13,11 @@ export const StyledDashboard = styled('div')(({ theme }) => ({
   display: 'flex',
 }));
 
-export const Widgets = styled('div')(({ theme }) => ({
+export const Widgets = styled('section')(({ theme }) => ({
   width: '100%',
   display: 'flex',
-  flexFlow: 'nowrap',
+  alignSelf: 'self-start',
+  // flexFlow: 'nowrap',
   gap: '20px',
   padding: '20px',
   flexDirection: 'column',
@@ -40,18 +41,22 @@ export const WidgetWrapper = styled('div')(({ theme }) => ({
     width: '95%',
   },
 
-  [theme.breakpoints.up('lg')]: {
+  [theme.breakpoints.up('xl')]: {
     '&:nth-child(1)': {
       width: '55%',
+      height: 'min-content',
     },
     '&:nth-child(2)': {
       width: '43%',
+      height: 'min-content',
     },
     '&:nth-child(3)': {
       width: '49%',
+      height: 'min-content',
     },
     '&:nth-child(4)': {
       width: '49%',
+      height: 'min-content',
     },
   },
 }));

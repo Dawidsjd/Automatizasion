@@ -12,7 +12,7 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   backdropFilter: 'blur(6.2px)',
   padding: '40px',
   maxWidth: '650px',
-  minHeight: '300px',
+  minHeight: '200px',
   margin: '20px auto',
   textAlign: 'left',
 }));
