@@ -1,14 +1,12 @@
-// style.js
-
 export const styles = {
-notepad: {
+  notepad: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
     height: "100vh",
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "white", // Poprawione
   },
   notepadHeader: {
     width: "100%",
@@ -26,13 +24,6 @@ notepad: {
     alignItems: "center",
   },
   exitBtn: {
-    backgroundColor: "#f0f0f0",
-    border: "none",
-    cursor: "pointer",
-    fontSize: "20px",
-  },
-    
-  exitBtn: { 
     position: 'absolute',
     top: '10px',
     left: '10px',
