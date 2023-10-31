@@ -68,7 +68,7 @@ const AuthDetails = () => {
             }`}</StyledUserName>
             <StyledStatusName>Status: active</StyledStatusName>
           </StyledProfile>
-          <StyledLoginBtn onClick={userSignOut} />
+          {/* <StyledLoginBtn onClick={userSignOut} /> */}
         </>
       ) : (
         <>

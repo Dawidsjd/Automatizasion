@@ -148,7 +148,7 @@ export const StyledUserAvatar = styled('img')(({ theme }) => ({
 export const StyledProfile = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  width: '120px',
+  width: '205px',
   padding: '5px',
   margin: '0 10px',
 }));
