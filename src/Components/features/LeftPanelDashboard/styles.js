@@ -60,6 +60,7 @@ export const StyledLink = styled(NavLink)(({ theme }) => ({
 export const StyledContainer = styled('div')(({ theme }) => ({
   height: '100vh',
   maxWidth: '325px',
+  minWidth: '275px',
   width: '22%',
   background: globalTheme.palette.primary.main,
   borderRadius: '0 35px 35px 0',
