@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './style';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Link } from 'react-router-dom';
+import punkt from '../../assets/punkt.svg';
 
 function ToDoList() {
   const [list, setList] = useState([]);
@@ -10,7 +11,7 @@ function ToDoList() {
   const [editText, setEditText] = useState('');
   const [isEditing, setIsEditing] = useState(false);
 
-  const addtolist = (todo) => {
+  const addToList = (todo) => {
     if (todo.trim() !== '') {
       const newTodoList = {
         id: Math.random(),
@@ -57,50 +58,51 @@ function ToDoList() {
         </Link>
         <h1 style={styles.title}>To-do List</h1>
         <input
-          type='text'
+          type="text"
           value={input}
           style={styles.input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              addtolist(input);
+              addToList(input);
             }
           }}
         />
-        <button onClick={() => addtolist(input)} style={styles.button}>
+        <button onClick={() => addToList(input)} style={styles.button}>
           ADD
         </button>
 
         <div style={styles.todoList}>
           <ul style={styles.bulletList}>
-  {list.map((todo, index) => (
-    <li key={todo.id} style={styles.bulletListItem}>
-      <span style={styles.bulletPoint}>•</span> 
-      {editIndex === index && isEditing ? (
-        <div style={styles.editBox}>
-          <input
-            type="text"
-            value={editText}
-            onChange={(e) => setEditText(e.target.value)}
-          />
-          <button onClick={() => saveEdit(index)}>Save</button>
+            {list.map((todo, index) => (
+  <li key={todo.id} style={styles.bulletListItem}>
+    <img src={punkt} alt="Obraz" style={styles.imageBulletPoint} />
+    {editIndex === index && isEditing ? (
+      <div style={styles.editBox}>
+        <input
+          type="text"
+          value={editText}
+          onChange={(e) => setEditText(e.target.value)}
+        />
+        <button onClick={() => saveEdit(index)}>Save</button>
+      </div>
+    ) : (
+      <div style={styles.listItem}>
+        <span style={styles.todoText}>{todo.todo}</span>
+        <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>
+          Edit
+        </button>
+        <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
+          X
+        </button>
+      </div>
+    )}
+    <hr style={styles.hr} />
+  </li>
+))}
+          </ul>
         </div>
-      ) : (
-        <div style={styles.listItemLeft}>
-          <span>{todo.todo}</span>
-          <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>Edit</button>
-          <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
-            X
-          </button>
-        </div>
-      )}
-      <hr style={styles.hr} />
-    </li>
-  ))}
-</ul>
-
-        </div>
-        
+                
         <button onClick={() => setIsEditing(true)} style={styles.saveButton}>
           Save
         </button>
@@ -108,8 +110,5 @@ function ToDoList() {
     </div>
   );
 }
-function saveTODO() {
-    //tu podłączenie do bazy
-   
-  }
+
 export default ToDoList;
