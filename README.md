@@ -5,6 +5,7 @@
 
 <h1>A L E           K O N G O</h1>
 
-<iframe src="https://giphy.com/embed/gkF7yMn87ZHiwKuntf" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/RoyalRiverMusik-dance-royalriver-kongoleo-gkF7yMn87ZHiwKuntf">via GIPHY</a></p>
 
+
+![giphy](https://github.com/Dawidsjd/Automatizasion/assets/95742362/24dba0f8-f046-4ecc-83e6-0f4c4266f8f5)
 
