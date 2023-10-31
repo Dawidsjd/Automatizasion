@@ -6,9 +6,7 @@ export const StyledNavbar = styled('div')(({ theme, clicked }) => ({
   display: 'flex',
   flexDirection: 'column',
   height: '100%',
-  width: '100%',
-  alignItems: 'flex-start',
-  justifyContent: 'center',
+  width: '80%',
   '& .link, & .link-active': {
     display: 'flex',
     width: '100%',
@@ -28,16 +26,32 @@ export const StyledNavbar = styled('div')(({ theme, clicked }) => ({
   },
 }));
 
+export const StyledWrapperGeneral = styled('section')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+  justifyContent: 'center',
+  margin: '50px 0',
+  span: {
+    color: '#bdc3c7',
+  },
+}));
+
 export const StyledLink = styled(NavLink)(({ theme }) => ({
   display: 'flex',
   width: '100%',
   height: '100%',
+  color: 'white !important',
   textDecoration: 'none',
   borderRadius: '7px',
   alignItems: 'center',
   justifyContent: 'left',
   color: '#caf0f6',
   fontSize: '14px',
+  a: {
+    color: '#fff !important',
+    width: '100%',
+  },
   '&.link-active, &:hover': {
     background: '#001e3b',
   },
@@ -46,7 +60,7 @@ export const StyledLink = styled(NavLink)(({ theme }) => ({
 export const StyledContainer = styled('div')(({ theme }) => ({
   height: '100vh',
   maxWidth: '325px',
-  width: '30%',
+  width: '22%',
   background: globalTheme.palette.primary.main,
   borderRadius: '0 35px 35px 0',
   display: 'flex',
@@ -79,23 +93,26 @@ export const StyledNav = styled('div')(({ theme }) => ({
   display: 'flex',
   width: '90%',
   height: 'auto',
-  margin: '60px 0',
+  margin: '0 0 50px 0',
   alignItems: 'center',
   justifyContent: 'center',
 }));
 
 export const StyledItem = styled('li')(({ theme }) => ({
   display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   height: '40px',
   width: '100%',
   margin: '5px 0',
   borderRadius: '7px',
-  color: 'red',
+  color: 'white',
 }));
 
 export const StyledIcon = styled('i')(({ theme }) => ({
   display: 'flex',
   margin: '0 15px',
+  color: 'white',
 }));
 
 export const StyledPanel = styled('img')(({ theme }) => ({
@@ -150,14 +167,20 @@ export const StyledStatusName = styled('span')(({ theme }) => ({
   margin: '0',
 }));
 
-export const StyledLoginBtn = styled('button')(({ theme }) => ({
-  background: 'none',
+export const StyledLoginBtn = styled('a')(({ theme }) => ({
   display: 'flex',
-  height: '40px',
-  width: '40px',
   alignItems: 'center',
-  justifyContent: 'center',
+  cursor: 'pointer',
+  width: '100%',
+  height: '100%',
   borderRadius: '7px',
+  color: 'white',
+  fontSize: '16px',
+  fontWeight: 'unset',
+  color: '#caf0f6',
+  '&:hover': {
+    background: '#001e3b',
+  },
 }));
 
 export const StyledLoginIcon = styled('i')(({ theme }) => ({
