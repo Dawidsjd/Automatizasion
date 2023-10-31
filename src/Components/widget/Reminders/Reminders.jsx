@@ -48,7 +48,7 @@ const Reminders = () => {
             </ReminderDescription>
           </Reminder>
           {/* podłączyć link do reminders */}
-          <Link to="">
+          <Link to="/SchoolDashboard/Reminder">
             <Button>
               Show more
               <BiShow style={{ marginLeft: "5px" }} />

@@ -13,6 +13,7 @@ import LogIn from "./pages/Safety/LogIn";
 import Register from "./pages/Safety/Register";
 import Settings from "./pages/Settings";
 import Support from "./pages/Support";
+import Reminder from "./Components/features/Reminders/Reminders";
 import Dziennik from "./Components/features/Dziennik/Dziennik";
 
 function App() {
@@ -73,6 +74,11 @@ function App() {
             element={<WikiSearch />}
           />
           <Route exact path="/SchoolDashboard/Notes" element={<Note />} />
+          <Route
+            exact
+            path="/SchoolDashboard/Reminder"
+            element={<Reminder />}
+          />
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
