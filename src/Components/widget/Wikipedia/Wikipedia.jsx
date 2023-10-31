@@ -1,7 +1,8 @@
 import React from "react";
-import { StyledContainer, Title, Subtitle, Button } from "./styles";
+import { StyledContainer, Title, Subtitle, Button, Icon } from "./styles";
 import { Link } from "react-router-dom";
 import EastIcon from "@mui/icons-material/East";
+import Knowledge from "../../../assets/Knowledge.svg";
 
 const Wikipedia = () => {
   return (
@@ -19,7 +20,6 @@ const Wikipedia = () => {
             Explore the World of Knowledge: Instant Access to Wikipedia's Vast
             Encyclopedia
           </Subtitle>
-          {/* Podłączyć tu link do wikipedi */}
           <Link to="/SchoolDashboard/Wikipedia">
             <Button>
               Search
@@ -27,6 +27,7 @@ const Wikipedia = () => {
             </Button>
           </Link>
         </div>
+        <Icon src={Knowledge} alt="Knowledge Image" />
       </div>
     </StyledContainer>
   );

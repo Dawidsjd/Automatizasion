@@ -40,3 +40,8 @@ export const Button = styled("button")(({ theme }) => ({
   cursor: "pointer",
   display: "flex",
 }));
+
+export const Icon = styled("img")(({ theme }) => ({
+  width: "35%",
+  height: "auto",
+}));
