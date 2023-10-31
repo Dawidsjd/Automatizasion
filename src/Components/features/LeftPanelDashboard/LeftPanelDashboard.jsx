@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiTwotoneHome } from 'react-icons/ai';
 import { BiSolidSchool, BiSupport } from 'react-icons/bi';
 import { IoReturnUpBack } from 'react-icons/io5';
 import { FiSettings } from 'react-icons/fi';
-=======
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { AiTwotoneHome } from "react-icons/ai";
-import { BiSolidSchool, BiSupport } from "react-icons/bi";
-import { FiSettings } from "react-icons/fi";
->>>>>>> 5561a2cd2edd5aeab771351fcbc8c2559908703b
+
 import {
   StyledContainer,
   StyledLogoContainer,
@@ -26,6 +19,7 @@ import {
 import Logo from './../../../assets/logo.svg';
 import PanelImage from './../../../assets/PanelImage.svg';
 import AuthDetails from '../LogInBackEnd/AuthDetails';
+
 const LeftPanelDashboard = () => {
   const [clicked, setClicked] = useState(false);
 
