@@ -1,6 +1,7 @@
 import globalTheme from '../GlobalStyles/GlobalTheme';
 import { styled } from '@mui/material/styles';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const StyledNavbar = styled('div')(({ theme, clicked }) => ({
   display: 'flex',
@@ -58,7 +59,7 @@ export const StyledLink = styled(NavLink)(({ theme }) => ({
 }));
 
 export const StyledContainer = styled('div')(({ theme }) => ({
-  height: '100vh',
+  minHeight: '100vh',
   maxWidth: '325px',
   minWidth: '275px',
   width: '22%',
@@ -69,7 +70,7 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   justifyContent: 'space-between',
 }));
 
-export const StyledLogoContainer = styled('div')(({ theme }) => ({
+export const StyledLogoContainer = styled(Link)(({ theme }) => ({
   background: globalTheme.palette.primary.dark,
   borderRadius: '0 10px 10px 0',
   display: 'flex',

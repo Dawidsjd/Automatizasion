@@ -4,7 +4,6 @@ import dashboardBackground from './../../assets/dashboardBackground.svg';
 
 export const StyledDashboard = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '100vh',
   background: `url(${dashboardBackground})`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',

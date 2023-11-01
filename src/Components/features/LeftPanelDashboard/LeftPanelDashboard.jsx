@@ -78,7 +78,7 @@ const LeftPanelDashboard = () => {
 
   return (
     <StyledContainer>
-      <StyledLogoContainer>
+      <StyledLogoContainer to='/'>
         <StyledLogoImage src={Logo} />
         <StyledLogo>FlowView</StyledLogo>
       </StyledLogoContainer>
