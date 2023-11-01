@@ -66,12 +66,14 @@ const styles = {
   float: 'left',
 },
   input: {
-    width: '100%',
+    width: '80%',
     padding: '10px',
-    marginBottom: '1rem',
+    marginBottom: '20px',
     outline: 'none',
     border: '2px solid black', // Dodanie czarnego obramowania
     borderRadius: '5px',
+    justifyContent: 'center',
+    margin: '0 auto',
     
   },
   editButton: {
@@ -120,6 +122,10 @@ editBox: {
     backgroundColor: '#003366',
     color: 'white',
     borderRadius: '70px',
+    width: '30%',
+    justifyContent: 'center',
+    margin: '0 auto',
+    
   },
   saveButton: {
     width: '100px',
