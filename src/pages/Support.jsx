@@ -1,13 +1,11 @@
-import React from "react";
-import LeftPanelDashboard from "../Components/features/LeftPanelDashboard/LeftPanelDashboard";
+import React from 'react';
+import { InlineWidget } from 'react-calendly';
 
 const Support = () => {
   return (
-    <>
-      <LeftPanelDashboard />
-      <div>Support</div>;
-    </>
+    <div className='App'>
+      <InlineWidget url='https://calendly.com/radoslawmarek/schedule-consultation' />
+    </div>
   );
 };
-
 export default Support;
