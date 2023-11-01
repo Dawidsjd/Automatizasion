@@ -6,12 +6,28 @@ export const styles = {
     justifyContent: "center",
     width: "100%",
     height: "100vh",
-    backgroundColor: "white",
+    backgroundColor: "#88a2c4",
   },
+ Background: {
+  background: '#a9c9dd',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  width: '1100px',
+  height: '700px',
+  textAlign: 'center',
+  margin: '128px auto',
+  borderRadius: '10px',
+  paddingBottom: '32px',
+  overflowY: 'auto',
+  boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)', // Dodaj box-shadow
+},
+
   notepadHeader: {
     width: "100%",
     padding: "1rem",
-    textAlign: "center",
+    textAlign: "left",
+    marginLeft: '30px',
   },
   notepadContent: {
     width: "100%",
