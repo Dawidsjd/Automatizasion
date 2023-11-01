@@ -18,7 +18,7 @@ const SchoolDiary = () => {
           <Title>School Diary</Title>
           <Subtitle>Stay Organized: Your Essential School Companion</Subtitle>
           {/* Podłączyć tu link do dziennika */}
-          <Link to="">
+          <Link to="/SchoolDashboard/Diary">
             <Button>
               Come in
               <EastIcon style={{ marginLeft: "5px" }} />

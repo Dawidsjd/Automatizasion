@@ -1,20 +1,22 @@
+// server.js
+
 const express = require('express');
 const setupVulcan = require('./vulcanApiExample');
 
 const app = express();
 
 const startServer = async () => {
-  const client = await setupVulcan();
+  app.use(express.json());
 
-  app.get('/api/students', async (req, res) => {
-    // Access client here
-    // const students = await client.getStudents();
-    // console.log('students: ', students);
+  app.post('/api/login', async (req, res) => {
+    const { indexNumber, schoolSymbol, password } = req.body;
 
-    const lessons = await client.getLessons();
+    const client = await setupVulcan(indexNumber, schoolSymbol, password);
+
+    // Pobierz lekcje
+    const lessons = await client.getLessons('2023-10-30', '2023-10-31');
     console.log('lessons: ', lessons);
 
-    // const studentsData = require('./dane_studentow.json');
     res.json(lessons);
   });
 

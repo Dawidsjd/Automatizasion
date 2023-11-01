@@ -15,6 +15,7 @@ import Settings from "./pages/Settings";
 import Support from "./pages/Support";
 import Reminder from "./Components/features/Reminders/Reminders";
 import Dziennik from "./Components/features/Dziennik/Dziennik";
+import Diary from "./Components/features/Diary/Diary";
 
 function App() {
   return (
@@ -79,6 +80,12 @@ function App() {
             path="/SchoolDashboard/Reminder"
             element={<Reminder />}
           />
+          <Route
+            exact
+            path="/SchoolDashboard/Diary"
+            element={<Diary />}
+          />
+          
         </Routes>
       </BrowserRouter>
       {/* <ChatBot /> */}
