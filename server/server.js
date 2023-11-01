@@ -11,13 +11,37 @@ const startServer = async () => {
   app.post('/api/login', async (req, res) => {
     const { indexNumber, schoolSymbol, password } = req.body;
 
-    const client = await setupVulcan(indexNumber, schoolSymbol, password);
+    try {
+      const client = await setupVulcan(indexNumber, schoolSymbol, password);
 
-    // Pobierz lekcje
-    const lessons = await client.getLessons('2023-10-30', '2023-10-31');
-    console.log('lessons: ', lessons);
+      // Pobierz lekcje od najbliższego poniedziałku do najbliższego piątku
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0 - niedziela, 1 - poniedziałek, ..., 6 - sobota
+    const mondayOffset = dayOfWeek === 0 ? 1 : 8 - dayOfWeek;
+    const fridayOffset = dayOfWeek === 0 ? 5 : 5 - dayOfWeek;
 
-    res.json(lessons);
+    const nextMonday = new Date(today);
+    nextMonday.setDate(today.getDate() + mondayOffset);
+
+    const nextFriday = new Date(today);
+    nextFriday.setDate(today.getDate() + fridayOffset);
+
+    if (nextFriday <= nextMonday) {
+      nextFriday.setDate(nextFriday.getDate() + 7); // Jeśli piątek ma datę wcześniejszą niż poniedziałek, dodaj tydzień
+    }
+
+    const formattedMonday = nextMonday.toISOString().split('T')[0];
+    const formattedFriday = nextFriday.toISOString().split('T')[0];
+
+      // Pobierz lekcje
+      const lessons = await client.getLessons(formattedMonday, formattedFriday);
+      console.log('lessons: ', lessons);
+
+      res.json(lessons);
+    } catch (error) {
+      console.error('Error logging in:', error);
+      res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
   });
 
   const PORT = process.env.PORT || 5000;
