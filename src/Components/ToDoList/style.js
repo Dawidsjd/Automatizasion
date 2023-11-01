@@ -24,6 +24,7 @@ const styles = {
     borderRadius: '10px',
     paddingBottom: '32px',
     overflowY: 'auto',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',
   },
   todoText: {
   color: '#ffffff',

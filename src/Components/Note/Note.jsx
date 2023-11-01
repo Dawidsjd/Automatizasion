@@ -9,6 +9,7 @@ function Notepad() {
 
   return (
     <div style={styles.notepad}>
+      <div style={styles.Background}>
       <h1 style={styles.title}>Note</h1>
       <div className="notepad-header" style={styles.notepadHeader}>
         <input
@@ -34,6 +35,7 @@ function Notepad() {
           <KeyboardBackspaceIcon />
         </button>
       </Link>
+    </div>
     </div>
   );
 
