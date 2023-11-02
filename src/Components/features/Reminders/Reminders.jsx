@@ -4,6 +4,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import Modal from "react-modal";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import {
+  AiFillCloseCircle,
+  AiOutlineCalendar,
+  AiOutlineClockCircle,
+} from "react-icons/ai";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import {
   RemindersContainer,
@@ -12,6 +17,19 @@ import {
   StyledHeader,
   StyledTitle,
   StyledModalBtn,
+  StyledModal,
+  StyledModalContent,
+  CloseButton,
+  Form,
+  FormGroup,
+  FormTitle,
+  StyledInputTitle,
+  StyledSelect,
+  StyledDate,
+  StyledTime,
+  StyledDatePicker,
+  StyledInputDesc,
+  SubmitBtn,
 } from "./styles";
 const RemindersList = () => {
   useEffect(() => {
@@ -146,7 +164,7 @@ const RemindersList = () => {
           <StyledTitle>Reminders</StyledTitle>
           <StyledModalBtn onClick={openModal}>Add</StyledModalBtn>
         </StyledHeader>
-        <Modal
+        <StyledModal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
@@ -154,127 +172,142 @@ const RemindersList = () => {
             isEditing ? "Edit Reminder Modal" : "Add Reminder Modal"
           }
         >
-          <h2>{isEditing ? "Edit" : "Add"}</h2>
-          <form onSubmit={isEditing ? handleEditSubmit : handleSubmit}>
-            <label>
-              Title:
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </label>
-            <div>
-              Start Date:
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => {
-                  const today = new Date();
-                  today.setHours(0, 0, 0, 0);
-                  if (date < today) {
-                    return;
-                  }
-                  setStartDate(date);
-                }}
-                dateFormat="dd-MM-yyyy"
-                minDate={new Date()}
-              />
-            </div>
-            <div>
-              End Date:
-              <DatePicker
-                selected={endDate}
-                onChange={(date) => setEndDate(date)}
-                dateFormat="dd-MM-yyyy"
-                minDate={startDate}
-              />
-            </div>
-            <div>
-              Start Time:
-              <DatePicker
-                selected={startTime}
-                onChange={(time) => {
-                  const now = new Date();
-                  now.setSeconds(0, 0);
-                  if (moment(startDate).isSame(now, "date") && time < now) {
-                    return;
-                  }
-                  setStartTime(time);
-                }}
-                showTimeSelect
-                showTimeSelectOnly
-                timeIntervals={15}
-                timeCaption="Time"
-                dateFormat="HH:mm"
-                minTime={
-                  moment(startDate).isSame(new Date(), "date")
-                    ? moment().add(15, "minutes").format("HH:mm")
-                    : "00:00"
-                }
-                maxTime={
-                  moment(startDate).isSame(new Date(), "date")
-                    ? "23:59"
-                    : "23:59"
-                }
-              />
-            </div>
-            <div>
-              End Time:
-              <DatePicker
-                selected={endTime}
-                onChange={(time) => {
-                  if (
-                    moment(startDate).isSame(endDate, "day") &&
-                    moment(time).isBefore(startTime)
-                  ) {
-                    setEndTime(startTime);
-                  } else {
-                    setEndTime(time);
-                  }
-                }}
-                showTimeSelect
-                showTimeSelectOnly
-                timeIntervals={15}
-                timeCaption="Time"
-                dateFormat="HH:mm"
-                minTime={
-                  moment(startDate).isSame(endDate, "day")
-                    ? moment(startTime).format("HH:mm")
-                    : "00:00"
-                }
-                maxTime={
-                  moment(startDate).isSame(endDate, "day") ? "23:59" : "23:59"
-                }
-              />
-            </div>
-            <label>
-              Description:
-              <input
-                type="text"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </label>
-            <label>
-              Category:
-              <select
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                required
-              >
-                <option value="">Select category</option>
-                <option value="homework">Zadanie domowe</option>
-                <option value="exam">Sprawdzian</option>
-                <option value="project">Projekt</option>
-                <option value="other">Inne</option>
-              </select>
-            </label>
-            <button type="button" onClick={closeModal}>
-              Close
-            </button>
-            <button type="submit">{isEditing ? "Save" : "Add Reminder"}</button>
-          </form>
-        </Modal>
+          <StyledModalContent>
+            <CloseButton type="button" onClick={closeModal}>
+              <AiFillCloseCircle />
+            </CloseButton>
+            <Form onSubmit={isEditing ? handleEditSubmit : handleSubmit}>
+              <FormGroup>
+                <FormTitle>Title</FormTitle>
+                <StyledInputTitle
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Reminder title"
+                />
+              </FormGroup>
+              <FormGroup>
+                <FormTitle>Category</FormTitle>
+                <StyledSelect
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  required
+                >
+                  <option value="">Select category</option>
+                  <option value="homework" style={{ color: "blue" }}>
+                    Homework
+                  </option>
+                  <option value="test" style={{ color: "red" }}>
+                    Test
+                  </option>
+                  <option value="project" style={{ color: "orange" }}>
+                    Project
+                  </option>
+                  <option value="other" style={{ color: "green" }}>
+                    Other
+                  </option>
+                </StyledSelect>
+              </FormGroup>
+              <FormGroup>
+                <FormTitle>
+                  Set Date <AiOutlineCalendar />
+                </FormTitle>
+                <StyledDate>
+                  <StyledDatePicker
+                    selected={startDate}
+                    onChange={(date) => {
+                      const today = new Date();
+                      today.setHours(0, 0, 0, 0);
+                      if (date < today) {
+                        return;
+                      }
+                      setStartDate(date);
+                    }}
+                    dateFormat="dd-MM-yyyy"
+                    minDate={new Date()}
+                  />
+                  <StyledDatePicker
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    dateFormat="dd-MM-yyyy"
+                    minDate={startDate}
+                  />
+                </StyledDate>
+              </FormGroup>
+              <FormGroup>
+                <FormTitle>
+                  Set Time <AiOutlineClockCircle />
+                </FormTitle>
+                <StyledTime>
+                  <StyledDatePicker
+                    selected={startTime}
+                    onChange={(time) => {
+                      const now = new Date();
+                      now.setSeconds(0, 0);
+                      if (moment(startDate).isSame(now, "date") && time < now) {
+                        return;
+                      }
+                      setStartTime(time);
+                    }}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={15}
+                    timeCaption="Time"
+                    dateFormat="HH:mm"
+                    minTime={
+                      moment(startDate).isSame(new Date(), "date")
+                        ? moment().add(15, "minutes").format("HH:mm")
+                        : "00:00"
+                    }
+                    maxTime={
+                      moment(startDate).isSame(new Date(), "date")
+                        ? "23:59"
+                        : "23:59"
+                    }
+                  />
+                  <StyledDatePicker
+                    selected={endTime}
+                    onChange={(time) => {
+                      if (
+                        moment(startDate).isSame(endDate, "day") &&
+                        moment(time).isBefore(startTime)
+                      ) {
+                        setEndTime(startTime);
+                      } else {
+                        setEndTime(time);
+                      }
+                    }}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={15}
+                    timeCaption="Time"
+                    dateFormat="HH:mm"
+                    minTime={
+                      moment(startDate).isSame(endDate, "day")
+                        ? moment(startTime).format("HH:mm")
+                        : "00:00"
+                    }
+                    maxTime={
+                      moment(startDate).isSame(endDate, "day")
+                        ? "23:59"
+                        : "23:59"
+                    }
+                  />
+                </StyledTime>
+              </FormGroup>
+              <FormGroup>
+                <FormTitle>Description</FormTitle>
+                <StyledInputDesc
+                  type="text"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="(e.g. Test from unit 6) "
+                />
+              </FormGroup>
+              <SubmitBtn type="submit">{isEditing ? "Save" : "Add"}</SubmitBtn>
+            </Form>
+          </StyledModalContent>
+        </StyledModal>
         <div>
           <h3>Reminders:</h3>
           {[...remindersMap].map(([date, reminders], index) => (
