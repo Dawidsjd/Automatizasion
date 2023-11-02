@@ -1,6 +1,7 @@
 ![image](https://github.com/Dawidsjd/Automatizasion/assets/95742362/da06ca07-a4e9-4788-a554-f96e81f63687)<h1>HackHeroes 2k23</h1> <br />
 
 <h3>Szybki host loginu: https://zippy-pasca-b55f6c.netlify.app</h3> <br />
+<h2>Koordynator Hackathonu Tomasz Kasper</h2>
 
 
 <h1>A L E           K O N G O</h1>
