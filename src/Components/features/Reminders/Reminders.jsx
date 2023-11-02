@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Modal from "react-modal";
 import moment from "moment";
-
+import { Link } from "react-router-dom";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import {
+  RemindersContainer,
+  StyledButton,
+  RemindersContent,
+  StyledHeader,
+  StyledTitle,
+  StyledModalBtn,
+} from "./styles";
 const RemindersList = () => {
+  useEffect(() => {
+    document.title = "Reminders";
+  });
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editReminder, setEditReminder] = useState(null);
@@ -122,153 +135,171 @@ const RemindersList = () => {
   };
 
   return (
-    <div>
-      <h2>Reminders List</h2>
-      <button onClick={openModal}>Add</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel={isEditing ? "Edit Reminder Modal" : "Add Reminder Modal"}
-      >
-        <h2>{isEditing ? "Edit" : "Add"}</h2>
-        <form onSubmit={isEditing ? handleEditSubmit : handleSubmit}>
-          <label>
-            Title:
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </label>
-          <div>
-            Start Date:
-            <DatePicker
-              selected={startDate}
-              onChange={(date) => {
-                const today = new Date();
-                today.setHours(0, 0, 0, 0);
-                if (date < today) {
-                  return;
+    <RemindersContainer>
+      <Link to="/SchoolDashboard">
+        <StyledButton>
+          <KeyboardBackspaceIcon />
+        </StyledButton>
+      </Link>
+      <RemindersContent>
+        <StyledHeader>
+          <StyledTitle>Reminders</StyledTitle>
+          <StyledModalBtn onClick={openModal}>Add</StyledModalBtn>
+        </StyledHeader>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          contentLabel={
+            isEditing ? "Edit Reminder Modal" : "Add Reminder Modal"
+          }
+        >
+          <h2>{isEditing ? "Edit" : "Add"}</h2>
+          <form onSubmit={isEditing ? handleEditSubmit : handleSubmit}>
+            <label>
+              Title:
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </label>
+            <div>
+              Start Date:
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => {
+                  const today = new Date();
+                  today.setHours(0, 0, 0, 0);
+                  if (date < today) {
+                    return;
+                  }
+                  setStartDate(date);
+                }}
+                dateFormat="dd-MM-yyyy"
+                minDate={new Date()}
+              />
+            </div>
+            <div>
+              End Date:
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                dateFormat="dd-MM-yyyy"
+                minDate={startDate}
+              />
+            </div>
+            <div>
+              Start Time:
+              <DatePicker
+                selected={startTime}
+                onChange={(time) => {
+                  const now = new Date();
+                  now.setSeconds(0, 0);
+                  if (moment(startDate).isSame(now, "date") && time < now) {
+                    return;
+                  }
+                  setStartTime(time);
+                }}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={15}
+                timeCaption="Time"
+                dateFormat="HH:mm"
+                minTime={
+                  moment(startDate).isSame(new Date(), "date")
+                    ? moment().add(15, "minutes").format("HH:mm")
+                    : "00:00"
                 }
-                setStartDate(date);
-              }}
-              dateFormat="dd-MM-yyyy"
-              minDate={new Date()}
-            />
-          </div>
-          <div>
-            End Date:
-            <DatePicker
-              selected={endDate}
-              onChange={(date) => setEndDate(date)}
-              dateFormat="dd-MM-yyyy"
-              minDate={startDate}
-            />
-          </div>
-          <div>
-            Start Time:
-            <DatePicker
-              selected={startTime}
-              onChange={(time) => {
-                const now = new Date();
-                now.setSeconds(0, 0);
-                if (moment(startDate).isSame(now, "date") && time < now) {
-                  return;
+                maxTime={
+                  moment(startDate).isSame(new Date(), "date")
+                    ? "23:59"
+                    : "23:59"
                 }
-                setStartTime(time);
-              }}
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={15}
-              timeCaption="Time"
-              dateFormat="HH:mm"
-              minTime={
-                moment(startDate).isSame(new Date(), "date")
-                  ? moment().add(15, "minutes").format("HH:mm")
-                  : "00:00"
-              }
-              maxTime={
-                moment(startDate).isSame(new Date(), "date") ? "23:59" : "23:59"
-              }
-            />
-          </div>
-          <div>
-            End Time:
-            <DatePicker
-              selected={endTime}
-              onChange={(time) => {
-                if (
-                  moment(startDate).isSame(endDate, "day") &&
-                  moment(time).isBefore(startTime)
-                ) {
-                  setEndTime(startTime);
-                } else {
-                  setEndTime(time);
+              />
+            </div>
+            <div>
+              End Time:
+              <DatePicker
+                selected={endTime}
+                onChange={(time) => {
+                  if (
+                    moment(startDate).isSame(endDate, "day") &&
+                    moment(time).isBefore(startTime)
+                  ) {
+                    setEndTime(startTime);
+                  } else {
+                    setEndTime(time);
+                  }
+                }}
+                showTimeSelect
+                showTimeSelectOnly
+                timeIntervals={15}
+                timeCaption="Time"
+                dateFormat="HH:mm"
+                minTime={
+                  moment(startDate).isSame(endDate, "day")
+                    ? moment(startTime).format("HH:mm")
+                    : "00:00"
                 }
-              }}
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={15}
-              timeCaption="Time"
-              dateFormat="HH:mm"
-              minTime={
-                moment(startDate).isSame(endDate, "day")
-                  ? moment(startTime).format("HH:mm")
-                  : "00:00"
-              }
-              maxTime={
-                moment(startDate).isSame(endDate, "day") ? "23:59" : "23:59"
-              }
-            />
-          </div>
-          <label>
-            Description:
-            <input
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </label>
-          <label>
-            Category:
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              required
-            >
-              <option value="">Select category</option>
-              <option value="homework">Zadanie domowe</option>
-              <option value="exam">Sprawdzian</option>
-              <option value="project">Projekt</option>
-              <option value="other">Inne</option>
-            </select>
-          </label>
-          <button type="submit">{isEditing ? "Save" : "Add Reminder"}</button>
-        </form>
-      </Modal>
-      <div>
-        <h3>Reminders:</h3>
-        {[...remindersMap].map(([date, reminders], index) => (
-          <div key={index}>
-            <h3>{date}</h3>
-            {reminders.map((reminder, idx) => (
-              <div key={idx}>
-                <h4>{reminder.title}</h4>
-                <p>
-                  {moment(reminder.startTime).format("HH:mm")}-
-                  {moment(reminder.endTime).format("HH:mm")}
-                </p>
-                <p>Description: {reminder.description}</p>
-                <p>Category: {reminder.category}</p>
-                <button onClick={() => handleEdit(date, idx)}>Edit</button>
-                <button onClick={() => handleDelete(date, idx)}>Delete</button>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
+                maxTime={
+                  moment(startDate).isSame(endDate, "day") ? "23:59" : "23:59"
+                }
+              />
+            </div>
+            <label>
+              Description:
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </label>
+            <label>
+              Category:
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                required
+              >
+                <option value="">Select category</option>
+                <option value="homework">Zadanie domowe</option>
+                <option value="exam">Sprawdzian</option>
+                <option value="project">Projekt</option>
+                <option value="other">Inne</option>
+              </select>
+            </label>
+            <button type="button" onClick={closeModal}>
+              Close
+            </button>
+            <button type="submit">{isEditing ? "Save" : "Add Reminder"}</button>
+          </form>
+        </Modal>
+        <div>
+          <h3>Reminders:</h3>
+          {[...remindersMap].map(([date, reminders], index) => (
+            <div key={index}>
+              <h3>{date}</h3>
+              {reminders.map((reminder, idx) => (
+                <div key={idx}>
+                  <h4>{reminder.title}</h4>
+                  <p>
+                    {moment(reminder.startTime).format("HH:mm")}-
+                    {moment(reminder.endTime).format("HH:mm")}
+                  </p>
+                  <p>Description: {reminder.description}</p>
+                  <p>Category: {reminder.category}</p>
+                  <button onClick={() => handleEdit(date, idx)}>Edit</button>
+                  <button onClick={() => handleDelete(date, idx)}>
+                    Delete
+                  </button>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </RemindersContent>
+    </RemindersContainer>
   );
 };
 
