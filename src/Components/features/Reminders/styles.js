@@ -145,7 +145,7 @@ export const StyledTime = styled("div")(({ theme }) => ({
 }));
 
 export const StyledDatePicker = styled(DatePicker)(({ theme }) => ({
-  width: "100%",
+  width: "95%",
   border: "1px solid #A1A5A9",
   borderRadius: "5px",
   fontSize: globalTheme.typography.smallfontsize.main,
