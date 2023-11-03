@@ -177,6 +177,46 @@ export const SubmitBtn = styled("button")(({ theme }) => ({
   },
 }));
 
+export const ReminerdsList = styled("div")(({ theme }) => ({
+  display: "flex",
+  margin: "20px",
+  maxHeight: "80%",
+}));
+
+export const TodayReminders = styled("div")(({ theme }) => ({
+  flex: 1,
+  overflowY: "auto",
+}));
+
+export const UpcomingReminders = styled("div")(({ theme }) => ({
+  flex: 2,
+  overflowY: "auto",
+}));
+
+export const UpcomingList = styled("div")(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "2fr 2fr",
+}));
+
+export const ReminderSectionName = styled("h3")(({ theme }) => ({
+  fontSize: globalTheme.typography.mediumfontsize.main,
+  color: globalTheme.palette.textcolorprimary.main,
+  margin: "10px 5px",
+}));
+
+export const Reminder = styled("div")(({ theme }) => ({
+  border: "1px solid red",
+  width: "90%",
+}));
+
+// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+
+// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+
+// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+
+// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+
 // export const RemindersContainer = styled("div")(({ theme }) => ({}));
 
 // export const RemindersContainer = styled("div")(({ theme }) => ({}));

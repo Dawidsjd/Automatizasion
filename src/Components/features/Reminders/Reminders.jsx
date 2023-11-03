@@ -8,6 +8,8 @@ import {
   AiFillCloseCircle,
   AiOutlineCalendar,
   AiOutlineClockCircle,
+  AiFillEdit,
+  AiFillDelete,
 } from "react-icons/ai";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import {
@@ -30,6 +32,12 @@ import {
   StyledDatePicker,
   StyledInputDesc,
   SubmitBtn,
+  ReminerdsList,
+  TodayReminders,
+  UpcomingReminders,
+  UpcomingList,
+  ReminderSectionName,
+  Reminder,
 } from "./styles";
 const RemindersList = () => {
   useEffect(() => {
@@ -152,6 +160,12 @@ const RemindersList = () => {
     setRemindersMap(new Map(remindersMap));
   };
 
+  const todayDate = moment(new Date()).format("Do MMMM");
+  const todayReminders = remindersMap.get(todayDate) || [];
+  const upcomingReminders = [...remindersMap].filter(([date, _]) =>
+    moment(date, "Do MMMM").isAfter(moment(), "day")
+  );
+
   return (
     <RemindersContainer>
       <Link to="/SchoolDashboard">
@@ -251,12 +265,12 @@ const RemindersList = () => {
                     }}
                     showTimeSelect
                     showTimeSelectOnly
-                    timeIntervals={15}
+                    timeIntervals={10}
                     timeCaption="Time"
                     dateFormat="HH:mm"
                     minTime={
                       moment(startDate).isSame(new Date(), "date")
-                        ? moment().add(15, "minutes").format("HH:mm")
+                        ? moment().add(10, "minutes").format("HH:mm")
                         : "00:00"
                     }
                     maxTime={
@@ -279,7 +293,7 @@ const RemindersList = () => {
                     }}
                     showTimeSelect
                     showTimeSelectOnly
-                    timeIntervals={15}
+                    timeIntervals={10}
                     timeCaption="Time"
                     dateFormat="HH:mm"
                     minTime={
@@ -308,29 +322,122 @@ const RemindersList = () => {
             </Form>
           </StyledModalContent>
         </StyledModal>
-        <div>
-          <h3>Reminders:</h3>
-          {[...remindersMap].map(([date, reminders], index) => (
-            <div key={index}>
-              <h3>{date}</h3>
-              {reminders.map((reminder, idx) => (
-                <div key={idx}>
-                  <h4>{reminder.title}</h4>
-                  <p>
-                    {moment(reminder.startTime).format("HH:mm")}-
-                    {moment(reminder.endTime).format("HH:mm")}
-                  </p>
-                  <p>Description: {reminder.description}</p>
-                  <p>Category: {reminder.category}</p>
-                  <button onClick={() => handleEdit(date, idx)}>Edit</button>
-                  <button onClick={() => handleDelete(date, idx)}>
-                    Delete
-                  </button>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        <ReminerdsList>
+          <TodayReminders>
+            <ReminderSectionName>Today</ReminderSectionName>
+            {[...remindersMap].map(([date, reminders], index) => {
+              if (moment(date, "Do MMMM").isSame(new Date(), "day")) {
+                return (
+                  <Reminder key={index}>
+                    {moment(date, "Do MMMM").isSame(
+                      new Date(),
+                      "day"
+                    ) ? null : (
+                      <h3>{date}</h3>
+                    )}
+                    {reminders.map((reminder, idx) => {
+                      if (
+                        moment(reminder.startDate).isSame(new Date(), "day")
+                      ) {
+                        return (
+                          <div key={idx} style={{ position: "relative" }}>
+                            <button
+                              style={{
+                                position: "absolute",
+                                right: "5px",
+                                top: "0px",
+                              }}
+                              onClick={() => handleEdit(date, idx)}
+                            >
+                              <AiFillEdit />
+                            </button>
+                            <button
+                              style={{
+                                position: "absolute",
+                                right: "5px",
+                                top: "20px",
+                              }}
+                              onClick={() => handleDelete(date, idx)}
+                            >
+                              <AiFillDelete />
+                            </button>
+                            <h4>{reminder.title}</h4>
+                            <p>
+                              {moment(reminder.startTime).format("HH:mm")}-
+                              {moment(reminder.endTime).format("HH:mm")}
+                            </p>
+                            <p>Description: {reminder.description}</p>
+                            <p>Category: {reminder.category}</p>
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
+                  </Reminder>
+                );
+              }
+              return null;
+            })}
+          </TodayReminders>
+          <UpcomingReminders>
+            <ReminderSectionName>Upcoming</ReminderSectionName>
+            <UpcomingList>
+              {[...remindersMap].map(([date, reminders], index) => {
+                if (!moment(date, "Do MMMM").isSame(new Date(), "day")) {
+                  return (
+                    <Reminder key={index}>
+                      <h3>{date}</h3>
+                      <div>
+                        {reminders.map((reminder, idx) => {
+                          if (
+                            !moment(reminder.startDate).isSame(
+                              new Date(),
+                              "day"
+                            )
+                          ) {
+                            return (
+                              <div key={idx} style={{ position: "relative" }}>
+                                <button
+                                  style={{
+                                    position: "absolute",
+                                    right: "5px",
+                                    top: "0px",
+                                  }}
+                                  onClick={() => handleEdit(date, idx)}
+                                >
+                                  <AiFillEdit />
+                                </button>
+                                <button
+                                  style={{
+                                    position: "absolute",
+                                    right: "5px",
+                                    top: "20px",
+                                  }}
+                                  onClick={() => handleDelete(date, idx)}
+                                >
+                                  <AiFillDelete />
+                                </button>
+                                <h4>{reminder.title}</h4>
+                                <p>
+                                  {moment(reminder.startTime).format("HH:mm")}-
+                                  {moment(reminder.endTime).format("HH:mm")}
+                                </p>
+                                <p>Description: {reminder.description}</p>
+                                <p>Category: {reminder.category}</p>
+                              </div>
+                            );
+                          }
+                          return null;
+                        })}
+                      </div>
+                    </Reminder>
+                  );
+                }
+                return null;
+              })}
+            </UpcomingList>
+          </UpcomingReminders>
+        </ReminerdsList>
       </RemindersContent>
     </RemindersContainer>
   );
