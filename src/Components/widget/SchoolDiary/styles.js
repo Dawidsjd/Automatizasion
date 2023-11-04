@@ -9,7 +9,7 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   background: globalTheme.palette.tiles.light,
   backdropFilter: 'blur(6.2px)',
-  width: '650px',
+  // width: "650px" xddddddddddddddddddddd,
   minHeight: '300px',
   marginTop: '2%',
   marginLeft: '5%',

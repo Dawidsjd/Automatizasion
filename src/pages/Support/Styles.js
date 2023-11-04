@@ -8,17 +8,16 @@ export const StyledSupportContainer = styled('main')(({ theme }) => ({
 
 export const StyledWrapper = styled('div')(({ theme }) => ({
   background: 'white',
-  borderRadius: '25px',
-  margin: '200px 0',
-  paddingTop: '50px',
+  borderRadius: '50px',
+  margin: '26vh 0 10vh 0',
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  [theme.breakpoints.up('lg')]: {
+  [theme.breakpoints.up('xl')]: {
     width: '80%',
-    // margin: '200px 0',
+    paddingTop: '50px',
   },
 }));
 

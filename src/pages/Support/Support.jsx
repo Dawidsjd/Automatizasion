@@ -27,7 +27,12 @@ const Support = () => {
             </p>
           </StyledWrapperContent>
           <StyledMain>
-            <InlineWidget url='https://calendly.com/flowview/contact' />
+            <InlineWidget
+              url='https://calendly.com/flowview/contact'
+              styles={{
+                height: '700px',
+              }}
+            />
           </StyledMain>
         </StyledWrapper>
       </StyledSupportContainer>
