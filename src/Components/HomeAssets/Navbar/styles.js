@@ -11,7 +11,7 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   top: '0',
   left: '0',
   zIndex: '999',
-  background: '#484cec',
+  background: '#3a7ae3',
   transition: '.3s',
   [theme.breakpoints.up('lg')]: {
     width: '100%',
@@ -36,8 +36,7 @@ export const StyledHeaderContent = styled('div')(({ theme }) => ({
 }));
 
 export const StyledImageWrapper = styled('section')(({ theme }) => ({
-  width: '100px',
-  marginRight: '25px',
+  width: '215px',
   [theme.breakpoints.up('lg')]: {
     margin: '0',
   },
@@ -51,11 +50,11 @@ export const StyledImage = styled('div')(({ theme }) => ({
 export const StyledLink = styled(Link)(({ theme }) => ({
   color: 'white',
   fontSize: '16px',
+  margin: '25px 0',
   fontWeight: '600',
   letterSpacing: '1px',
   whiteSpace: 'nowrap',
   padding: '5px',
-  margin: '10px',
   transition: '.2s',
   '&: hover': {
     color: '#ced6e0',
@@ -145,3 +144,5 @@ export const BurgerBox = styled('div')(({ theme }) => ({
     display: 'none',
   },
 }));
+
+export const StyledLogo = styled('img')(({ theme }) => ({}));

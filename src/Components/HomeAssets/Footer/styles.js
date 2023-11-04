@@ -31,7 +31,7 @@ const SharedStyles = {
     margin: 0,
   },
   '& h3': {
-    color: '#5865F2',
+    color: '#3a7ae3',
     padding: 0,
     margin: 0,
   },

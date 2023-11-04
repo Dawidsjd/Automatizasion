@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import newsletter from '../../../assets/newsLetter.svg';
+import place from '../../../assets/placeHome.svg';
 
 // Main.jsx
 export const StyledMain = styled('main')(({ theme }) => ({
@@ -51,10 +52,21 @@ export const StyledAssets = styled('section')(({ theme }) => ({
   height: '350px',
   background: 'none',
   color: 'white',
+  marginBottom: '25px',
   [theme.breakpoints.up('lg')]: {
     flexDirection: 'unset',
     width: '45%',
+    marginBottom: 0,
   },
+}));
+
+export const StyledSingleAsset = styled('div')(({ theme }) => ({
+  backgroundImage: `url(${place})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  width: '100%',
+  height: '102%',
 }));
 
 export const StyledContent = styled('section')(({ theme }) => ({

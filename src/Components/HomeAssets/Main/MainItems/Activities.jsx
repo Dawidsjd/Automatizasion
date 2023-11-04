@@ -19,7 +19,7 @@ const Activities = () => {
               is designed to make using it a pure pleasure.
             </p>
           </StyledContent>
-          <StyledVisualSection>Keyframes or idk</StyledVisualSection>
+          <StyledVisualSection></StyledVisualSection>
         </WrapperActivities>
       </div>
     </StyledWrapperItem>

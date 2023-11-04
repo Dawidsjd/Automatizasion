@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import HeroBackground from '../../../assets/HeroBackground.svg';
 
 export const StyledHeroContainer = styled('section')(({ theme }) => ({
-  background: '#484CEC',
+  background: '#246bd3',
   display: 'flex',
   justifyContent: 'center',
 }));
 
 export const StyledHeroWrapper = styled('section')(({ theme }) => ({
-  backgroundColor: '#484CEC',
+  backgroundColor: '#246bd3',
   zIndex: '0',
   display: 'flex',
   justifyContent: 'center',

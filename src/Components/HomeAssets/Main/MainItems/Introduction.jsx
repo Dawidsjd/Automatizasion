@@ -4,6 +4,7 @@ import {
   StyledAssets,
   StyledContent,
   WrapperItem,
+  StyledSingleAsset,
 } from '../styles';
 
 const Introduction = () => {
@@ -11,7 +12,9 @@ const Introduction = () => {
     <StyledWrapperItem>
       <div style={{ maxWidth: 1250 }}>
         <WrapperItem>
-          <StyledAssets>IMAGE DASHOBARD</StyledAssets>
+          <StyledAssets>
+            <StyledSingleAsset />
+          </StyledAssets>
           <StyledContent>
             <h2>A place you'll love to return to</h2>
             <p>

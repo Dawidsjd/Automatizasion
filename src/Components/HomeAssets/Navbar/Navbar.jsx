@@ -10,9 +10,12 @@ import {
   BurgerBox,
   StyledWrapperNav,
   StyledHeaderContent,
+  StyledLogo,
 } from './styles';
 
 import { Sling as Hamburger } from 'hamburger-react';
+
+import logo from '../../../assets/logo.svg';
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -42,7 +45,7 @@ const Navbar = () => {
     <StyledHeader style={{ height: `${headerHeight}px` }}>
       <StyledHeaderContent>
         <StyledImageWrapper>
-          <StyledImage>FlowView</StyledImage>
+          <StyledLogo src={logo} />
         </StyledImageWrapper>
 
         <ResponsiveBurger>
@@ -57,7 +60,6 @@ const Navbar = () => {
             <StyledNav>
               <StyledLink to='/'>Home</StyledLink>
               <StyledLink to='/homeDashboard'>Dashboard</StyledLink>
-              <StyledLink to='/ourTeam'>Our team</StyledLink>
               <StyledLink to='/support'>Support</StyledLink>
             </StyledNav>
           </StyledWrapperNav>
