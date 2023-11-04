@@ -52,6 +52,7 @@ const RecipeSearch = () => {
   const [searchClicked, setSearchClicked] = useState(false);
   const [open, setOpen] = React.useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [fetchCount, setFetchCount] = useState(0);
 
   const handleClickOpen = (recipe) => {
     setSelectedRecipe(recipe);
@@ -90,11 +91,11 @@ const RecipeSearch = () => {
 
   useEffect(() => {
     fetchData();
-  }, [query]);
+  }, [query, fetchCount]);
 
   const handleSearch = () => {
+    setFetchCount(prevCount => prevCount + 1);
     setSearchClicked(true);
-    fetchData();
   };
 
   return (
