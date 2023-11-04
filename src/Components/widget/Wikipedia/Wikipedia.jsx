@@ -27,7 +27,7 @@ const Wikipedia = () => {
             </Button>
           </Link>
         </div>
-        <Icon src={Knowledge} alt="Knowledge Image" />
+        <Icon draggable="false" src={Knowledge} alt="Knowledge Image" />
       </div>
     </StyledContainer>
   );

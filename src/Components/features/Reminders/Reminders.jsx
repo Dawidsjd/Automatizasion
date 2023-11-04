@@ -38,6 +38,15 @@ import {
   UpcomingList,
   ReminderSectionName,
   Reminder,
+  EditBtn,
+  DeleteBtn,
+  ReminderTitle,
+  ReminderDate,
+  ReminderTime,
+  ReminderDescription,
+  ReminderCategory,
+  CategoryName,
+  CategoryStatus,
 } from "./styles";
 const RemindersList = () => {
   useEffect(() => {
@@ -339,35 +348,46 @@ const RemindersList = () => {
                       if (
                         moment(reminder.startDate).isSame(new Date(), "day")
                       ) {
+                        let categoryStatusColor;
+                        switch (reminder.category) {
+                          case "homework":
+                            categoryStatusColor = "blue";
+                            break;
+                          case "test":
+                            categoryStatusColor = "red";
+                            break;
+                          case "project":
+                            categoryStatusColor = "orange";
+                            break;
+                          case "other":
+                            categoryStatusColor = "green";
+                            break;
+                          default:
+                            categoryStatusColor = "black";
+                        }
+
                         return (
                           <div key={idx} style={{ position: "relative" }}>
-                            <button
-                              style={{
-                                position: "absolute",
-                                right: "5px",
-                                top: "0px",
-                              }}
-                              onClick={() => handleEdit(date, idx)}
-                            >
+                            <EditBtn onClick={() => handleEdit(date, idx)}>
                               <AiFillEdit />
-                            </button>
-                            <button
-                              style={{
-                                position: "absolute",
-                                right: "5px",
-                                top: "20px",
-                              }}
-                              onClick={() => handleDelete(date, idx)}
-                            >
+                            </EditBtn>
+                            <DeleteBtn onClick={() => handleDelete(date, idx)}>
                               <AiFillDelete />
-                            </button>
-                            <h4>{reminder.title}</h4>
-                            <p>
+                            </DeleteBtn>
+                            <ReminderTitle>{reminder.title}</ReminderTitle>
+                            <ReminderTime>
                               {moment(reminder.startTime).format("HH:mm")}-
                               {moment(reminder.endTime).format("HH:mm")}
-                            </p>
-                            <p>Description: {reminder.description}</p>
-                            <p>Category: {reminder.category}</p>
+                            </ReminderTime>
+                            <ReminderDescription>
+                              {reminder.description}
+                            </ReminderDescription>
+                            <ReminderCategory>
+                              <CategoryStatus
+                                style={{ backgroundColor: categoryStatusColor }}
+                              />
+                              <CategoryName>{reminder.category}</CategoryName>
+                            </ReminderCategory>
                           </div>
                         );
                       }
@@ -386,7 +406,7 @@ const RemindersList = () => {
                 if (!moment(date, "Do MMMM").isSame(new Date(), "day")) {
                   return (
                     <Reminder key={index}>
-                      <h3>{date}</h3>
+                      <ReminderDate>{date}</ReminderDate>
                       <div>
                         {reminders.map((reminder, idx) => {
                           if (
@@ -395,35 +415,51 @@ const RemindersList = () => {
                               "day"
                             )
                           ) {
+                            let categoryStatusColor;
+                            switch (reminder.category) {
+                              case "homework":
+                                categoryStatusColor = "blue";
+                                break;
+                              case "test":
+                                categoryStatusColor = "red";
+                                break;
+                              case "project":
+                                categoryStatusColor = "orange";
+                                break;
+                              case "other":
+                                categoryStatusColor = "green";
+                                break;
+                              default:
+                                categoryStatusColor = "black";
+                            }
                             return (
                               <div key={idx} style={{ position: "relative" }}>
-                                <button
-                                  style={{
-                                    position: "absolute",
-                                    right: "5px",
-                                    top: "0px",
-                                  }}
-                                  onClick={() => handleEdit(date, idx)}
-                                >
+                                <EditBtn onClick={() => handleEdit(date, idx)}>
                                   <AiFillEdit />
-                                </button>
-                                <button
-                                  style={{
-                                    position: "absolute",
-                                    right: "5px",
-                                    top: "20px",
-                                  }}
+                                </EditBtn>
+                                <DeleteBtn
                                   onClick={() => handleDelete(date, idx)}
                                 >
                                   <AiFillDelete />
-                                </button>
-                                <h4>{reminder.title}</h4>
-                                <p>
+                                </DeleteBtn>
+                                <ReminderTitle>{reminder.title}</ReminderTitle>
+                                <ReminderTime>
                                   {moment(reminder.startTime).format("HH:mm")}-
                                   {moment(reminder.endTime).format("HH:mm")}
-                                </p>
-                                <p>Description: {reminder.description}</p>
-                                <p>Category: {reminder.category}</p>
+                                </ReminderTime>
+                                <ReminderDescription>
+                                  {reminder.description}
+                                </ReminderDescription>
+                                <ReminderCategory>
+                                  <CategoryStatus
+                                    style={{
+                                      backgroundColor: categoryStatusColor,
+                                    }}
+                                  />
+                                  <CategoryName>
+                                    {reminder.category}
+                                  </CategoryName>
+                                </ReminderCategory>
                               </div>
                             );
                           }

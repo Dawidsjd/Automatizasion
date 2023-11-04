@@ -73,6 +73,7 @@ const WeatherData = () => {
         <StyledContainer>
           <StyledColumn>
             <StyledIcon
+              draggable="false"
               src={`https://openweathermap.org/img/wn/${weatherData.icon}.png`}
               alt="Weather icon"
             />

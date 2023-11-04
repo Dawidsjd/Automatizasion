@@ -44,4 +44,6 @@ export const Button = styled("button")(({ theme }) => ({
 export const Icon = styled("img")(({ theme }) => ({
   width: "35%",
   height: "auto",
+  pointerEvents: "none",
+  userSelect: "none",
 }));

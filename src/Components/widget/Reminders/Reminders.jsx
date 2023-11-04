@@ -47,7 +47,6 @@ const Reminders = () => {
               <ReminderSubtitle>26th November</ReminderSubtitle>
             </ReminderDescription>
           </Reminder>
-          {/* podłączyć link do reminders */}
           <Link to="/SchoolDashboard/Reminder">
             <Button>
               Show more
@@ -55,7 +54,7 @@ const Reminders = () => {
             </Button>
           </Link>
         </div>
-        <Icon src={ReminderIcon} alt="reminder icon" />
+        <Icon draggable="false" src={ReminderIcon} alt="reminder icon" />
       </div>
     </StyledContainer>
   );

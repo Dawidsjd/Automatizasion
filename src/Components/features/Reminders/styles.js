@@ -205,23 +205,84 @@ export const ReminderSectionName = styled("h3")(({ theme }) => ({
 }));
 
 export const Reminder = styled("div")(({ theme }) => ({
-  border: "1px solid red",
-  width: "90%",
+  width: "80%",
+  borderRadius: "30px",
+  background:
+    "linear-gradient(27deg, rgba(42,157,229,1) 0%, rgba(0,51,102,1) 100%)",
+  padding: "10px 20px",
+  marginBottom: "10px",
 }));
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+export const EditBtn = styled("button")(({ theme }) => ({
+  position: "absolute",
+  right: "5px",
+  top: "0px",
+  background: "none",
+  cursor: "pointer",
+  fontSize: globalTheme.typography.semimediumfontsize.main,
+  color: globalTheme.palette.textcolorprimary.main,
+  "&: hover": {
+    color: "#306CA8",
+  },
+}));
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+export const DeleteBtn = styled("button")(({ theme }) => ({
+  position: "absolute",
+  right: "5px",
+  top: "25px",
+  background: "none",
+  cursor: "pointer",
+  fontSize: globalTheme.typography.semimediumfontsize.main,
+  color: globalTheme.palette.textcolorprimary.main,
+  "&: hover": {
+    color: "red",
+  },
+}));
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+export const ReminderDate = styled("h3")(({ theme }) => ({
+  color: globalTheme.palette.textcolorprimary.main,
+  fontSize: globalTheme.typography.mediumfontsize.main,
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+  lineHeight: "5px",
+  textTransform: "capitalize",
+}));
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+export const ReminderTitle = styled("h4")(({ theme }) => ({
+  lineHeight: "5px",
+  fontSize: globalTheme.typography.semimediumfontsize.main,
+  color: globalTheme.palette.textcolorprimary.main,
+  textTransform: "capitalize",
+}));
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+export const ReminderTime = styled("p")(({ theme }) => ({
+  lineHeight: "0",
+  color: "#BFC0C2",
+}));
 
-// export const RemindersContainer = styled("div")(({ theme }) => ({}));
+export const ReminderDescription = styled("p")(({ theme }) => ({
+  lineHeight: "15px",
+  fontSize: globalTheme.typography.smallfontsize.main,
+  color: "#4AF4FF",
+}));
+
+export const ReminderCategory = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+}));
+
+export const CategoryStatus = styled("div")(({ theme }) => ({
+  height: "10px",
+  width: "10px",
+  borderRadius: "20px",
+  alignSelf: "center",
+}));
+
+export const CategoryName = styled("p")(({ theme }) => ({
+  marginLeft: "5px",
+  textTransform: "capitalize",
+  fontSize: globalTheme.typography.smallfontsize.main,
+  color: globalTheme.palette.textcolorprimary.main,
+}));
 
 // export const RemindersContainer = styled("div")(({ theme }) => ({}));
 
