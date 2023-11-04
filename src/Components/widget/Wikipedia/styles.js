@@ -9,7 +9,7 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   background: globalTheme.palette.tiles.light,
   backdropFilter: 'blur(6.2px)',
-  // width: "650px" xddddddddddddddddddddd,
+  // width: '650px' na sztywno wstawiona szerokosc,
   marginTop: '2%',
   marginLeft: '5%',
   padding: '20px',
@@ -41,15 +41,9 @@ export const Button = styled('button')(({ theme }) => ({
   display: 'flex',
 }));
 
-<<<<<<< HEAD
 export const Icon = styled('img')(({ theme }) => ({
   width: '35%',
   height: 'auto',
-=======
-export const Icon = styled("img")(({ theme }) => ({
-  width: "35%",
-  height: "auto",
-  pointerEvents: "none",
-  userSelect: "none",
->>>>>>> 435e79b3766613a0c7fcc65dfc68982a47dc0aae
+  pointerEvents: 'none',
+  userSelect: 'none',
 }));

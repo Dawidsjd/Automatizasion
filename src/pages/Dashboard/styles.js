@@ -4,12 +4,18 @@ import dashboardBackground from './../../assets/dashboardBackground.svg';
 
 export const StyledDashboard = styled('div')(({ theme }) => ({
   width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
   background: `url(${dashboardBackground})`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   position: 'relative',
   display: 'flex',
+  [theme.breakpoints.up('lg')]: {
+    display: 'flex',
+    flexDirection: 'unset',
+  },
 }));
 
 export const Widgets = styled('section')(({ theme }) => ({

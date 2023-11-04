@@ -58,7 +58,11 @@ export const StyledLink = styled(NavLink)(({ theme }) => ({
   },
 }));
 
-export const StyledContainer = styled('div')(({ theme }) => ({
+export const StyledContainer = styled('div')(({ isOpen }) => ({ theme }) => ({
+  transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
+  transition: '.4s',
+  position: 'fixed',
+  zIndex: '999',
   minHeight: '100vh',
   maxWidth: '325px',
   minWidth: '275px',
@@ -68,19 +72,26 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
+  [theme.breakpoints.up('lg')]: {
+    position: 'relative',
+    transform: 'translateX(0)',
+  },
 }));
 
 export const StyledLogoContainer = styled(Link)(({ theme }) => ({
   background: globalTheme.palette.primary.dark,
   borderRadius: '0 10px 10px 0',
-  display: 'flex',
+  display: 'none',
+  justifyContent: 'center',
+  alignItems: 'center',
   width: '90%',
   height: '90px',
   padding: '0 10px',
-  alignItems: 'center',
-  justifyContent: 'space-between',
   position: 'relative',
   top: '40px',
+  [theme.breakpoints.up('lg')]: {
+    display: 'flex',
+  },
 }));
 
 export const StyledLogo = styled('p')(({ theme }) => ({
@@ -194,7 +205,33 @@ export const StyledLoginIcon = styled('i')(({ theme }) => ({
 }));
 
 export const StyledLogoImage = styled('img')(({ theme }) => ({
+  width: '250px',
+}));
+
+// responsive
+
+export const ResponsiveBurger = styled('div')(({ theme }) => ({
+  position: 'relative',
+  height: '100px',
+  justifyItems: 'center',
+  alignItems: 'center',
+  margin: 'auto',
+  width: '95%',
   display: 'flex',
-  width: '90px',
-  height: 'auto',
+  justifyContent: 'space-between',
+  [theme.breakpoints.up('lg')]: {
+    display: 'none',
+    margin: '0',
+  },
+}));
+
+export const BurgerBox = styled('div')(({ theme }) => ({
+  height: '100px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  [theme.breakpoints.up('lg')]: {
+    display: 'none',
+  },
 }));
