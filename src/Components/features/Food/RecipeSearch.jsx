@@ -13,6 +13,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import CircularProgress from '@mui/material/CircularProgress';
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import styles from "./style";
@@ -46,6 +47,23 @@ const tileStyles = {
   },
 };
 
+
+const LoadingIndicator = ({ loading }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {loading && <CircularProgress />}
+    </div>
+  );
+};
+
+
 const RecipeSearch = () => {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -72,7 +90,7 @@ const RecipeSearch = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "c1fa8c4c47mshc735e397e60a5dfp16d672jsn213805a23649",
+        "X-RapidAPI-Key": "b459219d15mshc4c14541f610567p1c8df9jsn45d71054de0a",
         "X-RapidAPI-Host": "tasty.p.rapidapi.com",
       },
     };
@@ -165,6 +183,7 @@ const RecipeSearch = () => {
             Search
           </button>
         </div>
+        <LoadingIndicator loading={searchClicked} />
         <div
           style={{
             display: "flex",
@@ -175,54 +194,58 @@ const RecipeSearch = () => {
             overflowY: "auto", // Dodaj suwak
           }}
         >
-          {recipes.map((recipe) => (
-            <div key={recipe.id}>
-              <Card
-                sx={{ maxWidth: 345 }}
-                onClick={() => handleClickOpen(recipe)}
-                style={tileStyles}
-              >
-                <CardActionArea>
-                  {recipe.thumbnail_url && (
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image={recipe.thumbnail_url}
-                    />
-                  )}
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="div"
-                      style={{
-                        fontSize: "1.2em",
-                        lineHeight: "1.4",
-                        fontWeight: "bold",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {recipe.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      style={{
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        whiteSpace: "nowrap",
-                        maxHeight: "2.4em",
-                      }}
-                    >
-                      {recipe.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </div>
-          ))}
+          {recipes.length > 0 ? (
+            recipes.map((recipe) => (
+              <div key={recipe.id}>
+                <Card
+                  sx={{ maxWidth: 345 }}
+                  onClick={() => handleClickOpen(recipe)}
+                  style={tileStyles}
+                >
+                  <CardActionArea>
+                    {recipe.thumbnail_url && (
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={recipe.thumbnail_url}
+                      />
+                    )}
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        style={{
+                          fontSize: "1.2em",
+                          lineHeight: "1.4",
+                          fontWeight: "bold",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {recipe.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        style={{
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                          maxHeight: "2.4em",
+                        }}
+                      >
+                        {recipe.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+            ))
+          ) : (
+            <Typography variant="body1">No results</Typography>
+          )}
         </div>
 
         {selectedRecipe && (
