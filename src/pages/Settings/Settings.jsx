@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { styles } from "./styles";
 import LeftPanelDashboard from "../../Components/features/LeftPanelDashboard/LeftPanelDashboard";
+import { auth } from "../../firebase";
+import { updateProfile } from "firebase/auth";
 
 const Settings = () => {
   const [userProfile, setUserProfile] = useState({
@@ -11,19 +13,15 @@ const Settings = () => {
     profileImage: "", // Dodaj pole dla zdjęcia profilowego
   });
 
-  useEffect(() => {
-    // Tutaj możesz wykonać zapytanie do serwera, aby pobrać dane użytkownika i zdjęcie profilowe
-    // ...
+  const [displayName, setDisplayName] = useState("");
 
-    // Przykład użycia fetch:
-    // fetch("url_do_api_pobierajacego_dane_uzytkownika")
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setUserProfile(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Błąd podczas pobierania danych użytkownika:", error);
-    //   });
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (user) {
+      setDisplayName(user.displayName);
+    }
+
+    // ...
   }, []);
 
   const handleInputChange = (e) => {
@@ -66,6 +64,19 @@ const Settings = () => {
     //   });
   };
 
+  const handleNameChange = () => {
+    const user = auth.currentUser;
+    if (user) {
+      updateProfile(user, { displayName: displayName })
+        .then(() => {
+          console.log("Zaktualizowano nazwę użytkownika na serwerze Firebase");
+        })
+        .catch((error) => {
+          console.error("Błąd podczas aktualizacji nazwy użytkownika:", error);
+        });
+    }
+  };
+
   return (
     <div style={styles.container}>
       <div>
@@ -77,13 +88,13 @@ const Settings = () => {
         />
         <input type="file" accept="image/*" onChange={handleImageChange} />
         <div>
-          <label htmlFor="name">Username:</label>
+          <label htmlFor="displayName">Display Name:</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={userProfile.name}
-            onChange={handleInputChange}
+            id="displayName"
+            name="displayName"
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
             style={styles.input}
           />
         </div>
@@ -120,8 +131,12 @@ const Settings = () => {
             style={styles.input}
           />
         </div>
+
         <button onClick={handleSaveClick} style={styles.button}>
           Save changes
+        </button>
+        <button onClick={handleNameChange} style={styles.button}>
+          Change Display Name
         </button>
       </div>
     </div>
