@@ -8,21 +8,12 @@ export const StyledContainer = styled("div")(({ theme }) => ({
   borderRadius: "16px",
   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
   background: globalTheme.palette.tiles.light,
-<<<<<<< HEAD
   backdropFilter: 'blur(6.2px)',
   // width: "650px" xd,
   marginTop: '2%',
   marginLeft: '5%',
   padding: '20px',
   textAlign: 'left',
-=======
-  backdropFilter: "blur(6.2px)",
-  width: "650px",
-  marginTop: "2%",
-  marginLeft: "5%",
-  padding: "20px",
-  textAlign: "left",
->>>>>>> 435e79b3766613a0c7fcc65dfc68982a47dc0aae
 }));
 
 export const Title = styled("div")(({ theme }) => ({

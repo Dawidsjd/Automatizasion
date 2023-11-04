@@ -41,15 +41,7 @@ export const Button = styled('button')(({ theme }) => ({
   display: 'flex',
 }));
 
-<<<<<<< HEAD
 export const Icon = styled('img')(({ theme }) => ({
   width: '35%',
   height: 'auto',
-=======
-export const Icon = styled("img")(({ theme }) => ({
-  width: "35%",
-  height: "auto",
-  pointerEvents: "none",
-  userSelect: "none",
->>>>>>> 435e79b3766613a0c7fcc65dfc68982a47dc0aae
 }));
