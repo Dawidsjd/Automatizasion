@@ -1,45 +1,107 @@
+import ContentBackground from "../../assets/content.svg";
 import globalTheme from "../features/GlobalStyles/GlobalTheme";
-
 export const styles = {
-  notepad: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    height: "100vh",
-    backgroundColor: "#88a2c4",
+  background: {
+    backgroundColor: '#A9C9DD',
+    width: '100%',
+    minHeight: '100vh',
+    position: 'absolute',
+    zIndex: -1,
   },
-  Background: {
-    background: "#a9c9dd",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    width: "1100px",
-    height: "700px",
-    textAlign: "center",
-    margin: "128px auto",
-    borderRadius: "10px",
-    paddingBottom: "32px",
-    overflowY: "auto",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)", // Dodaj box-shadow
+  h1: {
+    textAlign: 'center',
+    fontSize: '2.5rem',
+    padding: '1.25rem',
   },
-
-  notepadHeader: {
-    width: "100%",
-    padding: "1rem",
-    textAlign: "left",
-    marginLeft: "30px",
+  addNote: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    
   },
-  notepadContent: {
-    width: "100%",
-    padding: "1rem",
-    textAlign: "center",
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)',
+    
   },
-  saveButton: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+ 
+  input: {
+  borderWidth: '2px',
+  borderColor: '#4299e1',
+  padding: '1rem', // Zwiększamy padding dla większego pola input
+  marginBottom: '0.5rem',
+  fontSize: '1rem', // Zwiększamy rozmiar czcionki
+  },
+  button: {
+    backgroundColor: '#4299e1',
+    padding: '1.25rem 2rem',
+    color: 'white',
+    background: globalTheme.palette.primary.main,
+    marginTop: '1rem',
+    size: '90px',
+  },
+  editButton:
+  {
+    backgroundColor: '#003366',
+    color: 'white',
+    borderRadius: '24px',
+  },
+  notes_container: {
+    borderTopWidth: '2px',
+    borderTopColor: '#4299e1',
+    margin: '2.5rem',
+    display: 'grid', // Używamy Grid
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', // Automatyczne dostosowywanie do szerokości
+    gridGap: '1.25rem', // Odstęp między notatkami
+    
+  },
+  notes: {
+  backgroundColor: '#F7EC9A',
+  padding: '1rem',
+  paddingTop: '2.5rem',
+  position: 'relative',
+  overflow: 'auto',
+  fontSize: '16px',
+  wordWrap: 'break-word',
+  whiteSpace: 'pre-line',
+  boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)', // Dodaj cieniowanie
+  borderRadius: '24px',
+},
+  
+  deleteButton: {
+    position: 'absolute',
+    right: '0px',
+    top: '0',
+    fontWeight: 'bold',
+    fontSize: '1.5rem',
+    color: 'red',
+    backgroundColor: 'transparent',
+    border: 'none',
+  },
+  date: {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    fontSize: '1rem', // Możesz dostosować rozmiar daty do potrzeb
+  },
+  noteTitle: {
+    fontWeight: 'bold',
+    fontSize: '1rem',
+    paddingBottom: '0.5rem',
+  },
+  p: {
+    paddingTop: '1.25rem',
+    paddingBottom: '1.25rem',
+  },
+  // Przykład responsywności
+  '@media (max-width: 768px)': {
+    h1: {
+      fontSize: '2rem',
+    },
+    notes: {
+      width: '100%',
+    },
   },
   exitBtn: {
     position: "absolute",
@@ -54,8 +116,5 @@ export const styles = {
     alignItems: "center",
     fontSize: "1.5rem",
     padding: "10px 30px",
-  },
-  input: {
-    border: "2px solid black", // Dodaj to pole, aby dodać czarne obramowanie
   },
 };

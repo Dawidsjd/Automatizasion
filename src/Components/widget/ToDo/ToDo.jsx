@@ -11,9 +11,9 @@ import {
 } from "./styles";
 import Notes from "../../../assets/Notes.svg";
 import EastIcon from "@mui/icons-material/East";
-import { db } from '../../../firebase';
-import { onValue, ref } from 'firebase/database';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { db } from "../../../firebase";
+import { onValue, ref } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const ToDo = () => {
   const [todoList, setTodoList] = useState([]);
@@ -83,7 +83,7 @@ const ToDo = () => {
             <EastIcon style={{ marginLeft: "5px" }} />
           </StyledLink>
         </div>
-        <Icon src={Notes} alt="Notes Icon" />
+        <Icon draggable="false" src={Notes} alt="Notes Icon" />
       </div>
     </StyledContainer>
   );

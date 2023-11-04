@@ -69,7 +69,7 @@ const Welcome = () => {
           </StyledMessage>
           <StyledDescription>Have a nice day!</StyledDescription>
         </StyledWelcome>
-        <StyledImage src={HelloImg} />
+        <StyledImage draggable="false" src={HelloImg} />
       </StyledContent>
     </StyledContainer>
   );

@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { auth } from '../../../firebase';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { auth } from "../../../firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import {
   StyledAuthorization,
   StyledUserAvatar,
   StyledProfile,
   StyledUserName,
   StyledStatusName,
-  StyledLoginBtn,
-  StyledLoginIcon,
-} from './../LeftPanelDashboard/styles';
-import { BiLogOutCircle, BiLogInCircle } from 'react-icons/bi';
-import Tooltip from '@mui/material/Tooltip';
+} from "./../LeftPanelDashboard/styles";
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -32,13 +28,13 @@ const AuthDetails = () => {
     };
   }, []);
 
-  const [tooltipText, setTooltipText] = useState('');
+  const [tooltipText, setTooltipText] = useState("");
 
   useEffect(() => {
     if (authUser) {
-      setTooltipText('LogOut');
+      setTooltipText("LogOut");
     } else {
-      setTooltipText('LogIn');
+      setTooltipText("LogIn");
     }
   }, [authUser]);
 
@@ -51,7 +47,7 @@ const AuthDetails = () => {
   };
 
   const handleLogin = () => {
-    navigate('/logIn');
+    navigate("/logIn");
   };
 
   return (
@@ -68,7 +64,6 @@ const AuthDetails = () => {
             }`}</StyledUserName>
             <StyledStatusName>Status: active</StyledStatusName>
           </StyledProfile>
-          {/* <StyledLoginBtn onClick={userSignOut} /> */}
         </>
       ) : (
         <>
@@ -77,16 +72,8 @@ const AuthDetails = () => {
             <StyledUserName>Anonymus</StyledUserName>
             <StyledStatusName>Status: offline</StyledStatusName>
           </StyledProfile>
-          {/* <StyledLoginBtn onClick={handleLogin} /> */}
         </>
       )}
-      {/* <Tooltip title={tooltipText}>
-        <StyledLoginBtn onClick={authUser ? userSignOut : handleLogin}>
-          <StyledLoginIcon>
-            {authUser ? <BiLogOutCircle /> : <BiLogInCircle />}
-          </StyledLoginIcon>
-        </StyledLoginBtn>
-      </Tooltip> */}
     </StyledAuthorization>
   );
 };

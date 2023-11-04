@@ -34,8 +34,8 @@ const CookingAssistant = () => {
           </Link>
         </div>
         <IconContainer>
-          <IconFood src={FoodIcon} alt="Food Icon" />
-          <IconFork src={Fork} alt="Fork" />
+          <IconFood draggable="false" src={FoodIcon} alt="Food Icon" />
+          <IconFork draggable="false" src={Fork} alt="Fork" />
         </IconContainer>
       </div>
     </StyledContainer>

@@ -1,13 +1,14 @@
-import { styled } from '@mui/material/styles';
-import globalTheme from '../../features/GlobalStyles/GlobalTheme';
+import { styled } from "@mui/material/styles";
+import globalTheme from "../../features/GlobalStyles/GlobalTheme";
 
-export const StyledContainer = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'left',
-  borderRadius: '16px',
-  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+export const StyledContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "left",
+  borderRadius: "16px",
+  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
   background: globalTheme.palette.tiles.light,
+<<<<<<< HEAD
   backdropFilter: 'blur(6.2px)',
   // width: "650px" xddddddddddddddddddddd,
   minHeight: '300px',
@@ -15,34 +16,45 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   marginLeft: '5%',
   padding: '20px',
   textAlign: 'left',
+=======
+  backdropFilter: "blur(6.2px)",
+  width: "650px",
+  minHeight: "300px",
+  marginTop: "2%",
+  marginLeft: "5%",
+  padding: "20px",
+  textAlign: "left",
+>>>>>>> 435e79b3766613a0c7fcc65dfc68982a47dc0aae
 }));
 
-export const Title = styled('div')(({ theme }) => ({
+export const Title = styled("div")(({ theme }) => ({
   fontSize: globalTheme.typography.semibigfontsize.main,
-  fontWeight: 'bold',
+  fontWeight: "bold",
   color: globalTheme.palette.textcolorprimary.main,
-  marginBottom: '10px',
+  marginBottom: "10px",
 }));
 
-export const Subtitle = styled('div')(({ theme }) => ({
+export const Subtitle = styled("div")(({ theme }) => ({
   fontSize: globalTheme.typography.semimediumfontsize.main,
   color: globalTheme.palette.textcolorprimary.main,
-  marginBottom: '20px',
+  marginBottom: "20px",
 }));
 
-export const Button = styled('button')(({ theme }) => ({
-  padding: '12px 24px',
-  fontSize: '1.2em',
-  fontWeight: 'bold',
+export const Button = styled("button")(({ theme }) => ({
+  padding: "12px 24px",
+  fontSize: "1.2em",
+  fontWeight: "bold",
   background: globalTheme.palette.primary.main,
-  color: '#fff',
-  border: 'none',
-  borderRadius: '10px',
-  cursor: 'pointer',
-  display: 'flex',
+  color: "#fff",
+  border: "none",
+  borderRadius: "10px",
+  cursor: "pointer",
+  display: "flex",
 }));
 
-export const Icon = styled('img')(({ theme }) => ({
-  width: '35%',
-  height: 'auto',
+export const Icon = styled("img")(({ theme }) => ({
+  width: "35%",
+  height: "auto",
+  pointerEvents: "none",
+  userSelect: "none",
 }));

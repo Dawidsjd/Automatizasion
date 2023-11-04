@@ -25,7 +25,7 @@ const SchoolDiary = () => {
             </Button>
           </Link>
         </div>
-        <Icon src={SchoolImage} alt="School Image" />
+        <Icon draggable="false" src={SchoolImage} alt="School Image" />
       </div>
     </StyledContainer>
   );
