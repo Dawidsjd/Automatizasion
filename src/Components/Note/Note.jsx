@@ -1,22 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { styles } from "./styles"; // Import pliku ze stylami
 import { Container } from "@mui/material";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getDatabase, ref, set, onValue } from "firebase/database";
+import { db } from '../../firebase';
 
-function App() {
+function Note() {
   const [notes, setNotes] = useState([]);
   const [state, setState] = useState({
     title: "",
     note: "",
     id: Math.random() * 10,
-    date: new Date().toLocaleString(), // Dodanie daty notatki
+    date: new Date().toLocaleString(),
   });
   const [editingNoteId, setEditingNoteId] = useState(null);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
+      if (user) {
+        setUser(user);
+        getNotesFromFirebase(user.uid);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleDelete = (id) => {
     const leftNotes = notes.filter((note) => note.id !== id);
     setNotes(leftNotes);
+
+    if (user) {
+      saveNotesToFirebase(user.uid, leftNotes);
+    }
   };
 
   const handleEdit = (id) => {
@@ -40,7 +61,6 @@ function App() {
     e.preventDefault();
 
     if (editingNoteId !== null) {
-      // Aktualizacja notatki
       setNotes((prevNotes) =>
         prevNotes.map((note) => {
           if (note.id === editingNoteId) {
@@ -52,7 +72,6 @@ function App() {
 
       setEditingNoteId(null);
     } else {
-      // Dodawanie nowej notatki
       setNotes([...notes, { ...state, id: Math.random() * 10, date: new Date().toLocaleString() }]);
     }
 
@@ -60,6 +79,25 @@ function App() {
       title: "",
       note: "",
       date: new Date().toLocaleString(),
+    });
+
+    if (user) {
+      saveNotesToFirebase(user.uid, [...notes, { ...state, id: Math.random() * 10, date: new Date().toLocaleString() }]);
+    }
+  };
+
+  const saveNotesToFirebase = (userId, notes) => {
+    const database = getDatabase();
+    set(ref(database, `notes/${userId}`), notes);
+  };
+
+  const getNotesFromFirebase = (userId) => {
+    const database = getDatabase();
+    onValue(ref(database, `notes/${userId}`), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        setNotes(data);
+      }
     });
   };
 
@@ -123,7 +161,7 @@ function App() {
                   </div>
                 ) : (
                   <div>
-                    <p style={styles.date}>{note.date}</p> {/* Przeniesiona data */}
+                    <p style={styles.date}>{note.date}</p>
                     <h3 style={styles.noteTitle}>{note.title}</h3>
                     <p>{note.note}</p>
                     <button
@@ -150,4 +188,4 @@ function App() {
   );
 }
 
-export default App;
+export default Note;
