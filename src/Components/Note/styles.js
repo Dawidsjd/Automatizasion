@@ -29,9 +29,9 @@ export const styles = {
   input: {
   borderWidth: '2px',
   borderColor: '#4299e1',
-  padding: '1rem', // Zwiększamy padding dla większego pola input
+  padding: '1rem', 
   marginBottom: '0.5rem',
-  fontSize: '1rem', // Zwiększamy rozmiar czcionki
+  fontSize: '1rem',
   },
   button: {
     backgroundColor: '#4299e1',
@@ -51,9 +51,9 @@ export const styles = {
     borderTopWidth: '2px',
     borderTopColor: '#4299e1',
     margin: '2.5rem',
-    display: 'grid', // Używamy Grid
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', // Automatyczne dostosowywanie do szerokości
-    gridGap: '1.25rem', // Odstęp między notatkami
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
+    gridGap: '1.25rem', 
     
   },
   notes: {
@@ -65,7 +65,7 @@ export const styles = {
   fontSize: '16px',
   wordWrap: 'break-word',
   whiteSpace: 'pre-line',
-  boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)', // Dodaj cieniowanie
+  boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)', 
   borderRadius: '24px',
 },
   
@@ -83,7 +83,7 @@ export const styles = {
     position: 'absolute',
     top: '10px',
     right: '10px',
-    fontSize: '1rem', // Możesz dostosować rozmiar daty do potrzeb
+    fontSize: '1rem', 
   },
   noteTitle: {
     fontWeight: 'bold',
@@ -94,7 +94,7 @@ export const styles = {
     paddingTop: '1.25rem',
     paddingBottom: '1.25rem',
   },
-  // Przykład responsywności
+  
   '@media (max-width: 768px)': {
     h1: {
       fontSize: '2rem',

@@ -11,7 +11,7 @@ import HomeDashboard from './pages/Dashboard/HomeDashboard';
 import SchoolDashboard from './pages/Dashboard/SchoolDashboard';
 import LogIn from './pages/Safety/LogIn';
 import Register from './pages/Safety/Register';
-import Settings from './pages/Settings';
+import Settings from './pages/Settings/Settings';
 import Support from './pages/Support/Support';
 import Reminder from './Components/features/Reminders/Reminders';
 import Dziennik from './Components/features/Dziennik/Dziennik';
