@@ -48,10 +48,15 @@ import {
   CategoryName,
   CategoryStatus,
 } from "./styles";
+import { db } from "../../../firebase";
+import { onValue, ref, set } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 const RemindersList = () => {
   useEffect(() => {
     document.title = "Reminders";
-  });
+
+  }, []);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -64,6 +69,41 @@ const RemindersList = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [remindersMap, setRemindersMap] = useState(new Map());
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
+      if (user) {
+        setUser(user);
+        getRemindersFromFirebase(user.uid); // Pobierz przypomnienia dla obecnie zalogowanego użytkownika
+      } else {
+        setUser(null);
+      }
+    });
+  
+    return () => unsubscribe();
+  }, []);
+
+  const saveRemindersToFirebase = (userId, reminders) => {
+    set(ref(db, `reminders/${userId}`), reminders);
+  };
+
+  const saveEditedRemindersToFirebase = (userId, reminders) => {
+    set(ref(db, `reminders/${userId}`), reminders);
+  };
+
+  const getRemindersFromFirebase = (userId) => {
+    onValue(ref(db, `reminders/${userId}`), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        setRemindersMap(new Map(data));
+      }
+    });
+  };
+
+  const deleteReminderFromFirebase = (userId, reminders) => {
+    set(ref(db, `reminders/${userId}`), reminders);
+  };
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -92,7 +132,7 @@ const RemindersList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     const newReminder = {
       title: title,
       startDate: startDate,
@@ -102,13 +142,14 @@ const RemindersList = () => {
       description: description,
       category: category,
     };
-
+  
     const date = moment(startDate).format("Do MMMM");
-
+  
     const reminders = remindersMap.get(date) || [];
     reminders.push(newReminder);
     remindersMap.set(date, reminders);
     setRemindersMap(new Map(remindersMap));
+  
     closeModal();
     setTitle("");
     setStartDate(new Date());
@@ -117,7 +158,13 @@ const RemindersList = () => {
     setEndTime(new Date());
     setDescription("");
     setCategory("");
+  
+    if (user) {
+      const userId = user.uid;
+      saveRemindersToFirebase(userId, Array.from(remindersMap.entries()));
+    }
   };
+  
 
   const handleEdit = (date, index) => {
     const reminders = remindersMap.get(date);
@@ -127,7 +174,7 @@ const RemindersList = () => {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-
+  
     const editedReminder = {
       title: title,
       startDate: startDate,
@@ -137,16 +184,17 @@ const RemindersList = () => {
       description: description,
       category: category,
     };
-
+  
     const reminders = remindersMap.get(
       moment(editReminder.startDate).format("Do MMMM")
     );
-
+  
     const index = reminders.findIndex(
       (reminder) => reminder.title === editReminder.title
     );
     reminders[index] = editedReminder;
     setRemindersMap(new Map(remindersMap));
+  
     closeModal();
     setTitle("");
     setStartDate(new Date());
@@ -155,7 +203,13 @@ const RemindersList = () => {
     setEndTime(new Date());
     setDescription("");
     setCategory("");
+  
+    if (user) {
+      const userId = user.uid;
+      saveEditedRemindersToFirebase(userId, Array.from(remindersMap.entries()));
+    }
   };
+  
 
   const handleDelete = (date, index) => {
     const updatedReminders = remindersMap
@@ -167,6 +221,11 @@ const RemindersList = () => {
       remindersMap.set(date, updatedReminders);
     }
     setRemindersMap(new Map(remindersMap));
+
+    if (user) {
+      const userId = user.uid;
+      deleteReminderFromFirebase(userId, Array.from(remindersMap.entries()));
+    }
   };
 
   const todayDate = moment(new Date()).format("Do MMMM");
@@ -264,57 +323,21 @@ const RemindersList = () => {
                 <StyledTime>
                   <StyledDatePicker
                     selected={startTime}
-                    onChange={(time) => {
-                      const now = new Date();
-                      now.setSeconds(0, 0);
-                      if (moment(startDate).isSame(now, "date") && time < now) {
-                        return;
-                      }
-                      setStartTime(time);
-                    }}
+                    onChange={(time) => setStartTime(time)}
                     showTimeSelect
                     showTimeSelectOnly
                     timeIntervals={10}
                     timeCaption="Time"
                     dateFormat="HH:mm"
-                    minTime={
-                      moment(startDate).isSame(new Date(), "date")
-                        ? moment().add(10, "minutes").format("HH:mm")
-                        : "00:00"
-                    }
-                    maxTime={
-                      moment(startDate).isSame(new Date(), "date")
-                        ? "23:59"
-                        : "23:59"
-                    }
                   />
                   <StyledDatePicker
                     selected={endTime}
-                    onChange={(time) => {
-                      if (
-                        moment(startDate).isSame(endDate, "day") &&
-                        moment(time).isBefore(startTime)
-                      ) {
-                        setEndTime(startTime);
-                      } else {
-                        setEndTime(time);
-                      }
-                    }}
+                    onChange={(time) => setEndTime(time)}
                     showTimeSelect
                     showTimeSelectOnly
                     timeIntervals={10}
                     timeCaption="Time"
                     dateFormat="HH:mm"
-                    minTime={
-                      moment(startDate).isSame(endDate, "day")
-                        ? moment(startTime).format("HH:mm")
-                        : "00:00"
-                    }
-                    maxTime={
-                      moment(startDate).isSame(endDate, "day")
-                        ? "23:59"
-                        : "23:59"
-                    }
                   />
                 </StyledTime>
               </FormGroup>
@@ -368,9 +391,7 @@ const RemindersList = () => {
 
                         return (
                           <div key={idx} style={{ position: "relative" }}>
-                            <EditBtn onClick={() => handleEdit(date, idx)}>
-                              <AiFillEdit />
-                            </EditBtn>
+                           
                             <DeleteBtn onClick={() => handleDelete(date, idx)}>
                               <AiFillDelete />
                             </DeleteBtn>
@@ -407,65 +428,47 @@ const RemindersList = () => {
                   return (
                     <Reminder key={index}>
                       <ReminderDate>{date}</ReminderDate>
-                      <div>
-                        {reminders.map((reminder, idx) => {
-                          if (
-                            !moment(reminder.startDate).isSame(
-                              new Date(),
-                              "day"
-                            )
-                          ) {
-                            let categoryStatusColor;
-                            switch (reminder.category) {
-                              case "homework":
-                                categoryStatusColor = "blue";
-                                break;
-                              case "test":
-                                categoryStatusColor = "red";
-                                break;
-                              case "project":
-                                categoryStatusColor = "orange";
-                                break;
-                              case "other":
-                                categoryStatusColor = "green";
-                                break;
-                              default:
-                                categoryStatusColor = "black";
-                            }
-                            return (
-                              <div key={idx} style={{ position: "relative" }}>
-                                <EditBtn onClick={() => handleEdit(date, idx)}>
-                                  <AiFillEdit />
-                                </EditBtn>
-                                <DeleteBtn
-                                  onClick={() => handleDelete(date, idx)}
-                                >
-                                  <AiFillDelete />
-                                </DeleteBtn>
-                                <ReminderTitle>{reminder.title}</ReminderTitle>
-                                <ReminderTime>
-                                  {moment(reminder.startTime).format("HH:mm")}-
-                                  {moment(reminder.endTime).format("HH:mm")}
-                                </ReminderTime>
-                                <ReminderDescription>
-                                  {reminder.description}
-                                </ReminderDescription>
-                                <ReminderCategory>
-                                  <CategoryStatus
-                                    style={{
-                                      backgroundColor: categoryStatusColor,
-                                    }}
-                                  />
-                                  <CategoryName>
-                                    {reminder.category}
-                                  </CategoryName>
-                                </ReminderCategory>
-                              </div>
-                            );
-                          }
-                          return null;
-                        })}
-                      </div>
+                      {reminders.map((reminder, idx) => {
+                        let categoryStatusColor;
+                        switch (reminder.category) {
+                          case "homework":
+                            categoryStatusColor = "blue";
+                            break;
+                          case "test":
+                            categoryStatusColor = "red";
+                            break;
+                          case "project":
+                            categoryStatusColor = "orange";
+                            break;
+                          case "other":
+                            categoryStatusColor = "green";
+                            break;
+                          default:
+                            categoryStatusColor = "black";
+                        }
+                        return (
+                          <div key={idx} style={{ position: "relative" }}>
+                            
+                            <DeleteBtn onClick={() => handleDelete(date, idx)}>
+                              <AiFillDelete />
+                            </DeleteBtn>
+                            <ReminderTitle>{reminder.title}</ReminderTitle>
+                            <ReminderTime>
+                              {moment(reminder.startTime).format("HH:mm")}-
+                              {moment(reminder.endTime).format("HH:mm")}
+                            </ReminderTime>
+                            <ReminderDescription>
+                              {reminder.description}
+                            </ReminderDescription>
+                            <ReminderCategory>
+                              <CategoryStatus
+                                style={{ backgroundColor: categoryStatusColor }}
+                              />
+                              <CategoryName>{reminder.category}</CategoryName>
+                            </ReminderCategory>
+                          </div>
+                        );
+                      })}
                     </Reminder>
                   );
                 }
