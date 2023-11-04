@@ -19,7 +19,7 @@ export const StyledNavbar = styled('div')(({ theme, clicked }) => ({
     color: '#caf0f6',
     fontSize: '14px',
     '&:hover, &.link-active': {
-      background: '#001e3b',
+      background: '#002950',
     },
   },
   '& .nav_active': {
@@ -67,7 +67,7 @@ export const StyledContainer = styled('div')(({ isOpen }) => ({ theme }) => ({
   maxWidth: '325px',
   minWidth: '275px',
   width: '22%',
-  background: globalTheme.palette.primary.main,
+  background: '#003972',
   borderRadius: '0 35px 35px 0',
   display: 'flex',
   flexDirection: 'column',
@@ -79,7 +79,7 @@ export const StyledContainer = styled('div')(({ isOpen }) => ({ theme }) => ({
 }));
 
 export const StyledLogoContainer = styled(Link)(({ theme }) => ({
-  background: globalTheme.palette.primary.dark,
+  background: '#002950',
   borderRadius: '0 10px 10px 0',
   display: 'none',
   justifyContent: 'center',
@@ -141,7 +141,7 @@ export const StyledAuthorization = styled('div')(({ theme }) => ({
   display: 'flex',
   width: '100%',
   height: '100px',
-  background: globalTheme.palette.primary.dark,
+  background: '#002950',
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: '0 0 35px 0',
@@ -206,6 +206,7 @@ export const StyledLoginIcon = styled('i')(({ theme }) => ({
 
 export const StyledLogoImage = styled('img')(({ theme }) => ({
   width: '250px',
+  cursor: 'pointer',
 }));
 
 // responsive
@@ -235,3 +236,4 @@ export const BurgerBox = styled('div')(({ theme }) => ({
     display: 'none',
   },
 }));
+export const StyledBurgerLogo = styled(Link)(({ theme }) => ({}));

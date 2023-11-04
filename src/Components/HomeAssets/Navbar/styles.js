@@ -11,7 +11,7 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   top: '0',
   left: '0',
   zIndex: '999',
-  background: '#3a7ae3',
+  background: '#2369d1',
   transition: '.3s',
   [theme.breakpoints.up('lg')]: {
     width: '100%',

@@ -22,6 +22,7 @@ import {
   ResponsiveBurger,
   StyledContainerPanel,
   BurgerBox,
+  StyledBurgerLogo,
 } from './styles';
 import Logo from './../../../assets/logo.svg';
 import AuthDetails from '../LogInBackEnd/AuthDetails';
@@ -86,7 +87,9 @@ const LeftPanelDashboard = () => {
     <>
       <ResponsiveBurger>
         <Hamburger toggled={isOpen} toggle={handleToggle} color='#fff' />
-        <StyledLogoImage src={Logo} />
+        <StyledBurgerLogo to='/'>
+          <StyledLogoImage src={Logo} />
+        </StyledBurgerLogo>
       </ResponsiveBurger>
 
       <StyledContainer isOpen={isOpen ? 'open' : ''}>
