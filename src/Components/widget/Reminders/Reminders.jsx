@@ -44,10 +44,23 @@ const Reminders = () => {
     let renderedList = [];
     for (let i = 0; i < 3; i++) {
       if (i < reminders.length) {
+        let reminderStatusColor;
+        if (reminders[i].category === "test") {
+          reminderStatusColor = "red";
+        } else if (reminders[i].category === "other") {
+          reminderStatusColor = "green";
+        } else if (reminders[i].category === "project") {
+          reminderStatusColor = "orange";
+        } else if (reminders[i].category === "homework") {
+          reminderStatusColor = "blue";
+        } else {
+          reminderStatusColor = "black";
+        }
+
         renderedList.push(
           <div key={i}>
             <Reminder>
-              <ReminderStatus style={{ background: "red" }} />
+              <ReminderStatus style={{ background: reminderStatusColor }} />
               <ReminderDescription>
                 <ReminderTitle>{reminders[i].title}</ReminderTitle>
                 <ReminderSubtitle>
