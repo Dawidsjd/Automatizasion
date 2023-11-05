@@ -37,7 +37,7 @@ b)Szkolną, która zawiera:<br>
 	-Reminders: Przypominacze, które przypomną nam np.: o upływających terminach zadań domowych, sprawdzianach.
 	-School Dairy: Opcja przekierowująca nas do naszego szkolnego dziennika,<br>
 	-Wikipedia: Po wpisaniu frazy zostanie ona wyszukana w wikipedii,<br>
-	-Notes: Notatki, które możemy dodawać, usuwać, edytować<br>
+	-Notes: Notatki, które możemy dodawać, usuwać, edytować <br>
 Posiada również zakładkę Support, dzięki której można skontaktować się z twórcami, w razie problemów technicznych. Aplikacja zawiera też opcję logowania, która jest niezbędnie potrzebna do używania aplikacji. <br>
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 <br>
