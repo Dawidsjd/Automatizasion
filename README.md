@@ -28,6 +28,7 @@ JavaScript(React)
 
 <h2>W jaki sposób działa Wasza aplikacja? Co może dzięki niej osiągnąć użytkownik? Jaką ma funkcjonalność?
 Opisz działanie Waszej aplikacji/narzędzia</h2>
+Ogólnie rzecz ujmując, aplikacja dzieli się na dwie części:	<br>
 a)Domową, w której znajdziemy:<br>
 	-Cooking Assistant: Wyszukuje w bazie danych przepisy według filtrów wyszukiwań np: po wpisaniu słowa Chicken, wyszukuje nam wszystkie dostępne przepisy związane z kurczakiem,<br>
 	-To do list: Jest to typowa lista To-Do, dzięki której nie zapominimy nic zrobić, o ile to zapiszemy. Zapisuje dopiero po zalogowaniu,<br>
