@@ -20,6 +20,7 @@ export const StyledWrapperContent = styled('section')(({ theme }) => ({
   marginBottom: '100px',
   [theme.breakpoints.up('lg')]: {
     width: '65%',
+    maxWidth: '1250px',
   },
 }));
 
