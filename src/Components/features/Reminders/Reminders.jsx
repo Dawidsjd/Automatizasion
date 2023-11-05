@@ -38,7 +38,6 @@ import {
   UpcomingList,
   ReminderSectionName,
   Reminder,
-  EditBtn,
   DeleteBtn,
   ReminderTitle,
   ReminderDate,
@@ -58,7 +57,6 @@ const RemindersList = () => {
   }, []);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
   const [editReminder, setEditReminder] = useState(null);
   const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState(new Date());
@@ -112,7 +110,6 @@ const RemindersList = () => {
 
   const openEditModal = (reminder) => {
     setModalIsOpen(true);
-    setIsEditing(true);
     setEditReminder(reminder);
     setTitle(reminder.title);
     setStartDate(reminder.startDate);
@@ -125,7 +122,6 @@ const RemindersList = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    setIsEditing(false);
     setEditReminder(null);
   };
 
@@ -161,50 +157,6 @@ const RemindersList = () => {
     if (user) {
       const userId = user.uid;
       saveRemindersToFirebase(userId, Array.from(remindersMap.entries()));
-    }
-  };
-
-  const handleEdit = (date, index) => {
-    const reminders = remindersMap.get(date);
-    const reminderToEdit = reminders[index];
-    openEditModal(reminderToEdit);
-  };
-
-  const handleEditSubmit = (e) => {
-    e.preventDefault();
-
-    const editedReminder = {
-      title: title,
-      startDate: startDate,
-      endDate: endDate,
-      startTime: startTime,
-      endTime: endTime,
-      description: description,
-      category: category,
-    };
-
-    const reminders = remindersMap.get(
-      moment(editReminder.startDate).format("Do MMMM")
-    );
-
-    const index = reminders.findIndex(
-      (reminder) => reminder.title === editReminder.title
-    );
-    reminders[index] = editedReminder;
-    setRemindersMap(new Map(remindersMap));
-
-    closeModal();
-    setTitle("");
-    setStartDate(new Date());
-    setEndDate(new Date());
-    setStartTime(new Date());
-    setEndTime(new Date());
-    setDescription("");
-    setCategory("");
-
-    if (user) {
-      const userId = user.uid;
-      saveEditedRemindersToFirebase(userId, Array.from(remindersMap.entries()));
     }
   };
 
@@ -247,15 +199,13 @@ const RemindersList = () => {
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-          contentLabel={
-            isEditing ? "Edit Reminder Modal" : "Add Reminder Modal"
-          }
+          contentLabel={"Add Reminder Modal"}
         >
           <StyledModalContent>
             <CloseButton type="button" onClick={closeModal}>
               <AiFillCloseCircle />
             </CloseButton>
-            <Form onSubmit={isEditing ? handleEditSubmit : handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <FormGroup>
                 <FormTitle>Title</FormTitle>
                 <StyledInputTitle
@@ -347,7 +297,7 @@ const RemindersList = () => {
                   placeholder="(e.g. Test from unit 6) "
                 />
               </FormGroup>
-              <SubmitBtn type="submit">{isEditing ? "Save" : "Add"}</SubmitBtn>
+              <SubmitBtn type="submit">Add</SubmitBtn>
             </Form>
           </StyledModalContent>
         </StyledModal>
