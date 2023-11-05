@@ -88,13 +88,12 @@ const Main = () => {
           <ReportProblemIcon sx={{ fontSize: 36 }} />
         </DialogTitle>
         <DialogContent dividers style={{ textAlign: "center" }}>
-          <h2>Zależy nam na twojej wygodzie</h2>
+          <h2>We care about your comfort</h2>
           <p>
-            Ze względu na obciążenie modeli 3D, mogą mieć one wpływ na
-            słabsze urządzenia. Czy chcesz je wyświetlać?
+          Due to the load on 3D models, they may impact weaker devices.<br/> Do you want to display them?
           </p>
           <p>
-            Opcje mozesz zmienic w kazdej chwili klikając{" "}
+          You can change options at any time by clicking{" "}
             <img
               src={IconModel}
               alt="3D Model"
