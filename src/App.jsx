@@ -18,8 +18,8 @@ import Diary from './Components/features/Diary/Diary';
 import Profile from './pages/Settings/Profile';
 import Security from './pages/Settings/Security';
 import Application from './pages/Settings/Application';
-import TermsAndConditions from './pages/TermsAndConditions/TermsAndConditions';
-import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import TermsAndConditions from './pages/PrivacyPolicy&Terms/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy&Terms/PrivacyPolicy';
 
 function App() {
   return (

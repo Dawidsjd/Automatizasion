@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   StyledContainerSubPage,
   StyledWrapperContent,
@@ -8,6 +8,20 @@ import Header from '../../Components/HomeAssets/Navbar/Navbar';
 import Footer from '../../Components/HomeAssets/Footer/Footer';
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    const handleScrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('hashchange', handleScrollToTop);
+
+    handleScrollToTop();
+
+    return () => {
+      window.removeEventListener('hashchange', handleScrollToTop);
+    };
+  }, []);
+
   return (
     <StyledContainerSubPage>
       <Header />
