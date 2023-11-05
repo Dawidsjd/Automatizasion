@@ -102,33 +102,6 @@ const TermsAndConditions = () => {
 
           <h2>3. Final Provisions</h2>
           <p>
-            3.1. FlowView utilizes{' '}
-            <a
-              href='https://www.bing.com/create'
-              target='_blank'
-              rel='noreferrer'
-            >
-              Bing Create
-            </a>{' '}
-            for creating several graphics used in the application.
-          </p>
-          <p>
-            3.2. FlowView users accept that graphics created using tools such as
-            Bing Create are used for illustrative purposes in the application
-            and are not presented as users' own work.
-          </p>
-
-          <h2>4. Final Provisions</h2>
-          <p>
-            4.1. Using the FlowView application implies acceptance of these
-            terms and conditions.
-          </p>
-          <p>
-            4.2. FlowView reserves the right to amend these terms and conditions
-            at any time, which will be announced on the website or within the
-            application.
-          </p>
-          <p>
             3.1. Using the FlowView application implies acceptance of these
             terms and conditions.
           </p>
