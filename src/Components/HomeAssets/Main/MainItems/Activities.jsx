@@ -5,7 +5,7 @@ import {
   StyledVisualSection,
   StyledContent,
 } from "../styles";
-import Image3 from "./../../../../assets/Image3.jpg";
+import Image3 from "./../../../../assets/browsing.svg";
 
 const Activities = () => {
   return (
@@ -24,7 +24,7 @@ const Activities = () => {
             <img
               src={Image3}
               alt="SchoolGraphic"
-              style={{ width: "75%", height: "auto" }}
+              style={{ width: "100%", height: "100%" }}
             />
           </StyledVisualSection>
         </WrapperActivities>

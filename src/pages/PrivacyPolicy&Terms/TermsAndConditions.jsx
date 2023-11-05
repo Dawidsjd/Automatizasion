@@ -100,7 +100,7 @@ const TermsAndConditions = () => {
             unconditional solutions to programming problems.
           </p>
 
-          <h2>3. Utilization of Graphic Design Tools</h2>
+          <h2>3. Final Provisions</h2>
           <p>
             3.1. FlowView utilizes{' '}
             <a
@@ -125,6 +125,15 @@ const TermsAndConditions = () => {
           </p>
           <p>
             4.2. FlowView reserves the right to amend these terms and conditions
+            at any time, which will be announced on the website or within the
+            application.
+          </p>
+          <p>
+            3.1. Using the FlowView application implies acceptance of these
+            terms and conditions.
+          </p>
+          <p>
+            3.2. FlowView reserves the right to amend these terms and conditions
             at any time, which will be announced on the website or within the
             application.
           </p>
