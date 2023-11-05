@@ -134,8 +134,8 @@ const RemindersList = () => {
 
     const newReminder = {
       title: title,
-      startDate: startDate,
-      endDate: endDate,
+      startDate: startDate.toISOString(),
+      endDate: endDate.toISOString(),
       startTime: startTime,
       endTime: endTime,
       description: description,
@@ -175,40 +175,23 @@ const RemindersList = () => {
 
     const editedReminder = {
       title: title,
-      startDate: moment(startDate).toDate(), // Upewnij się, że data jest prawidłowo sformatowana
-      endDate: moment(endDate).toDate(),
-      startTime: moment(startTime).toDate(),
-      endTime: moment(endTime).toDate(),
+      startDate: startDate,
+      endDate: endDate,
+      startTime: startTime,
+      endTime: endTime,
       description: description,
       category: category,
     };
 
-    const remindersDate = moment(editReminder.startDate).format("Do MMMM");
+    const reminders = remindersMap.get(
+      moment(editReminder.startDate).format("Do MMMM")
+    );
 
-    const reminders = remindersMap.get(remindersDate);
-
-    // Znajdź indeks przypomnienia, które chcemy zaktualizować
     const index = reminders.findIndex(
       (reminder) => reminder.title === editReminder.title
     );
-
-    if (index !== -1) {
-      reminders[index] = editedReminder; // Zaktualizuj przypomnienie
-
-      // Zaktualizuj stan przypomnień
-      const updatedRemindersMap = new Map(remindersMap);
-      updatedRemindersMap.set(remindersDate, reminders);
-      setRemindersMap(updatedRemindersMap);
-
-      // Zapisz zaktualizowane przypomnienia do bazy danych Firebase
-      if (user) {
-        const userId = user.uid;
-        saveEditedRemindersToFirebase(
-          userId,
-          Array.from(updatedRemindersMap.entries())
-        );
-      }
-    }
+    reminders[index] = editedReminder;
+    setRemindersMap(new Map(remindersMap));
 
     closeModal();
     setTitle("");
@@ -218,6 +201,11 @@ const RemindersList = () => {
     setEndTime(new Date());
     setDescription("");
     setCategory("");
+
+    if (user) {
+      const userId = user.uid;
+      saveEditedRemindersToFirebase(userId, Array.from(remindersMap.entries()));
+    }
   };
 
   const handleDelete = (date, index) => {
@@ -403,9 +391,6 @@ const RemindersList = () => {
                             <DeleteBtn onClick={() => handleDelete(date, idx)}>
                               <AiFillDelete />
                             </DeleteBtn>
-                            <EditBtn onClick={() => handleEdit(date, index)}>
-                              <AiFillEdit />
-                            </EditBtn>
                             <ReminderTitle>{reminder.title}</ReminderTitle>
                             <ReminderTime>
                               {moment(reminder.startTime).format("HH:mm")}-
@@ -462,9 +447,6 @@ const RemindersList = () => {
                             <DeleteBtn onClick={() => handleDelete(date, idx)}>
                               <AiFillDelete />
                             </DeleteBtn>
-                            <EditBtn onClick={() => handleEdit(date, index)}>
-                              <AiFillEdit />
-                            </EditBtn>
                             <ReminderTitle>{reminder.title}</ReminderTitle>
                             <ReminderTime>
                               {moment(reminder.startTime).format("HH:mm")}-
