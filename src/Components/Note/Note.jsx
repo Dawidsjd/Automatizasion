@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { styles } from "./styles"; // Import pliku ze stylami
-import { Container } from "@mui/material";
+import { styles } from "./styles";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, set, onValue } from "firebase/database";
-import { db } from '../../firebase';
 
 function Note() {
   const [notes, setNotes] = useState([]);
@@ -72,7 +70,10 @@ function Note() {
 
       setEditingNoteId(null);
     } else {
-      setNotes([...notes, { ...state, id: Math.random() * 10, date: new Date().toLocaleString() }]);
+      setNotes([
+        ...notes,
+        { ...state, id: Math.random() * 10, date: new Date().toLocaleString() },
+      ]);
     }
 
     setState({
@@ -82,7 +83,10 @@ function Note() {
     });
 
     if (user) {
-      saveNotesToFirebase(user.uid, [...notes, { ...state, id: Math.random() * 10, date: new Date().toLocaleString() }]);
+      saveNotesToFirebase(user.uid, [
+        ...notes,
+        { ...state, id: Math.random() * 10, date: new Date().toLocaleString() },
+      ]);
     }
   };
 

@@ -17,7 +17,6 @@ const SchoolDiary = () => {
         <div>
           <Title>School Diary</Title>
           <Subtitle>Stay Organized: Your Essential School Companion</Subtitle>
-          {/* Podłączyć tu link do dziennika */}
           <Link to="/SchoolDashboard/Diary">
             <Button>
               Come in

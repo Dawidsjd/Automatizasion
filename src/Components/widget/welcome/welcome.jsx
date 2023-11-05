@@ -65,7 +65,7 @@ const Welcome = () => {
       <StyledContent>
         <StyledWelcome>
           <StyledMessage>
-            {username ? `Good Day, ${username}!` : "Good Day!"}
+            {username ? `Good Day, ${username}!` : "Good Day, Anonymus!"}
           </StyledMessage>
           <StyledDescription>Have a nice day!</StyledDescription>
         </StyledWelcome>

@@ -13,7 +13,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import styles from "./style";
@@ -21,7 +21,7 @@ import globalTheme from "../GlobalStyles/GlobalTheme";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialog-paper": {
-    background: "#707c94", // Zmiana koloru tła
+    background: "#707c94",
   },
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
@@ -30,10 +30,10 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
   "& .MuiButton-textPrimary": {
-    color: "#fff", // Zmiana koloru napisu w przycisku "Close"
+    color: "#fff",
   },
   "& .MuiSvgIcon-root": {
-    fill: "#fff", // Zmiana koloru ikony "X"
+    fill: "#fff",
   },
 }));
 
@@ -47,22 +47,20 @@ const tileStyles = {
   },
 };
 
-
 const LoadingIndicator = ({ loading }) => {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       {loading && <CircularProgress />}
     </div>
   );
 };
-
 
 const RecipeSearch = () => {
   const [recipes, setRecipes] = useState([]);
@@ -99,7 +97,6 @@ const RecipeSearch = () => {
       const response = await fetch(url, options);
       const data = await response.json();
       setRecipes(data.results);
-      // console.log(data.results[0].sections[0].components[0].raw_text);
     } catch (error) {
       console.error(error);
     } finally {
@@ -112,7 +109,7 @@ const RecipeSearch = () => {
   }, [query, fetchCount]);
 
   const handleSearch = () => {
-    setFetchCount(prevCount => prevCount + 1);
+    setFetchCount((prevCount) => prevCount + 1);
     setSearchClicked(true);
   };
 
@@ -162,8 +159,8 @@ const RecipeSearch = () => {
             style={{
               width: "100%",
               padding: "8px",
-              border: "none", // Usunięcie obramowania
-              outline: "none", // Usunięcie obramowania po najechaniu
+              border: "none",
+              outline: "none",
             }}
           />
           <button
@@ -190,8 +187,8 @@ const RecipeSearch = () => {
             flexWrap: "wrap",
             gap: "10px",
             justifyContent: "center",
-            maxHeight: "60vh", // Dodaj maksymalną wysokość
-            overflowY: "auto", // Dodaj suwak
+            maxHeight: "60vh",
+            overflowY: "auto",
           }}
         >
           {recipes.length > 0 ? (

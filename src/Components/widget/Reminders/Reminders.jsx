@@ -120,7 +120,7 @@ const Reminders = () => {
       >
         <div style={{ width: "60%" }}>
           <Title>Reminders</Title>
-          {renderReminder()} {/* Call the renderReminder function */}
+          {renderReminder()}
           <Link to="/SchoolDashboard/Reminder">
             <Button>
               Show more

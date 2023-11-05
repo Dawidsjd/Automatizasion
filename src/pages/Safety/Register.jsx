@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
   FacebookAuthProvider,
-} from 'firebase/auth';
-import { auth } from '../../firebase';
+} from "firebase/auth";
+import { auth } from "../../firebase";
 import {
   StyledLogInContainer,
   StyledLogInWrapper,
@@ -18,21 +18,18 @@ import {
   StyledSeparate,
   StyledSeparateMobile,
   StyledButtons,
-  StyledLinkForgotPassword,
-  StyledLinkRegister,
   StyledFcGoogle,
   StyledBsFacebook,
   StyledBsGithub,
   StyledLinkPrevent,
-} from './styles';
-import LineLogIn from '../../assets/LineLogIn.svg';
-import { useNavigate } from 'react-router-dom';
-import { IoReturnUpBackOutline } from 'react-icons/io5';
+} from "./styles";
+import { useNavigate } from "react-router-dom";
+import { IoReturnUpBackOutline } from "react-icons/io5";
 
 const Register = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -46,21 +43,21 @@ const Register = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
-        if (errorCode === 'auth/email-already-in-use') {
-          setError('Konto o podanym adresie email już istnieje.');
-        } else if (errorCode === 'auth/invalid-email') {
-          setError('Podano niepoprawny adres email.');
-        } else if (errorCode === 'auth/weak-password') {
-          setError('Hasło jest za słabe.');
+        if (errorCode === "auth/email-already-in-use") {
+          setError("Konto o podanym adresie email już istnieje.");
+        } else if (errorCode === "auth/invalid-email") {
+          setError("Podano niepoprawny adres email.");
+        } else if (errorCode === "auth/weak-password") {
+          setError("Hasło jest za słabe.");
         } else {
           console.error(errorMessage);
-          setError('Wystąpił nieznany błąd.');
+          setError("Wystąpił nieznany błąd.");
         }
       });
   };
@@ -70,7 +67,7 @@ const Register = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         console.log(error);
@@ -82,7 +79,7 @@ const Register = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         console.log(error);
@@ -94,7 +91,7 @@ const Register = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         console.log(error);
@@ -118,11 +115,11 @@ const Register = () => {
                 <button onClick={signInWithGitHub}>
                   <StyledBsGithub /> Log In with GitHub
                 </button>
-                <StyledLinkPrevent to='/homeDashboard'>
+                <StyledLinkPrevent to="/homeDashboard">
                   <IoReturnUpBackOutline size={23} />
                   <p>Back to home Dashboard</p>
                 </StyledLinkPrevent>
-                <StyledLinkPrevent to='/login'>
+                <StyledLinkPrevent to="/login">
                   <IoReturnUpBackOutline size={23} />
                   <p>Back to log in</p>
                 </StyledLinkPrevent>
@@ -136,7 +133,7 @@ const Register = () => {
               <SingleInput>
                 <p>Username or email</p>
                 <input
-                  type='text'
+                  type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -144,7 +141,7 @@ const Register = () => {
               <SingleInput>
                 <p>Password</p>
                 <input
-                  type='password'
+                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -152,13 +149,13 @@ const Register = () => {
               <SingleInput>
                 <p>Repeat password</p>
                 <input
-                  type='password'
+                  type="password"
                   value={repeatPassword}
                   onChange={(e) => setRepeatPassword(e.target.value)}
                 />
               </SingleInput>
               <button onClick={signUp}>Register</button>
-              {error && <p style={{ color: 'red' }}>{error}</p>}
+              {error && <p style={{ color: "red" }}>{error}</p>}
             </StyledDefaultLogIn>
           </UserDataWrapper>
         </StyledLogInContent>
