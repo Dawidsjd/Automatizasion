@@ -74,7 +74,7 @@ const RemindersList = () => {
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       if (user) {
         setUser(user);
-        getRemindersFromFirebase(user.uid); // Pobierz przypomnienia dla obecnie zalogowanego użytkownika
+        getRemindersFromFirebase(user.uid);
       } else {
         setUser(null);
       }

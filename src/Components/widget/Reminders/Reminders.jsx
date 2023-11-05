@@ -19,25 +19,45 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Reminders = () => {
   const [reminders, setReminders] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       if (user) {
-        const userId = user.uid;
-        getReminder(userId);
+        setUser(user);
+        getRemindersFromFirebase(user.uid);
       }
     });
 
     return () => unsubscribe();
   }, []);
 
-  const getReminder = (userId) => {
+  const getRemindersFromFirebase = (userId) => {
     onValue(ref(db, `reminders/${userId}`), (snapshot) => {
       const data = snapshot.val();
       if (data !== null) {
-        setReminders(Object.values(data));
+        const remindersMap = new Map(data);
+        const allReminders = [];
+        for (let [_, reminders] of remindersMap) {
+          allReminders.push(...reminders);
+        }
+        const sortedReminders = allReminders.sort(
+          (a, b) => new Date(a.startDate) - new Date(b.startDate)
+        );
+        setReminders(sortedReminders.slice(0, 3));
       }
     });
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const formattedDate = `${date
+      .toDateString()
+      .slice(0, 16)} ${date.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}`;
+    return formattedDate;
   };
 
   const renderReminder = () => {
@@ -56,6 +76,8 @@ const Reminders = () => {
         } else {
           reminderStatusColor = "black";
         }
+        const startDate = formatDate(reminders[i].startDate);
+        const endDate = formatDate(reminders[i].endDate);
 
         renderedList.push(
           <div key={i}>
@@ -64,8 +86,7 @@ const Reminders = () => {
               <ReminderDescription>
                 <ReminderTitle>{reminders[i].title}</ReminderTitle>
                 <ReminderSubtitle>
-                  {reminders[i].startDate} {reminders[i].endDate}{" "}
-                  {reminders[i].startTime} {reminders[i].endTime}
+                  {startDate} - {endDate}
                 </ReminderSubtitle>
               </ReminderDescription>
             </Reminder>
