@@ -5,6 +5,7 @@ import {
   StyledVisualSection,
   StyledContent,
 } from '../styles';
+import Browsing from '../../../../assets/browsing.svg'
 
 const Activities = () => {
   return (
@@ -19,7 +20,13 @@ const Activities = () => {
               is designed to make using it a pure pleasure.
             </p>
           </StyledContent>
-          <StyledVisualSection></StyledVisualSection>
+          <StyledVisualSection>
+          <img
+              src={Browsing}
+              alt='SchoolGraphic'
+              style={{ width: '100%', height: '100%', }}
+            />
+          </StyledVisualSection>
         </WrapperActivities>
       </div>
     </StyledWrapperItem>

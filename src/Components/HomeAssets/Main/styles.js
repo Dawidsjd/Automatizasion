@@ -113,7 +113,7 @@ export const StyledVisualSection = styled('div')(({ theme }) => ({
   width: '95%',
   height: '350px',
   position: 'relative',
-  background: 'orange',
+  background: 'none',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
