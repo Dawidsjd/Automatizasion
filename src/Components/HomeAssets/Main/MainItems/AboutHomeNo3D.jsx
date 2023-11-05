@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   StyledWrapperItem,
   WrapperItem,
   StyledAssets,
   StyledContent,
-} from '../styles';
-import HouseGuy from '../../../../assets/house_guy.svg';
+} from "../styles";
+import Image1 from "./../../../../assets/Image1.jpg";
 
 const AboutDashboardHome = () => {
   return (
@@ -24,9 +24,9 @@ const AboutDashboardHome = () => {
           </StyledContent>
           <StyledAssets>
             <img
-              src={HouseGuy}
-              alt='HomeGraphic'
-              style={{ width: '100%', height: '100%', }}
+              src={Image1}
+              alt="HomeGraphic"
+              style={{ width: "75%", height: "auto" }}
             />
           </StyledAssets>
         </WrapperItem>

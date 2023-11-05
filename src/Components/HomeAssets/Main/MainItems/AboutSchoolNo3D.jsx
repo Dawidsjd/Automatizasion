@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 import {
   StyledWrapperItem,
   WrapperItem,
   StyledAssets,
   StyledContent,
-} from '../styles';
-import SchoolGuy from '../../../../assets/school_guy.svg';
+} from "../styles";
+import Image2 from "./../../../../assets/Image2.jpg";
 
 const AboutDashboardHome = () => {
   return (
     <StyledWrapperItem>
       <div style={{ maxWidth: 1250 }}>
         <WrapperItem>
-        <StyledAssets>
+          <StyledAssets>
             <img
-              src={SchoolGuy}
-              alt='SchoolGraphic'
-              style={{ width: '100%', height: '100%', }}
+              src={Image2}
+              alt="SchoolGraphic"
+              style={{ width: "75%", height: "auto" }}
             />
           </StyledAssets>
           <StyledContent>

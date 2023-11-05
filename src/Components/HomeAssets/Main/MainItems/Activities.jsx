@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   StyledWrapperItem,
   WrapperActivities,
   StyledVisualSection,
   StyledContent,
-} from '../styles';
-import Browsing from '../../../../assets/browsing.svg'
+} from "../styles";
+import Image3 from "./../../../../assets/Image3.jpg";
 
 const Activities = () => {
   return (
@@ -21,10 +21,10 @@ const Activities = () => {
             </p>
           </StyledContent>
           <StyledVisualSection>
-          <img
-              src={Browsing}
-              alt='SchoolGraphic'
-              style={{ width: '100%', height: '100%', }}
+            <img
+              src={Image3}
+              alt="SchoolGraphic"
+              style={{ width: "75%", height: "auto" }}
             />
           </StyledVisualSection>
         </WrapperActivities>
