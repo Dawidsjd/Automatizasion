@@ -55,7 +55,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 const RemindersList = () => {
   useEffect(() => {
     document.title = "Reminders";
-
   }, []);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -80,7 +79,7 @@ const RemindersList = () => {
         setUser(null);
       }
     });
-  
+
     return () => unsubscribe();
   }, []);
 
@@ -132,7 +131,7 @@ const RemindersList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const newReminder = {
       title: title,
       startDate: startDate,
@@ -142,14 +141,14 @@ const RemindersList = () => {
       description: description,
       category: category,
     };
-  
+
     const date = moment(startDate).format("Do MMMM");
-  
+
     const reminders = remindersMap.get(date) || [];
     reminders.push(newReminder);
     remindersMap.set(date, reminders);
     setRemindersMap(new Map(remindersMap));
-  
+
     closeModal();
     setTitle("");
     setStartDate(new Date());
@@ -158,13 +157,12 @@ const RemindersList = () => {
     setEndTime(new Date());
     setDescription("");
     setCategory("");
-  
+
     if (user) {
       const userId = user.uid;
       saveRemindersToFirebase(userId, Array.from(remindersMap.entries()));
     }
   };
-  
 
   const handleEdit = (date, index) => {
     const reminders = remindersMap.get(date);
@@ -174,27 +172,44 @@ const RemindersList = () => {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
-  
+
     const editedReminder = {
       title: title,
-      startDate: startDate,
-      endDate: endDate,
-      startTime: startTime,
-      endTime: endTime,
+      startDate: moment(startDate).toDate(), // Upewnij się, że data jest prawidłowo sformatowana
+      endDate: moment(endDate).toDate(),
+      startTime: moment(startTime).toDate(),
+      endTime: moment(endTime).toDate(),
       description: description,
       category: category,
     };
-  
-    const reminders = remindersMap.get(
-      moment(editReminder.startDate).format("Do MMMM")
-    );
-  
+
+    const remindersDate = moment(editReminder.startDate).format("Do MMMM");
+
+    const reminders = remindersMap.get(remindersDate);
+
+    // Znajdź indeks przypomnienia, które chcemy zaktualizować
     const index = reminders.findIndex(
       (reminder) => reminder.title === editReminder.title
     );
-    reminders[index] = editedReminder;
-    setRemindersMap(new Map(remindersMap));
-  
+
+    if (index !== -1) {
+      reminders[index] = editedReminder; // Zaktualizuj przypomnienie
+
+      // Zaktualizuj stan przypomnień
+      const updatedRemindersMap = new Map(remindersMap);
+      updatedRemindersMap.set(remindersDate, reminders);
+      setRemindersMap(updatedRemindersMap);
+
+      // Zapisz zaktualizowane przypomnienia do bazy danych Firebase
+      if (user) {
+        const userId = user.uid;
+        saveEditedRemindersToFirebase(
+          userId,
+          Array.from(updatedRemindersMap.entries())
+        );
+      }
+    }
+
     closeModal();
     setTitle("");
     setStartDate(new Date());
@@ -203,13 +218,7 @@ const RemindersList = () => {
     setEndTime(new Date());
     setDescription("");
     setCategory("");
-  
-    if (user) {
-      const userId = user.uid;
-      saveEditedRemindersToFirebase(userId, Array.from(remindersMap.entries()));
-    }
   };
-  
 
   const handleDelete = (date, index) => {
     const updatedReminders = remindersMap
@@ -391,10 +400,12 @@ const RemindersList = () => {
 
                         return (
                           <div key={idx} style={{ position: "relative" }}>
-                           
                             <DeleteBtn onClick={() => handleDelete(date, idx)}>
                               <AiFillDelete />
                             </DeleteBtn>
+                            <EditBtn onClick={() => handleEdit(date, index)}>
+                              <AiFillEdit />
+                            </EditBtn>
                             <ReminderTitle>{reminder.title}</ReminderTitle>
                             <ReminderTime>
                               {moment(reminder.startTime).format("HH:mm")}-
@@ -448,10 +459,12 @@ const RemindersList = () => {
                         }
                         return (
                           <div key={idx} style={{ position: "relative" }}>
-                            
                             <DeleteBtn onClick={() => handleDelete(date, idx)}>
                               <AiFillDelete />
                             </DeleteBtn>
+                            <EditBtn onClick={() => handleEdit(date, index)}>
+                              <AiFillEdit />
+                            </EditBtn>
                             <ReminderTitle>{reminder.title}</ReminderTitle>
                             <ReminderTime>
                               {moment(reminder.startTime).format("HH:mm")}-
