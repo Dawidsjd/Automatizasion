@@ -26,8 +26,8 @@ const ThreeScene = () => {
           rotateSpeed={0.4}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={0}
-          maxDistance={100}
-          minDistance={1}
+          maxDistance={10}
+          minDistance={4}
         />
 
         <Environment preset='forest' />
