@@ -62,6 +62,7 @@ const Main = () => {
         aria-labelledby="customized-dialog-title"
         open={open}
         maxWidth="md"
+        style={{backdropFilter: "blur(10px)"}}
       >
         <DialogTitle sx={{ m: 0, p: 2, textAlign: 'center' }} id="customized-dialog-title">
           <ReportProblemIcon sx={{ fontSize: 36 }} />

@@ -5,6 +5,7 @@ import {
   StyledAssets,
   StyledContent,
 } from '../styles';
+import SchoolGuy from '../../../../assets/school_guy.svg';
 
 const AboutDashboardHome = () => {
   return (
@@ -13,9 +14,9 @@ const AboutDashboardHome = () => {
         <WrapperItem>
         <StyledAssets>
             <img
-              src='https://builtforathletes.com/cdn/shop/articles/Ronnie_Coleman.jpg?v=1589441229'
+              src={SchoolGuy}
               alt='SchoolGraphic'
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              style={{ width: '100%', height: '100%', }}
             />
           </StyledAssets>
           <StyledContent>
