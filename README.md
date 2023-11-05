@@ -9,11 +9,11 @@
 <p>FlowView</p>
 
 <h2>Skład drużyny</h2>
-Dawid Buszta – Backend Developer
-Radosław Marek -	Frontend Developer
-Rafał Buczkowski – Frontend Developer
-Michał Kociołek – Frontend Developer
-Maciej Nowicki – Frontend Developer, Dokumentacja
+Dawid Buszta – Backend Developer<br>
+Radosław Marek - Frontend Developer<br>
+Rafał Buczkowski – Frontend Developer<br>
+Michał Kociołek – Frontend Developer<br>
+Maciej Nowicki – Frontend Developer, Dokumentacja<br>
 
 <h2>Link do pracy</h2>
 ???????????????????????????????????
