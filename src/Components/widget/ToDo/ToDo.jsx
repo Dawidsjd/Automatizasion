@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   StyledContainer,
   Title,
@@ -8,12 +8,13 @@ import {
   CheckStatus,
   ListContent,
   Line,
-} from "./styles";
-import Notes from "../../../assets/Notes.svg";
-import EastIcon from "@mui/icons-material/East";
-import { db } from "../../../firebase";
-import { onValue, ref } from "firebase/database";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+  StyledDiv,
+} from './styles';
+import Notes from '../../../assets/Notes.svg';
+import EastIcon from '@mui/icons-material/East';
+import { db } from '../../../firebase';
+import { onValue, ref } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const ToDo = () => {
   const [todoList, setTodoList] = useState([]);
@@ -68,23 +69,23 @@ const ToDo = () => {
 
   return (
     <StyledContainer>
-      <div
+      <StyledDiv
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <div>
           <Title>To-do list</Title>
           {renderTodoList()}
-          <StyledLink to="/HomeDashboard/ToDoList">
+          <StyledLink to='/HomeDashboard/ToDoList'>
             Check list
-            <EastIcon style={{ marginLeft: "5px" }} />
+            <EastIcon style={{ marginLeft: '5px' }} />
           </StyledLink>
         </div>
-        <Icon draggable="false" src={Notes} alt="Notes Icon" />
-      </div>
+        <Icon draggable='false' src={Notes} alt='Notes Icon' />
+      </StyledDiv>
     </StyledContainer>
   );
 };

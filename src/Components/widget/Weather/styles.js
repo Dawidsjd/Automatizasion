@@ -14,6 +14,10 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   margin: '20px auto',
   padding: '32.5px',
   minHeight: '300px',
+  flexDirection: 'column',
+  [theme.breakpoints.up('md')]: {
+    flexDirection: 'row',
+  },
   [theme.breakpoints.up('lg')]: {
     minHeight: '300px',
   },

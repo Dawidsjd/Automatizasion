@@ -71,11 +71,14 @@ export const StyledDescription = styled('p')(({ theme }) => ({
 }));
 
 export const StyledImage = styled('img')(({ theme }) => ({
-  maxWidth: '35%',
+  maxWidth: '175px',
   pointerEvents: 'none',
   userSelect: 'none',
+  [theme.breakpoints.up('md')]: {
+    maxWidth: '225px',
+  },
   [theme.breakpoints.up('lg')]: {
-    width: '300px',
+    maxWidth: '300px',
   },
 }));
 
@@ -84,4 +87,9 @@ export const StyledContent = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   marginRight: '25px',
   marginBottom: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  [theme.breakpoints.up('md')]: {
+    flexDirection: 'row',
+  },
 }));
