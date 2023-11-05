@@ -75,6 +75,11 @@ const Main = () => {
         open={open}
         maxWidth="md"
         style={{backdropFilter: "blur(10px)"}}
+        sx={{
+          '& .MuiPaper-root': {
+            backgroundColor: '#0952bd',
+          },
+        }}
       >
         <DialogTitle
           sx={{ m: 0, p: 2, textAlign: "center" }}
@@ -85,7 +90,7 @@ const Main = () => {
         <DialogContent dividers style={{ textAlign: "center" }}>
           <h2>Zależy nam na twojej wygodzie</h2>
           <p>
-            Ze względu na duże obciążenie modeli 3D, mogą mieć one wpływ na
+            Ze względu na obciążenie modeli 3D, mogą mieć one wpływ na
             słabsze urządzenia. Czy chcesz je wyświetlać?
           </p>
           <p>
@@ -102,13 +107,13 @@ const Main = () => {
             />
           </p>
           <Button
-            autoFocus
-            sx={{ mx: 1 }}
+            sx={{ mx: 8 }}
             onClick={() => handleDisplayChange(true)}
+            style={{color: "#111", fontWeight: "bold"}}
           >
             Tak
           </Button>
-          <Button sx={{ mx: 1 }} onClick={() => handleDisplayChange(false)}>
+          <Button sx={{ mx: 8 }} onClick={() => handleDisplayChange(false)} style={{color: "#111", fontWeight: "bold"}}>
             Nie
           </Button>
         </DialogContent>
