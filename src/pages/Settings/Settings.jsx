@@ -82,15 +82,15 @@ const Settings = () => {
       <div style={styles.contentContainer}>
         <h1 style={styles.h1}>Account settings</h1>
         <div style={styles.navigationContainer}>
-          <a href="/profile" style={styles.navigationProfile}>
+        <Link to="/Settings/profile" style={styles.navigationProfile}>
             Profil
-          </a>
-          <a href="/security" style={styles.navigationSecurity}>
+          </Link>
+          <Link to="/Settings/security" style={styles.navigationSecurity}>
             Security
-          </a>
-          <a href="/application" style={styles.navigationApplication}>
+          </Link>
+          <Link to="/Settings/Application" style={styles.navigationApplication}>
             Application
-          </a>
+          </Link>
         </div>
         <img
           src={userProfile.profileImage}
