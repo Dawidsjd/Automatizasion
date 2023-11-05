@@ -1,4 +1,4 @@
-![image](https://github.com/Dawidsjd/Automatizasion/assets/95742362/da06ca07-a4e9-4788-a554-f96e81f63687)<h1>HackHeroes 2k23</h1> <br />
+<h1>HackHeroes 2k23</h1>
 
 <h3>Szybki host loginu: https://zippy-pasca-b55f6c.netlify.app</h3> <br />
 
@@ -8,11 +8,14 @@
 <h2>Nazwa Drużyny</h2>
 <p>FlowView</p>
 
+<h2>Skład drużyny</h2>
+Dawid Buszta – Backend Developer
+Radosław Marek -	Frontend Developer
+Rafał Buczkowski – Frontend Developer
+Michał Kociołek – Frontend Developer
+Maciej Nowicki – Frontend Developer, Dokumentacja
 
-Skład drużyny
-
-
-Link do pracy
+<h2 color:red;>Link do pracy</h2>
 
 
 Link do kodu źródłowego (jeżeli jest inny niż link do pracy )
