@@ -30,7 +30,7 @@ const ThreeScene = () => {
           minDistance={1}
         />
 
-        <Environment preset='studio' />
+        <Environment preset='forest' />
 
         <SchoolModel />
 

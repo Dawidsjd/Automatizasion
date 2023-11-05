@@ -8,7 +8,7 @@ const HomeModel = () => {
   const modelRef = useRef();
 
   let mixer = null;
-  const { scene, animations } = useLoader(GLTFLoader, "/import3D/shaylushay.glb");
+  const { scene, animations } = useLoader(GLTFLoader, "/import3D/house.glb");
   //console.log(scene.animations);
     
     scene.traverse(function(node){
@@ -19,7 +19,7 @@ const HomeModel = () => {
     });
 
   mixer = new THREE.AnimationMixer(scene);
-  void mixer.clipAction(animations[0]).play();
+  // void mixer.clipAction(animations[0]).play();
 
   useFrame((state, delta) => {
     mixer.update(delta);
@@ -27,7 +27,7 @@ const HomeModel = () => {
     modelRef.current.rotation.y += 0.001;
   });
 
-  return <primitive object={scene} ref={modelRef} scale={[1, 1, 1]} position={[0, -2, 0]} />;
+  return <primitive object={scene} ref={modelRef} scale={[0.2, 0.2, 0.2]} position={[0, -2, 0]} />;
 };
 
 export default HomeModel;
