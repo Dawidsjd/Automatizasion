@@ -92,6 +92,8 @@ const TermsAndConditions = () => {
               chat.openai.com
             </a>{' '}
             to assist users in coding and resolving programming-related issues.
+          </p>
+          <p>
             2.2. FlowView users acknowledge that the information and suggestions
             provided by artificial intelligence are offered solely for
             educational purposes and should not be considered as definitive and
@@ -108,18 +110,23 @@ const TermsAndConditions = () => {
             >
               Bing Create
             </a>{' '}
-            for creating several graphics used in the application. 3.2. FlowView
-            users accept that graphics created using tools such as Bing Create
-            are used for illustrative purposes in the application and are not
-            presented as users' own work.
+            for creating several graphics used in the application.
+          </p>
+          <p>
+            3.2. FlowView users accept that graphics created using tools such as
+            Bing Create are used for illustrative purposes in the application
+            and are not presented as users' own work.
           </p>
 
           <h2>4. Final Provisions</h2>
           <p>
             4.1. Using the FlowView application implies acceptance of these
-            terms and conditions. 4.2. FlowView reserves the right to amend
-            these terms and conditions at any time, which will be announced on
-            the website or within the application.
+            terms and conditions.
+          </p>
+          <p>
+            4.2. FlowView reserves the right to amend these terms and conditions
+            at any time, which will be announced on the website or within the
+            application.
           </p>
 
           <p style={{ marginTop: '20px' }}>Thank you for using FlowView!</p>
