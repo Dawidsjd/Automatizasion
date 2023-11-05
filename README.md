@@ -28,11 +28,12 @@ JavaScript(React)
 
 <h2>W jaki sposób działa Wasza aplikacja? Co może dzięki niej osiągnąć użytkownik? Jaką ma funkcjonalność?
 Opisz działanie Waszej aplikacji/narzędzia</h2><br>
-Ogólnie rzecz ujmując, aplikacja dzieli się na dwie części:	<br>
-a)Domową, w której znajdziemy:<br>
+
+**Ogólnie rzecz ujmując, aplikacja dzieli się na dwie części:**	<br>
+**a)Domową, w której znajdziemy:<br>**
 	-Cooking Assistant: Wyszukuje w bazie danych przepisy według filtrów wyszukiwań np: po wpisaniu słowa Chicken, wyszukuje nam wszystkie dostępne przepisy związane z kurczakiem,<br>
 	-To do list: Jest to typowa lista To-Do, dzięki której nie zapominimy nic zrobić, o ile to zapiszemy. Zapisuje dopiero po zalogowaniu,<br>
-b)Szkolną, która zawiera:<br>
+**b)Szkolną, która zawiera:<br>**
 	-Reminders: Przypominacze, które przypomną nam np.: o upływających terminach zadań domowych, sprawdzianach.
 	-School Dairy: Opcja przekierowująca nas do naszego szkolnego dziennika,<br>
 	-Wikipedia: Po wpisaniu frazy zostanie ona wyszukana w wikipedii,<br>
