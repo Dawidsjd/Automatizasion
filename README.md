@@ -2,10 +2,11 @@
 
 <h3>Szybki host loginu: https://zippy-pasca-b55f6c.netlify.app</h3> <br />
 
-Nazwa projektu
+<h2>Nazwa projektu</h2>
+<p>FlowView</p>
 
-
-Nazwa Drużyny
+<h2>Nazwa Drużyny</h2>
+<p>FlowView</p>
 
 
 Skład drużyny
