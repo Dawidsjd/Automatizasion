@@ -31,7 +31,6 @@ const styles = {
     color: "#ffffff",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    // backgroundColor: "#4a5568",
     padding: "0.5rem 1rem",
     marginLeft: "10px",
     display: "inline-block",
@@ -57,7 +56,7 @@ const styles = {
   imageBulletPoint: {
     width: "24px", // Dostosuj szerokość obrazu do swoich potrzeb
     height: "24px", // Dostosuj wysokość obrazu do swoich potrzeb
-    marginRight: "30px", // Dodaj odstęp między obrazem a treścią
+    marginRight: "30px", 
     float: "left",
   },
   input: {
@@ -65,7 +64,7 @@ const styles = {
     padding: "10px",
     marginBottom: "20px",
     outline: "none",
-    border: "2px solid black", // Dodanie czarnego obramowania
+    border: "2px solid black", 
     borderRadius: "5px",
     justifyContent: "center",
     margin: "0 auto",

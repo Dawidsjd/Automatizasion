@@ -21,7 +21,7 @@ const Settings = () => {
       setDisplayName(user.displayName);
     }
 
-    // ...
+ 
   }, []);
 
   const handleInputChange = (e) => {
@@ -36,32 +36,10 @@ const Settings = () => {
     reader.onload = (event) => {
       setUserProfile({ ...userProfile, profileImage: event.target.result });
     };
-
+    
     if (file) {
       reader.readAsDataURL(file);
     }
-  };
-
-  const handleSaveClick = () => {
-    // Tutaj można dodać kod do zapisu zmian na serwerze
-    // Następnie zaktualizuj stan aplikacji
-    // ...
-
-    // Przykład zapisu zmian na serwerze (przy użyciu fetch):
-    // fetch("url_do_api_zapisujacego_dane_uzytkownika", {
-    //   method: "POST",
-    //   body: JSON.stringify(userProfile),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log("Zapisano zmiany na serwerze:", data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Błąd podczas zapisywania zmian na serwerze:", error);
-    //   });
   };
 
   const handleNameChange = () => {
@@ -78,9 +56,15 @@ const Settings = () => {
   };
 
   return (
+    
     <div style={styles.container}>
-      <div>
+      <div style={styles.contentContainer}>
         <h1 style={styles.h1}>Account settings</h1>
+        <div style={styles.navigationContainer}>
+          <a href="/profile" style={styles.navigationProfile}>Profil</a>
+          <a href="/security" style={styles.navigationSecurity}>Security</a>
+          <a href="/application" style={styles.navigationApplication}>Application</a>
+        </div>
         <img
           src={userProfile.profileImage}
           alt="Profile"
@@ -132,7 +116,7 @@ const Settings = () => {
           />
         </div>
 
-        <button onClick={handleSaveClick} style={styles.button}>
+        <button onClick={handleSaveClick} style={styles.buttonSave}>
           Save changes
         </button>
         <button onClick={handleNameChange} style={styles.button}>
