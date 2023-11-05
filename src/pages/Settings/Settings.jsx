@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { styles } from "./styles";
-import LeftPanelDashboard from "../../Components/features/LeftPanelDashboard/LeftPanelDashboard";
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { updateProfile } from "firebase/auth";
@@ -12,7 +11,7 @@ const Settings = () => {
     email: "email@example.com",
     phoneNumber: "123-456-789",
     location: "Lokalizacja",
-    profileImage: "", // Dodaj pole dla zdjęcia profilowego
+    profileImage: "",
   });
 
   const [displayName, setDisplayName] = useState("");
@@ -38,7 +37,7 @@ const Settings = () => {
     reader.onload = (event) => {
       setUserProfile({ ...userProfile, profileImage: event.target.result });
     };
-    
+
     if (file) {
       reader.readAsDataURL(file);
     }
@@ -48,7 +47,6 @@ const Settings = () => {
     // Tutaj można dodać kod do zapisu zmian na serwerze
     // Następnie zaktualizuj stan aplikacji
     // ...
-
     // Przykład zapisu zmian na serwerze (przy użyciu fetch):
     // fetch("url_do_api_zapisujacego_dane_uzytkownika", {
     //   method: "POST",
@@ -84,9 +82,15 @@ const Settings = () => {
       <div style={styles.contentContainer}>
         <h1 style={styles.h1}>Account settings</h1>
         <div style={styles.navigationContainer}>
-          <a href="/profile" style={styles.navigationProfile}>Profil</a>
-          <a href="/security" style={styles.navigationSecurity}>Security</a>
-          <a href="/application" style={styles.navigationApplication}>Application</a>
+          <a href="/profile" style={styles.navigationProfile}>
+            Profil
+          </a>
+          <a href="/security" style={styles.navigationSecurity}>
+            Security
+          </a>
+          <a href="/application" style={styles.navigationApplication}>
+            Application
+          </a>
         </div>
         <img
           src={userProfile.profileImage}
@@ -151,7 +155,7 @@ const Settings = () => {
             position: "absolute",
             top: "10px",
             left: "10px",
-            background: '#003366',
+            background: "#003366",
             color: "#fff",
             border: "none",
             borderRadius: "8px",

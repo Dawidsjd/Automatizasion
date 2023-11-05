@@ -93,6 +93,12 @@ export const StyledModal = styled("div")(({ theme }) => ({
   background: "#fff",
   padding: "20px",
   borderRadius: "20px",
+  [theme.breakpoints.down("lg")]: {
+    width: "50%",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "60%",
+  },
 }));
 
 export const CloseButton = styled("button")(({ theme }) => ({
@@ -113,13 +119,33 @@ export const CloseButton = styled("button")(({ theme }) => ({
 export const ContainerSlider = styled("div")(({ theme }) => ({
   width: "40%",
   height: "100vh",
+  [theme.breakpoints.down("lg")]: {
+    width: "90%",
+    display: "flex",
+    justifyContent: "center",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "60%",
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
 
 export const StyledSlider = styled(Slider)(({ theme }) => ({
   padding: "10px",
   marginTop: "10%",
   background: "#fff",
-  borderRadius: "40px",
+  borderRadius: "10px",
+  [theme.breakpoints.down("lg")]: {
+    width: "80%",
+    minWidth: "600px",
+    padding: "0",
+    marginTop: "15%",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+    minWidth: "300px",
+  },
 }));
 
 export const StyledDate = styled("h2")(({ theme }) => ({
@@ -130,21 +156,30 @@ export const StyledDate = styled("h2")(({ theme }) => ({
 export const LessonPlan = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+  },
 }));
 
 export const Table = styled("table")(({ theme }) => ({
-  border: "1px solid black",
   justifyContent: "center",
   marginBottom: "5%",
   borderCollapse: "collapse",
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+    margin: "5px",
+  },
 }));
 
 export const TableHeader = styled("th")(({ theme }) => ({
-  border: "1px solid black",
   padding: "10px",
   color: globalTheme.palette.textcolorprimary.main,
   background: globalTheme.palette.primary.main,
   fontSize: globalTheme.typography.semimediumfontsize.main,
+  [theme.breakpoints.down("md")]: {
+    padding: "4px",
+    fontSize: globalTheme.typography.smallfontsize.main,
+  },
 }));
 
 export const TableRow = styled("tr")(({ theme }) => ({}));
@@ -152,9 +187,15 @@ export const TableRow = styled("tr")(({ theme }) => ({}));
 export const TableBody = styled("tbody")(({ theme }) => ({
   fontSize: globalTheme.typography.smallfontsize.main,
   textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    fontSize: globalTheme.typography.semismallfontsize.main,
+  },
 }));
 
 export const TableData = styled("td")(({ theme }) => ({
   border: "1px solid black",
   padding: "10px",
+  [theme.breakpoints.down("md")]: {
+    padding: "4px",
+  },
 }));

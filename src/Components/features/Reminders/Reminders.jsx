@@ -57,7 +57,6 @@ const RemindersList = () => {
   }, []);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [editReminder, setEditReminder] = useState(null);
   const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -85,10 +84,6 @@ const RemindersList = () => {
     set(ref(db, `reminders/${userId}`), reminders);
   };
 
-  const saveEditedRemindersToFirebase = (userId, reminders) => {
-    set(ref(db, `reminders/${userId}`), reminders);
-  };
-
   const getRemindersFromFirebase = (userId) => {
     onValue(ref(db, `reminders/${userId}`), (snapshot) => {
       const data = snapshot.val();
@@ -110,7 +105,6 @@ const RemindersList = () => {
 
   const openEditModal = (reminder) => {
     setModalIsOpen(true);
-    setEditReminder(reminder);
     setTitle(reminder.title);
     setStartDate(reminder.startDate);
     setEndDate(reminder.endDate);
@@ -122,7 +116,6 @@ const RemindersList = () => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    setEditReminder(null);
   };
 
   const handleSubmit = (e) => {

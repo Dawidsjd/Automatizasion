@@ -20,7 +20,7 @@ const Notes = () => {
       const userId = user.uid;
       getFirstNoteFromFirebase(userId);
     }
-    
+
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       if (!user) {
         setFirstNote(null);
@@ -35,7 +35,7 @@ const Notes = () => {
     onValue(ref(database, `notes/${userId}`), (snapshot) => {
       const data = snapshot.val();
       if (data !== null && data.length > 0) {
-        setFirstNote(data[0]); // Ustaw pierwszą notatkę w stanie komponentu
+        setFirstNote(data[0]);
       }
     });
   };

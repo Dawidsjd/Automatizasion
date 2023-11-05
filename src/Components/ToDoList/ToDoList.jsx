@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import styles from './style';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import { Link } from 'react-router-dom';
-import punkt from '../../assets/punkt.svg';
-import { db } from '../../firebase';
-import { set, ref, onValue } from 'firebase/database';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-
-
+import React, { useState, useEffect } from "react";
+import styles from "./style";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Link } from "react-router-dom";
+import punkt from "../../assets/punkt.svg";
+import { db } from "../../firebase";
+import { set, ref, onValue } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function ToDoList() {
   const [list, setList] = useState([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [editIndex, setEditIndex] = useState(-1);
-  const [editText, setEditText] = useState('');
+  const [editText, setEditText] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Obserwuj zmiany w stanie autoryzacji
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       if (user) {
         setUser(user);
-        getListFromFirebase(user.uid); // Pobierz listę zadań dla obecnie zalogowanego użytkownika
+        getListFromFirebase(user.uid);
       } else {
         setUser(null);
       }
@@ -32,17 +29,17 @@ function ToDoList() {
   }, []);
 
   const addToList = (todo) => {
-    if (todo.trim() !== '') {
+    if (todo.trim() !== "") {
       const newTodoList = {
         id: Math.random(),
         todo: todo,
       };
-      setInput('');
+      setInput("");
       setList([...list, newTodoList]);
 
       if (user) {
         const userId = user.uid;
-        saveListToFirebase(userId, [...list, newTodoList]); // Zapisz listę zadań do Firebase
+        saveListToFirebase(userId, [...list, newTodoList]);
       }
     }
   };
@@ -53,7 +50,7 @@ function ToDoList() {
 
     if (user) {
       const userId = user.uid;
-      saveListToFirebase(userId, newList); // Zapisz zaktualizowaną listę zadań do Firebase
+      saveListToFirebase(userId, newList);
     }
   };
 
@@ -64,7 +61,7 @@ function ToDoList() {
   };
 
   const saveEdit = (index) => {
-    if (editText.trim() !== '') {
+    if (editText.trim() !== "") {
       const updatedList = list.map((item, i) => {
         if (i === index) {
           return { ...item, todo: editText };
@@ -73,12 +70,12 @@ function ToDoList() {
       });
       setList(updatedList);
       setEditIndex(-1);
-      setEditText('');
+      setEditText("");
       setIsEditing(false);
 
       if (user) {
         const userId = user.uid;
-        saveListToFirebase(userId, updatedList); // Zapisz zaktualizowaną listę zadań do Firebase
+        saveListToFirebase(userId, updatedList);
       }
     }
   };
@@ -111,7 +108,7 @@ function ToDoList() {
           style={styles.input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === "Enter") {
               addToList(input);
             }
           }}
@@ -137,10 +134,16 @@ function ToDoList() {
                 ) : (
                   <div style={styles.listItem}>
                     <span style={styles.todoText}>{todo.todo}</span>
-                    <button onClick={() => startEdit(index, todo.todo)} style={styles.editButton}>
+                    <button
+                      onClick={() => startEdit(index, todo.todo)}
+                      style={styles.editButton}
+                    >
                       Edit
                     </button>
-                    <button onClick={() => deleteTodo(todo.id)} style={styles.deleteButton}>
+                    <button
+                      onClick={() => deleteTodo(todo.id)}
+                      style={styles.deleteButton}
+                    >
                       X
                     </button>
                   </div>

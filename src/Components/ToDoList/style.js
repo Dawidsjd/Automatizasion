@@ -54,9 +54,9 @@ const styles = {
   },
 
   imageBulletPoint: {
-    width: "24px", // Dostosuj szerokość obrazu do swoich potrzeb
-    height: "24px", // Dostosuj wysokość obrazu do swoich potrzeb
-    marginRight: "30px", 
+    width: "24px",
+    height: "24px",
+    marginRight: "30px",
     float: "left",
   },
   input: {
@@ -64,7 +64,7 @@ const styles = {
     padding: "10px",
     marginBottom: "20px",
     outline: "none",
-    border: "2px solid black", 
+    border: "2px solid black",
     borderRadius: "5px",
     justifyContent: "center",
     margin: "0 auto",

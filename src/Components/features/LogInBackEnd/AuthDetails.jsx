@@ -28,16 +28,6 @@ const AuthDetails = () => {
     };
   }, []);
 
-  const [tooltipText, setTooltipText] = useState("");
-
-  useEffect(() => {
-    if (authUser) {
-      setTooltipText("LogOut");
-    } else {
-      setTooltipText("LogIn");
-    }
-  }, [authUser]);
-
   const userSignOut = () => {
     signOut(auth)
       .then(() => {

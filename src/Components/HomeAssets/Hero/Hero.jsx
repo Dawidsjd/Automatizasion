@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   StyledHeroContainer,
   StyledHeroWrapper,
@@ -9,16 +9,14 @@ import {
   StyledHeroBox,
   StyledImages,
   StyledImageWave,
-} from './styles';
-
-import { Link } from 'react-router-dom';
+} from "./styles";
 
 const Hero = () => {
   const handleClick = () => {
     const scrolledY = window.scrollY + 580;
     window.scrollTo({
       top: scrolledY,
-      behavior: 'smooth', // Użyj smooth, aby uzyskać płynne przejście
+      behavior: "smooth",
     });
   };
 
@@ -35,7 +33,7 @@ const Hero = () => {
               develop skills to create a smart, automated environment around us.
             </h3>
             <StyledButtons>
-              <StyledLink to='/HomeDashboard'>Dashboard</StyledLink>
+              <StyledLink to="/HomeDashboard">Dashboard</StyledLink>
               <StyledButton onClick={handleClick}>Learn more</StyledButton>
             </StyledButtons>
           </StyledHeroContent>
