@@ -32,7 +32,7 @@ const ThreeScene = () => {
 
         <pointLight position={[0, 10, 0]} intensity={1} />
 
-        <Environment preset='studio' />
+        <Environment preset='sunset' />
         <HomeModel />
       </Suspense>
     </Canvas>
