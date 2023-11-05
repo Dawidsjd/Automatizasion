@@ -5,7 +5,7 @@ import {
   StyledAssets,
   StyledContent,
 } from "../styles";
-import Image1 from "./../../../../assets/Image1.jpg";
+import Image1 from "./../../../../assets/house_guy.svg";
 
 const AboutDashboardHome = () => {
   return (
@@ -26,7 +26,7 @@ const AboutDashboardHome = () => {
             <img
               src={Image1}
               alt="HomeGraphic"
-              style={{ width: "75%", height: "auto" }}
+              style={{ width: "75%", height: "100%" }}
             />
           </StyledAssets>
         </WrapperItem>

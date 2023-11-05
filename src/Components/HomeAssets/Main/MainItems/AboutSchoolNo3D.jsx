@@ -5,7 +5,7 @@ import {
   StyledAssets,
   StyledContent,
 } from "../styles";
-import Image2 from "./../../../../assets/Image2.jpg";
+import Image2 from "./../../../../assets/school_guy.svg";
 
 const AboutDashboardHome = () => {
   return (
@@ -16,7 +16,7 @@ const AboutDashboardHome = () => {
             <img
               src={Image2}
               alt="SchoolGraphic"
-              style={{ width: "75%", height: "auto" }}
+              style={{ width: "100%", height: "100%" }}
             />
           </StyledAssets>
           <StyledContent>
