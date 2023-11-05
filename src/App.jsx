@@ -18,6 +18,7 @@ import Diary from "./Components/features/Diary/Diary";
 import Profile from "./pages/Settings/Profile";
 import Security from "./pages/Settings/Security";
 import Application from "./pages/Settings/Application";
+import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 
 function App() {
   return (
@@ -51,6 +52,11 @@ function App() {
           <Route exact path="/Settings/profile" element={<Profile />} />
           <Route exact path="/Settings/security" element={<Security />} />
           <Route exact path="/Settings/Application" element={<Application />} />
+          <Route
+            exact
+            path="/TermsAndConditions"
+            element={<TermsAndConditions />}
+          />
           <Route
             exact
             path="/HomeDashboard/CookingAssistant"
