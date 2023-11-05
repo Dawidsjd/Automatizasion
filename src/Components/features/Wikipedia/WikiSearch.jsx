@@ -133,7 +133,7 @@ const WikiSearch = () => {
             position: "absolute",
             top: "10px",
             left: "10px",
-            background: "purple",
+            background: "#003366",
             color: "#fff",
             border: "none",
             borderRadius: "8px",
