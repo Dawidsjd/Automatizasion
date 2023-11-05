@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   breakpoints: {
@@ -11,14 +11,15 @@ const theme = createTheme({
       md: 640,
       lg: 1024,
       xl: 1200,
+      xll: 1350,
     },
   },
   palette: {
-    mode: "dark",
+    mode: 'dark',
   },
 });
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

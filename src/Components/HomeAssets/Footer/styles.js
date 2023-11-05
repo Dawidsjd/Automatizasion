@@ -96,16 +96,18 @@ export const RestInformations = styled('div')(({ theme }) => ({
   },
 }));
 
-export const StyledQuickLinks = styled('div')(({ theme }) => ({}));
+export const StyledQuickLinks = styled('div')(({ theme }) => ({
+  // przykladowy styl
+}));
 
 export const StyledLinkQuickMedia = styled(Link)(({ theme }) => ({
-  margin: '10px 10px 10px 0',
+  margin: '10px 15px 10px 0',
   display: 'inline-block',
   textAlign: 'center',
   color: 'white',
   border: '2px solid white',
   borderRadius: '10px',
-  padding: '5px 8px',
+  padding: '6px 8px 2px 8px',
 }));
 
 export const StyledInfoLinks = styled(Link)(({ theme }) => ({

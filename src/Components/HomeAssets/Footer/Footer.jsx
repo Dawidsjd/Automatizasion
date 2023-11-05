@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   StyledFooterWrapper,
   StyledpositioningFooter,
@@ -10,14 +10,14 @@ import {
   StyledQuickLinks,
   StyledLinkQuickMedia,
   StyledInfoLinks,
-} from "./styles";
+} from './styles';
 
-import { RiTwitterXFill } from "react-icons/ri";
+import { RiTwitterXFill } from 'react-icons/ri';
 import {
   BiLogoFacebook,
   BiLogoInstagram,
   BiLogoLinkedin,
-} from "react-icons/bi";
+} from 'react-icons/bi';
 
 const Footer = () => {
   return (
@@ -35,8 +35,8 @@ const Footer = () => {
           <InfoLinks>
             <SingleLinks>
               <h3>AboutUs</h3>
-              <StyledInfoLinks to="/OurTeam">Our team</StyledInfoLinks>
-              <StyledInfoLinks to="/Safety">Safety</StyledInfoLinks>
+              <StyledInfoLinks to='/OurTeam'>Our team</StyledInfoLinks>
+              <StyledInfoLinks to='/Safety'>Safety</StyledInfoLinks>
             </SingleLinks>
             <SingleLinks>
               <h3>Contact</h3>
@@ -45,10 +45,10 @@ const Footer = () => {
             </SingleLinks>
             <SingleLinks>
               <h3>Useful links</h3>
-              <StyledInfoLinks to="/PrivacyPolicy">
+              <StyledInfoLinks to='/PrivacyPolicy'>
                 Privacy Policy
               </StyledInfoLinks>
-              <StyledInfoLinks to="/TermsAndConditions">
+              <StyledInfoLinks to='/TermsAndConditions'>
                 Terms and Conditions
               </StyledInfoLinks>
             </SingleLinks>
@@ -58,7 +58,7 @@ const Footer = () => {
         <RestInformations>
           <StyledQuickLinks>
             <StyledLinkQuickMedia>
-              <RiTwitterXFill size={25} />
+              <RiTwitterXFill size={25} style={{ padding: '0px' }} />
             </StyledLinkQuickMedia>
             <StyledLinkQuickMedia>
               <BiLogoFacebook size={25} />

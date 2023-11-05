@@ -12,7 +12,7 @@ export const StyledContainer = styled('div')(({ theme }) => ({
   paddingTop: '30px',
   paddingLeft: '30px',
   width: '100%',
-  maxHeight: '300px',
+  height: '300px',
   margin: '20px auto',
   textAlign: 'left',
   [theme.breakpoints.up('lg')]: {
