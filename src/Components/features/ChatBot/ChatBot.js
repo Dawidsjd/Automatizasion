@@ -6,6 +6,7 @@ import SendIcon from "@mui/icons-material/Send";
 import BotAvatar from "../../../assets/200.gif";
 import UserAvatar from "../../../assets/gagajhagha.jpg";
 import globalTheme from "../GlobalStyles/GlobalTheme";
+import './media.css';
 
 function ChatBot() {
   const [messages, setMessages] = useState([
@@ -18,6 +19,7 @@ function ChatBot() {
   const [query, setQuery] = useState("");
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isBotTyping, setIsBotTyping] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -25,6 +27,17 @@ function ChatBot() {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
@@ -78,7 +91,7 @@ function ChatBot() {
   return (
     <div style={styles.container}>
       {isChatOpen ? (
-        <div style={styles.ChatContainer}>
+        <div className="ChatContainer">
           <div style={styles.Banner}>ChatBot</div>
           <div style={styles.MessagesContainer}>
             {messages.map((message, index) => (

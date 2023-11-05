@@ -1,0 +1,25 @@
+.ChatContainer {
+    position: fixed;
+    bottom: 60px;
+    right: 100px;
+    background: #fff;
+    width: 350px;
+    height: 450px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+
+  @media screen and (max-width: 456px) {
+    .ChatContainer {
+        right: 5%; 
+        width: 90%; 
+        bottom: 100px;
+        left: 5%; 
+    }
+  }
+  
