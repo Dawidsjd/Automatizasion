@@ -76,7 +76,7 @@ export const styles = {
   },
 buttonSave: {
     padding: "12px 30px",
-    background: "#7289da",
+    background: "#003366",
     color: "#fff",
     border: "none",
     borderRadius: "90px",
@@ -85,7 +85,7 @@ buttonSave: {
   },
   button: {
     padding: "12px 40px",
-    background: "#7289da",
+    background: "#003366",
     color: "#fff",
     border: "none",
     borderRadius: "90px",
@@ -95,6 +95,18 @@ buttonSave: {
   buttonContainer: {
     display: "flex",
     justifyContent: "center", 
-  }
+  },
+  "@media (max-width: 768px)": {
+    contentContainer: {
+      width: "80%", 
+    },
+    
+  },
 
+  "@media (max-width: 480px)": {
+    contentContainer: {
+      width: "90%", 
+    },
+    
+  },
 };
