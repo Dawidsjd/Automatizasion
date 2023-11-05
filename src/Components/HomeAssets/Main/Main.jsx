@@ -110,10 +110,10 @@ const Main = () => {
             onClick={() => handleDisplayChange(true)}
             style={{color: "#111", fontWeight: "bold"}}
           >
-            Tak
+            Yes
           </Button>
           <Button sx={{ mx: 8 }} onClick={() => handleDisplayChange(false)} style={{color: "#111", fontWeight: "bold"}}>
-            Nie
+            No
           </Button>
         </DialogContent>
       </Dialog>
