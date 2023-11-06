@@ -27,7 +27,7 @@ const ThreeScene = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={0}
           maxDistance={10}
-          minDistance={5}
+          minDistance={4}
         />
 
         <pointLight position={[0, 10, 0]} intensity={1} />
