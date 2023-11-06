@@ -6,7 +6,7 @@ import Footer from '../Components/HomeAssets/Footer/Footer';
 
 const Home = () => {
   useEffect(() => {
-    document.title = 'FlowView';
+    document.title = 'FlowVue';
   });
   return (
     <>

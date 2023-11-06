@@ -34,7 +34,7 @@ const TermsAndConditions = () => {
 
           <h2>1. Utilization of Materials under Free License</h2>
           <p>
-            1.1. FlowView utilizes materials provided under a free license from
+            1.1. FlowVue utilizes materials provided under a free license from
             websites such as:
             <ul>
               <li>
@@ -79,14 +79,14 @@ const TermsAndConditions = () => {
                 </a>
               </li>
             </ul>
-            1.2. FlowView users are obliged to adhere to the terms of use of
+            1.2. FlowVue users are obliged to adhere to the terms of use of
             these materials, including licenses, usage policies, or any other
             regulations specified by the providers of these materials.
           </p>
 
           <h2>2. Utilization of Artificial Intelligence</h2>
           <p>
-            2.1. The FlowView application utilizes artificial intelligence
+            2.1. The FlowVue application utilizes artificial intelligence
             provided by{' '}
             <a href='https://chat.openai.com' target='_blank' rel='noreferrer'>
               chat.openai.com
@@ -94,7 +94,7 @@ const TermsAndConditions = () => {
             to assist users in coding and resolving programming-related issues.
           </p>
           <p>
-            2.2. FlowView users acknowledge that the information and suggestions
+            2.2. FlowVue users acknowledge that the information and suggestions
             provided by artificial intelligence are offered solely for
             educational purposes and should not be considered as definitive and
             unconditional solutions to programming problems.
@@ -102,16 +102,16 @@ const TermsAndConditions = () => {
 
           <h2>3. Final Provisions</h2>
           <p>
-            3.1. Using the FlowView application implies acceptance of these
+            3.1. Using the FlowVue application implies acceptance of these
             terms and conditions.
           </p>
           <p>
-            3.2. FlowView reserves the right to amend these terms and conditions
+            3.2. FlowVue reserves the right to amend these terms and conditions
             at any time, which will be announced on the website or within the
             application.
           </p>
 
-          <p style={{ marginTop: '20px' }}>Thank you for using FlowView!</p>
+          <p style={{ marginTop: '20px' }}>Thank you for using FlowVue!</p>
         </StyledContent>
       </StyledWrapperContent>
       <Footer style={{ position: 'fixed', bottom: 0, width: '100%' }} />

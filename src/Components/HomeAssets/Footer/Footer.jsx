@@ -25,7 +25,7 @@ const Footer = () => {
       <StyledpositioningFooter>
         <InfoContentWrapper>
           <AboutShortContent>
-            <h3>FlowView</h3>
+            <h3>FlowVue</h3>
             <p>
               Our team of passionate programmers who create innovative solutions
               for various projects based on commitment, capability and the
@@ -41,7 +41,7 @@ const Footer = () => {
             <SingleLinks>
               <h3>Contact</h3>
               <p>Kontakt: 865 329 870</p>
-              <p>Email: flowview@gmail.com</p>
+              <p>Email: flowvue@gmail.com</p>
             </SingleLinks>
             <SingleLinks>
               <h3>Useful links</h3>
@@ -71,7 +71,7 @@ const Footer = () => {
             </StyledLinkQuickMedia>
           </StyledQuickLinks>
           <hr />
-          <p>© FlowView. All rights reserved</p>
+          <p>© FlowVue. All rights reserved</p>
         </RestInformations>
       </StyledpositioningFooter>
     </StyledFooterWrapper>
