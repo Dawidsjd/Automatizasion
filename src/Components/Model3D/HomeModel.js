@@ -7,7 +7,7 @@ const HomeModel = () => {
   const modelRef = useRef();
 
   let mixer = null;
-  const { scene, animations } = useLoader(GLTFLoader, "/import3D/house.glb");
+  const { scene, animations } = useLoader(GLTFLoader, "/import3D/autumn_house.glb");
 
   scene.traverse(function (node) {
     if (node.isMesh) node.castShadow = true;
@@ -25,8 +25,8 @@ const HomeModel = () => {
     <primitive
       object={scene}
       ref={modelRef}
-      scale={[0.2, 0.2, 0.2]}
-      position={[0, -2, 0]}
+      scale={[0.15, 0.15, 0.15]}
+      position={[0, -1, 0]}
     />
   );
 };

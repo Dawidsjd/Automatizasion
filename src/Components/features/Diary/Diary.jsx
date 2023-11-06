@@ -41,7 +41,7 @@ const Diary = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.get("https://automatizasion.onrender.com/", {
+      const response = await axios.get("https://automatizasion.onrender.com/api/login", {
         indexNumber,
         schoolSymbol,
         password,
