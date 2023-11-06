@@ -44,7 +44,7 @@ const Diary = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://automatizasion.onrender.com/api/login", {
+      const response = await axios.post("/api/login", {
         indexNumber,
         schoolSymbol,
         password,
