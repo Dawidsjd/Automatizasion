@@ -109,6 +109,7 @@ const styles = {
   },
   button: {
     padding: '0.5rem 1rem',
+    marginTop: '15px',
     fontSize: '1rem',
     cursor: 'pointer',
     backgroundColor: '#003366',
