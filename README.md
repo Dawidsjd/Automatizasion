@@ -43,17 +43,13 @@ Opisz działanie Waszej aplikacji/narzędzia</h2><br>
 Aplikacja zawiera też opcję logowania, dzięki któremu zapisują się na koncie użytkownika dane takie, jak przypomnienia, lista to do czy notatki. <br>
 <br>
 
-/----**Do zrobienia**----/
-Jak widzicie dalszy rozwój Waszego rozwiązania?
-(W jaki sposób Wasz projekt mógłby zostać wdrożony lub rozwijany? Jacy partnerzy mogliby się zaangażować w jego rozwój?)
+Jak widzicie dalszy rozwój Waszego rozwiązania? <br>
+FlowVue ma potencjał do rozwoju poprzez integracje z innymi aplikacjami, rozbudowę funkcjonalności szkolnych, personalizację interfejsu oraz współpracę z lokalnymi instytucjami. <br><br>
 
+Jakie widzicie zagrożenia/ryzyka dla Waszego rozwiązania? <br>
+Możliwe zagrożenia obejmują problemy technologiczne, ryzyko związane z bezpieczeństwem danych, akceptację przez użytkowników oraz wymagania regulacyjne i zgodność z przepisami. <br><br>
 
-Jakie widzicie zagrożenia/ryzyka dla Waszego rozwiązania?
-(Opisz zdiagnozowane zagrożenia jak np. problemy technologiczne czy konieczność zaangażowania innych podmiotów np. urząd miasta)
-
-
-Dlaczego akurat Wy powinniście wygrać?
-(Napisz, co wyróżnia Was pomysł lub jego realizacja np. wybór innowacyjnej technologii)
-
+Dlaczego akurat Wy powinniście wygrać?<br>
+FlowVue wyróżnia się innowacyjnym podejściem do automatyzacji w domu i szkole. Kompleksowe funkcjonalności, intuicyjny interfejs i możliwość personalizacji sprawiają, że jest to wyjątkowe narzędzie. Dodatkowo, wykorzystujemy nowoczesne technologie, co zapewnia szybką i wydajną pracę. Wierzymy, że nasze rozwiązanie ma potencjał do znaczącej poprawy życia wielu osób.
 
 
