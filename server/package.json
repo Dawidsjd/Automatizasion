@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "proxy": "https://flowvue.vercel.app/",
   "description": "",
   "main": "server.js",
   "scripts": {
