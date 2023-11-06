@@ -7,7 +7,7 @@ const setupVulcan = require('./vulcanApiExample');
 const app = express();
 
 app.use(cors({
-  origin: "https://flowvue.vercel.app/",
+  origin: "https://flowvue.vercel.app",
 }));
 
 const startServer = async () => {
