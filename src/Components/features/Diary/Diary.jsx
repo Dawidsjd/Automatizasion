@@ -164,7 +164,8 @@ const Diary = () => {
         </FormContainer>
       )}
 
-      <ContainerSlider>
+{lessons.length > 0 && (
+        <ContainerSlider>
         <StyledSlider {...sliderSettings}>
           {Object.keys(groupedLessons).map((date, index) => (
             <div key={index}>
@@ -195,6 +196,7 @@ const Diary = () => {
           ))}
         </StyledSlider>
       </ContainerSlider>
+      )}
     </Container>
   );
 };

@@ -6,10 +6,10 @@ import Slider from 'react-slick';
 export const Container = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'center',
   alignItems: 'center',
+  height: '100vh',
   background: `#677bab url(${ContentBackground}) no-repeat center center fixed`,
-  display: 'flex',
-  flexDirection: 'column',
   [theme.breakpoints.up('md')]: {
     flexDirection: 'row',
   },
@@ -35,6 +35,8 @@ export const StyledButton = styled('button')(({ theme }) => ({
 
 export const FormContainer = styled('div')(({ theme }) => ({
   display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
   justifyContent: 'center',
   alignItems: 'center',
   minHeight: '100vh',
