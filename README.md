@@ -34,7 +34,7 @@ Opisz działanie Waszej aplikacji/narzędzia</h2><br>
 	-Cooking Assistant: Wyszukuje w bazie danych przepisy według filtrów wyszukiwań np: po wpisaniu słowa Chicken, wyszukuje nam wszystkie dostępne przepisy związane z kurczakiem,<br>
 	-To do list: Jest to typowa lista To-Do, dzięki której nie zapominimy zrobić tego, co mamy zapisane. Dane z listy zapisuje dopiero, gdy użytkownik będzie zalogowany, <br>
  	-Widget pogody: Informuje użytkownika o pogodzie, która jest w lokalizaji pobranej od użytkownika. Aby widget działał, użytkownik musi zezwolić przeglądarce na dostęp do lokalizacji.<br>
-**b)Szkolną, która zawiera:<br>**
+**<br>b)Szkolną, która zawiera:<br>**
 	-Reminders: Zakładka z przypomnieniami m.in.: o upływających terminach zadań domowych, sprawdzianach,<br>
 	-School Dairy: Po zalogowaniu do dziennika strona wyświetla aktualny plan lekcji na bieżący tydzień,<br>
 	-Wikipedia: Po wpisaniu frazy zostanie ona wyszukana w wikipedii,<br>
