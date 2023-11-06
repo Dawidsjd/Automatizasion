@@ -21,7 +21,7 @@ https://github.com/Dawidsjd/Automatizasion
 
 <h2>Na jakie potrzeby/problem odpowiada Wasze rozwiązanie? W jaki sposób wpisuje się w temat Hack Heroes 2023?
 </h2>
-Program FlowView ma za zadanie pomóc nam w zarządzaniu swoim czasem oraz ułatwia organizację naszego życia. Zamiast szukać wielu podstawowych narzędzi, czy informacji po internecie, można je szybko i wygodnie znaleźć poprzez naszą aplikację.
+Program FlowVue ma za zadanie pomóc nam w zarządzaniu swoim czasem oraz ułatwia organizację naszego życia. Zamiast szukać wielu podstawowych narzędzi, czy informacji po internecie, można je szybko i wygodnie znaleźć poprzez naszą aplikację.
 
 <h2>W jakich językach programowania, jakich technologiach powstała aplikacja/narzędzie?</h2>
 JavaScript(React)
