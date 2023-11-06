@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "proxy": "https://flowvue.vercel.app/",
+  "proxy": "https://automatizasion.onrender.com/",
   "description": "",
   "main": "server.js",
   "scripts": {
