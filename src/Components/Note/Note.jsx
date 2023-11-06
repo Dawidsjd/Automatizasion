@@ -6,6 +6,9 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, set, onValue } from "firebase/database";
 
 function Note() {
+  useEffect(() => {
+    document.title = "Notes";
+  }, []);
   const [notes, setNotes] = useState([]);
   const [state, setState] = useState({
     title: "",

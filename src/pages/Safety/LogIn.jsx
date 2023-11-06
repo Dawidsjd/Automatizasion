@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
   FacebookAuthProvider,
-} from 'firebase/auth';
-import { auth } from '../../firebase';
+} from "firebase/auth";
+import { auth } from "../../firebase";
 import {
   StyledLogInContainer,
   StyledLogInWrapper,
@@ -24,13 +24,16 @@ import {
   StyledBsFacebook,
   StyledBsGithub,
   StyledLinkPrevent,
-} from './styles';
-import { useNavigate } from 'react-router-dom';
-import { IoReturnUpBackOutline } from 'react-icons/io5';
+} from "./styles";
+import { useNavigate } from "react-router-dom";
+import { IoReturnUpBackOutline } from "react-icons/io5";
 
 const LogIn = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  useEffect(() => {
+    document.title = "Log In";
+  }, []);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
@@ -39,19 +42,19 @@ const LogIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
-        if (errorCode === 'auth/wrong-password') {
-          setError('Nieprawidłowe hasło.');
-        } else if (errorCode === 'auth/user-not-found') {
-          setError('Użytkownik o podanym adresie email nie istnieje.');
+        if (errorCode === "auth/wrong-password") {
+          setError("Nieprawidłowe hasło.");
+        } else if (errorCode === "auth/user-not-found") {
+          setError("Użytkownik o podanym adresie email nie istnieje.");
         } else {
           console.error(errorMessage);
-          setError('Wystąpił nieznany błąd.');
+          setError("Wystąpił nieznany błąd.");
         }
       });
   };
@@ -61,7 +64,7 @@ const LogIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         console.log(error);
@@ -73,7 +76,7 @@ const LogIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         console.log(error);
@@ -85,7 +88,7 @@ const LogIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        navigate('/HomeDashboard');
+        navigate("/HomeDashboard");
       })
       .catch((error) => {
         console.log(error);
@@ -109,8 +112,8 @@ const LogIn = () => {
                 <button onClick={signInWithGitHub}>
                   <StyledBsGithub /> Log In with GitHub
                 </button>
-                <StyledLinkPrevent to='/homeDashboard'>
-                  <IoReturnUpBackOutline size={23} />{' '}
+                <StyledLinkPrevent to="/homeDashboard">
+                  <IoReturnUpBackOutline size={23} />{" "}
                   <p>Back to home Dashboard</p>
                 </StyledLinkPrevent>
               </StyledButtons>
@@ -123,7 +126,7 @@ const LogIn = () => {
               <SingleInput>
                 <p>Username or email</p>
                 <input
-                  type='text'
+                  type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -131,19 +134,19 @@ const LogIn = () => {
               <SingleInput>
                 <p>Password</p>
                 <input
-                  type='password'
+                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </SingleInput>
               <button onClick={signIn}>Log In</button>
-              {error && <p style={{ color: 'red' }}>{error}</p>}
-              <StyledLinkForgotPassword to='/register'>
+              {error && <p style={{ color: "red" }}>{error}</p>}
+              <StyledLinkForgotPassword to="/register">
                 Forgot password?
               </StyledLinkForgotPassword>
             </StyledDefaultLogIn>
           </UserDataWrapper>
-          <StyledLinkRegister to='/register'>
+          <StyledLinkRegister to="/register">
             Need an account? Sign up now!
           </StyledLinkRegister>
         </StyledLogInContent>

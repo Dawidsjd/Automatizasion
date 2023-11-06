@@ -1,12 +1,15 @@
-import React from 'react'
-import NotFound from '../../assets/page_not_found.svg'
+import React, { useEffect } from "react";
+import NotFound from "../../assets/page_not_found.svg";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Security = () => {
+  useEffect(() => {
+    document.title = "Security";
+  }, []);
   return (
     <>
-    <Link to="/Settings">
+      <Link to="/Settings">
         <button
           style={{
             position: "absolute",
@@ -26,11 +29,22 @@ const Security = () => {
           <KeyboardBackspaceIcon />
         </button>
       </Link>
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
-    <img src={NotFound} alt='Page not Found' style={{ maxWidth: "100%", height: "auto" }} />
-    </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <img
+          src={NotFound}
+          alt="Page not Found"
+          style={{ maxWidth: "100%", height: "auto" }}
+        />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Security
+export default Security;

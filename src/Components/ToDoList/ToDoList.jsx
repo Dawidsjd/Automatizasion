@@ -8,6 +8,9 @@ import { set, ref, onValue } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function ToDoList() {
+  useEffect(() => {
+    document.title = "To-do list ";
+  }, []);
   const [list, setList] = useState([]);
   const [input, setInput] = useState("");
   const [editIndex, setEditIndex] = useState(-1);

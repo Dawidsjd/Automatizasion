@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithPopup,
@@ -27,6 +27,9 @@ import { useNavigate } from "react-router-dom";
 import { IoReturnUpBackOutline } from "react-icons/io5";
 
 const Register = () => {
+  useEffect(() => {
+    document.title = "Register";
+  }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");

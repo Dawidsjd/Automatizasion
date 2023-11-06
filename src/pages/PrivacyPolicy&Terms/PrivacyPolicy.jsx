@@ -1,24 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import {
   StyledContainerSubPage,
   StyledWrapperContent,
   StyledContent,
-} from './styles';
-import Header from '../../Components/HomeAssets/Navbar/Navbar';
-import Footer from '../../Components/HomeAssets/Footer/Footer';
+} from "./styles";
+import Header from "../../Components/HomeAssets/Navbar/Navbar";
+import Footer from "../../Components/HomeAssets/Footer/Footer";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    document.title = "Privacy Policy";
+  }, []);
+
   useEffect(() => {
     const handleScrollToTop = () => {
       window.scrollTo(0, 0);
     };
 
-    window.addEventListener('hashchange', handleScrollToTop);
+    window.addEventListener("hashchange", handleScrollToTop);
 
     handleScrollToTop();
 
     return () => {
-      window.removeEventListener('hashchange', handleScrollToTop);
+      window.removeEventListener("hashchange", handleScrollToTop);
     };
   }, []);
 

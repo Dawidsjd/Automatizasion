@@ -113,6 +113,10 @@ const RecipeSearch = () => {
     setSearchClicked(true);
   };
 
+  useEffect(() => {
+    document.title = "Cooking Assistant";
+  }, []);
+
   return (
     <div style={styles.RecipeSearchContainer}>
       <Link to="/HomeDashboard">
