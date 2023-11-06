@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
           <h1>Privacy Policy</h1>
 
           <p>
-            Thank you for using our FlowView application. Our goal is to provide
+            Thank you for using our FlowVue application. Our goal is to provide
             you with the best possible experience while using our time
             management tool. Below, we present our privacy policy, which aims to
             protect your privacy and personal data.
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
 
           <h2>1. Collection and Use of Data:</h2>
           <p>
-            - The FlowView application collects only the information necessary
+            - The FlowVue application collects only the information necessary
             to ensure its proper functioning. The data you provide during
             registration, such as your email address, is used solely for
             identification purposes and communication with you.
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
 
           <h2>4. Cookies:</h2>
           <p>
-            - The FlowView application may use cookies to facilitate your use of
+            - The FlowVue application may use cookies to facilitate your use of
             our application. Cookies are small text files stored on your device
             that help us identify you as a user.
           </p>
@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
           <p>
             We encourage you to regularly review our privacy policy to be aware
             of what information we collect and how we process it. Thank you for
-            your trust and for using the FlowView application.
+            your trust and for using the FlowVue application.
           </p>
         </StyledContent>
       </StyledWrapperContent>
