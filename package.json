@@ -16,6 +16,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.1",
+    "cors": "^2.8.5",
     "firebase": "^10.5.2",
     "framework7": "^8.3.0",
     "hamburger-react": "^2.5.0",

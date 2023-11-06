@@ -1,9 +1,12 @@
 // server.js
 
 const express = require('express');
+const cors = require('cors');
 const setupVulcan = require('./vulcanApiExample');
 
 const app = express();
+
+app.use(cors());
 
 const startServer = async () => {
   app.use(express.json());
