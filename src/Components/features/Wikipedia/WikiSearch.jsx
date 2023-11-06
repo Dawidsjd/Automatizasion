@@ -92,6 +92,10 @@ const WikiSearch = () => {
     handleClickOpen();
   };
 
+  useEffect(() => {
+    document.title = "Wikipedia";
+  }, []);
+
   const fetchFullPageContent = async (pageId) => {
     try {
       const response = await fetch(

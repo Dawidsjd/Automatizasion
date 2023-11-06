@@ -149,6 +149,15 @@ export const StyledNewsletterContent = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {},
 }));
 
+export const StyledErrorSpan = styled('span')(({ theme }) => ({
+  color: '#e74c3c',
+  fontWeight: '600',
+}));
+export const StyledCorrectSpan = styled('span')(({ theme }) => ({
+  color: '#2ecc71',
+  fontWeight: '600',
+}));
+
 export const ContentBox = styled('div')(({ theme }) => ({
   display: 'flex',
   width: '100%',
@@ -173,6 +182,20 @@ export const ContentBox = styled('div')(({ theme }) => ({
     marginTop: '20px',
     padding: '10px',
     fontSize: '14px',
+  },
+  button: {
+    padding: '10px 15px',
+    fontSize: '16px',
+    margin: '10px',
+    borderRadius: '10px',
+    background: '#ecf0f1',
+    boxShadow: '-1px 2px 7px 0px #bdc3c7',
+    transition: '.1s',
+    cursor: 'pointer',
+    fontWeight: '500',
+    '&:hover': {
+      background: '#bdc3c7',
+    },
   },
   [theme.breakpoints.up('md')]: {
     input: {

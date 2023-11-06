@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -30,6 +30,9 @@ import { Link } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 const Diary = () => {
+  useEffect(() => {
+    document.title = "Diary";
+  }, []);
   const [indexNumber, setIndexNumber] = useState("");
   const [schoolSymbol, setSchoolSymbol] = useState("");
   const [password, setPassword] = useState("");
@@ -164,38 +167,38 @@ const Diary = () => {
         </FormContainer>
       )}
 
-{lessons.length > 0 && (
+      {lessons.length > 0 && (
         <ContainerSlider>
-        <StyledSlider {...sliderSettings}>
-          {Object.keys(groupedLessons).map((date, index) => (
-            <div key={index}>
-              <StyledDate>{date}</StyledDate>
-              <LessonPlan>
-                <Table>
-                  <TableRow>
-                    <TableHeader>Subject</TableHeader>
-                    <TableHeader>Room</TableHeader>
-                    <TableHeader>Teacher</TableHeader>
-                    <TableHeader>Time</TableHeader>
-                  </TableRow>
-                  <TableBody>
-                    {groupedLessons[date].map((lesson, index) => (
-                      <TableRow key={index}>
-                        <TableData>{lesson.subject.name}</TableData>
-                        <TableData>{lesson.room.code}</TableData>
-                        <TableData>
-                          {lesson.teacherPrimary.displayName}
-                        </TableData>
-                        <TableData>{lesson.timeSlot.display}</TableData>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </LessonPlan>
-            </div>
-          ))}
-        </StyledSlider>
-      </ContainerSlider>
+          <StyledSlider {...sliderSettings}>
+            {Object.keys(groupedLessons).map((date, index) => (
+              <div key={index}>
+                <StyledDate>{date}</StyledDate>
+                <LessonPlan>
+                  <Table>
+                    <TableRow>
+                      <TableHeader>Subject</TableHeader>
+                      <TableHeader>Room</TableHeader>
+                      <TableHeader>Teacher</TableHeader>
+                      <TableHeader>Time</TableHeader>
+                    </TableRow>
+                    <TableBody>
+                      {groupedLessons[date].map((lesson, index) => (
+                        <TableRow key={index}>
+                          <TableData>{lesson.subject.name}</TableData>
+                          <TableData>{lesson.room.code}</TableData>
+                          <TableData>
+                            {lesson.teacherPrimary.displayName}
+                          </TableData>
+                          <TableData>{lesson.timeSlot.display}</TableData>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </LessonPlan>
+              </div>
+            ))}
+          </StyledSlider>
+        </ContainerSlider>
       )}
     </Container>
   );

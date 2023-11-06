@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { styles } from './styles';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import { Link } from 'react-router-dom';
-import { auth } from '../../firebase';
-import { updateProfile } from 'firebase/auth';
+import React, { useEffect, useState } from "react";
+import { styles } from "./styles";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Link } from "react-router-dom";
+import { auth } from "../../firebase";
+import { updateProfile } from "firebase/auth";
 
 const Settings = () => {
+  useEffect(() => {
+    document.title = "Settings";
+  }, []);
   const [userProfile, setUserProfile] = useState({
-    name: 'Imię Nazwisko',
-    email: 'email@example.com',
-    phoneNumber: '123-456-789',
-    location: 'Lokalizacja',
-    profileImage: '',
+    name: "Imię Nazwisko",
+    email: "email@example.com",
+    phoneNumber: "123-456-789",
+    location: "Lokalizacja",
+    profileImage: "",
   });
 
-  const [displayName, setDisplayName] = useState('');
+  const [displayName, setDisplayName] = useState("");
 
   useEffect(() => {
     const user = auth.currentUser;
@@ -69,10 +72,10 @@ const Settings = () => {
     if (user) {
       updateProfile(user, { displayName: displayName })
         .then(() => {
-          console.log('Zaktualizowano nazwę użytkownika na serwerze Firebase');
+          console.log("Zaktualizowano nazwę użytkownika na serwerze Firebase");
         })
         .catch((error) => {
-          console.error('Błąd podczas aktualizacji nazwy użytkownika:', error);
+          console.error("Błąd podczas aktualizacji nazwy użytkownika:", error);
         });
     }
   };
@@ -82,44 +85,44 @@ const Settings = () => {
       <div style={styles.contentContainer}>
         <h1 style={styles.h1}>Account settings</h1>
         <div style={styles.navigationContainer}>
-          <Link to='/Settings/profile' style={styles.navigationProfile}>
+          <Link to="/Settings/profile" style={styles.navigationProfile}>
             Profil
           </Link>
-          <Link to='/Settings/security' style={styles.navigationSecurity}>
+          <Link to="/Settings/security" style={styles.navigationSecurity}>
             Security
           </Link>
-          <Link to='/Settings/Application' style={styles.navigationApplication}>
+          <Link to="/Settings/Application" style={styles.navigationApplication}>
             Application
           </Link>
         </div>
         <div>
-          <label htmlFor='email'>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
-            type='email'
-            id='email'
-            name='email'
+            type="email"
+            id="email"
+            name="email"
             value={userProfile.email}
             onChange={handleInputChange}
             style={styles.input}
           />
         </div>
         <div>
-          <label htmlFor='phoneNumber'>Number telephone:</label>
+          <label htmlFor="phoneNumber">Number telephone:</label>
           <input
-            type='tel'
-            id='phoneNumber'
-            name='phoneNumber'
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
             value={userProfile.phoneNumber}
             onChange={handleInputChange}
             style={styles.input}
           />
         </div>
         <div>
-          <label htmlFor='location'>Location:</label>
+          <label htmlFor="location">Location:</label>
           <input
-            type='text'
-            id='location'
-            name='location'
+            type="text"
+            id="location"
+            name="location"
             value={userProfile.location}
             onChange={handleInputChange}
             style={styles.input}
@@ -132,21 +135,21 @@ const Settings = () => {
           Change Display Name
         </button>
       </div>
-      <Link to='/HomeDashboard'>
+      <Link to="/HomeDashboard">
         <button
           style={{
-            position: 'absolute',
-            top: '10px',
-            left: '10px',
-            background: '#003366',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '1.5em',
-            padding: '10px 30px',
+            position: "absolute",
+            top: "10px",
+            left: "10px",
+            background: "#003366",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            fontSize: "1.5em",
+            padding: "10px 30px",
           }}
         >
           <KeyboardBackspaceIcon />

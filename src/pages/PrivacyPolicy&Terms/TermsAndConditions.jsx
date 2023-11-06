@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 import {
   StyledContainerSubPage,
   StyledWrapperContent,
   StyledContent,
-} from './styles';
-import { Link } from 'react-router-dom';
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
-import Header from '../../Components/HomeAssets/Navbar/Navbar';
-import Footer from '../../Components/HomeAssets/Footer/Footer';
+} from "./styles";
+import { Link } from "react-router-dom";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import Header from "../../Components/HomeAssets/Navbar/Navbar";
+import Footer from "../../Components/HomeAssets/Footer/Footer";
 
 const TermsAndConditions = () => {
+  useEffect(() => {
+    document.title = "Terms and Conditions";
+  }, []);
+
   useEffect(() => {
     const handleScrollToTop = () => {
       window.scrollTo(0, 0);
     };
 
-    window.addEventListener('hashchange', handleScrollToTop);
+    window.addEventListener("hashchange", handleScrollToTop);
 
     handleScrollToTop();
 
     return () => {
-      window.removeEventListener('hashchange', handleScrollToTop);
+      window.removeEventListener("hashchange", handleScrollToTop);
     };
   }, []);
 
@@ -39,41 +43,41 @@ const TermsAndConditions = () => {
             <ul>
               <li>
                 <a
-                  href='https://rapidapi.com/apidojo/api/tasty'
-                  target='_blank'
-                  rel='noreferrer'
+                  href="https://rapidapi.com/apidojo/api/tasty"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   Tasty API
                 </a>
               </li>
               <li>
                 <a
-                  href='https://media.flaticon.com/license/license_editorial.pdf?_ga=2.235194182.676126502.1698770555-1678211452.1698257304&_gl=1*fyxny5*fp_ga*MTY3ODIxMTQ1Mi4xNjk4MjU3MzA0*fp_ga_1ZY8468CQB*MTY5ODc3MDU1NS4yLjEuMTY5ODc3MDU2OC40Ny4wLjA.*test_ga*MTY3ODIxMTQ1Mi4xNjk4MjU3MzA0*test_ga_523JXC6VL7*MTY5ODc3MDU1NS4yLjEuMTY5ODc3MDU2OS40Ni4wLjA'
-                  target='_blank'
-                  rel='noreferrer'
+                  href="https://media.flaticon.com/license/license_editorial.pdf?_ga=2.235194182.676126502.1698770555-1678211452.1698257304&_gl=1*fyxny5*fp_ga*MTY3ODIxMTQ1Mi4xNjk4MjU3MzA0*fp_ga_1ZY8468CQB*MTY5ODc3MDU1NS4yLjEuMTY5ODc3MDU2OC40Ny4wLjA.*test_ga*MTY3ODIxMTQ1Mi4xNjk4MjU3MzA0*test_ga_523JXC6VL7*MTY5ODc3MDU1NS4yLjEuMTY5ODc3MDU2OS40Ni4wLjA"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   Flaticon
                 </a>
               </li>
               <li>
                 <a
-                  href='https://rapidapi.com/lemur-engine-lemur-engine-default/api/lemurbot/'
-                  target='_blank'
-                  rel='noreferrer'
+                  href="https://rapidapi.com/lemur-engine-lemur-engine-default/api/lemurbot/"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   LemurBot API
                 </a>
               </li>
               <li>
-                <a href='https://mui.com/' target='_blank' rel='noreferrer'>
+                <a href="https://mui.com/" target="_blank" rel="noreferrer">
                   Material-UI (MUI)
                 </a>
               </li>
               <li>
                 <a
-                  href='https://www.iconfinder.com'
-                  target='_blank'
-                  rel='noreferrer'
+                  href="https://www.iconfinder.com"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   Iconfinder
                 </a>
@@ -87,10 +91,10 @@ const TermsAndConditions = () => {
           <h2>2. Utilization of Artificial Intelligence</h2>
           <p>
             2.1. The FlowVue application utilizes artificial intelligence
-            provided by{' '}
-            <a href='https://chat.openai.com' target='_blank' rel='noreferrer'>
+            provided by{" "}
+            <a href="https://chat.openai.com" target="_blank" rel="noreferrer">
               chat.openai.com
-            </a>{' '}
+            </a>{" "}
             to assist users in coding and resolving programming-related issues.
           </p>
           <p>
@@ -102,8 +106,8 @@ const TermsAndConditions = () => {
 
           <h2>3. Final Provisions</h2>
           <p>
-            3.1. Using the FlowVue application implies acceptance of these
-            terms and conditions.
+            3.1. Using the FlowVue application implies acceptance of these terms
+            and conditions.
           </p>
           <p>
             3.2. FlowVue reserves the right to amend these terms and conditions
@@ -111,10 +115,10 @@ const TermsAndConditions = () => {
             application.
           </p>
 
-          <p style={{ marginTop: '20px' }}>Thank you for using FlowVue!</p>
+          <p style={{ marginTop: "20px" }}>Thank you for using FlowVue!</p>
         </StyledContent>
       </StyledWrapperContent>
-      <Footer style={{ position: 'fixed', bottom: 0, width: '100%' }} />
+      <Footer style={{ position: "fixed", bottom: 0, width: "100%" }} />
     </StyledContainerSubPage>
   );
 };

@@ -1,16 +1,19 @@
-import React from 'react';
-import { InlineWidget } from 'react-calendly';
-import Header from '../../Components/HomeAssets/Navbar/Navbar';
+import React, { useEffect } from "react";
+import { InlineWidget } from "react-calendly";
+import Header from "../../Components/HomeAssets/Navbar/Navbar";
 import {
   StyledSupportContainer,
   StyledMain,
   StyledWrapper,
   StyledWrapperContent,
   StyledInlineWidget,
-} from './Styles';
-import Footer from '../../Components/HomeAssets/Footer/Footer';
+} from "./Styles";
+import Footer from "../../Components/HomeAssets/Footer/Footer";
 
 const Support = () => {
+  useEffect(() => {
+    document.title = "Settings";
+  }, []);
   return (
     <>
       <Header />
@@ -28,9 +31,9 @@ const Support = () => {
           </StyledWrapperContent>
           <StyledMain>
             <InlineWidget
-              url='https://calendly.com/flowview/contact'
+              url="https://calendly.com/flowview/contact"
               styles={{
-                height: '700px',
+                height: "700px",
               }}
             />
           </StyledMain>
