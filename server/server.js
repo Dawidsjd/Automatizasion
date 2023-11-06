@@ -11,7 +11,7 @@ app.use(cors());
 const startServer = async () => {
   app.use(express.json());
 
-  app.post('/api/login', async (req, res) => {
+  app.get('/api/login', async (req, res) => {
     const { indexNumber, schoolSymbol, password } = req.body;
 
     try {
