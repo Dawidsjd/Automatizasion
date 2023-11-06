@@ -33,7 +33,7 @@ Opisz działanie Waszej aplikacji/narzędzia</h2><br>
 **a)Domową, w której znajdziemy:<br>**
 	-Cooking Assistant: Wyszukuje w bazie danych przepisy według filtrów wyszukiwań np: po wpisaniu słowa Chicken, wyszukuje nam wszystkie dostępne przepisy związane z kurczakiem,<br>
 	-To do list: Jest to typowa lista To-Do, dzięki której nie zapominimy zrobić tego, co mamy zapisane. Dane z listy zapisuje dopiero, gdy użytkownik będzie zalogowany, <br>
- 	-Widget pogody: Informuje użytkownika o pogodzie, która jest w lokalizaji pobranej od użytkownika. Aby widget działał, użytkownik musi zezwolić przeglądarce na dostęp do lokalizacji.<br>
+ 	-Widget pogody: Informuje użytkownika o pogodzie, która jest w lokalizaji pobranej od użytkownika. Aby widget działał, użytkownik musi zezwolić przeglądarce na dostęp do lokalizacji.
 **<br>b)Szkolną, która zawiera:<br>**
 	-Reminders: Zakładka z przypomnieniami m.in.: o upływających terminach zadań domowych, sprawdzianach,<br>
 	-School Dairy: Po zalogowaniu do dziennika strona wyświetla aktualny plan lekcji na bieżący tydzień,<br>
@@ -43,6 +43,7 @@ Opisz działanie Waszej aplikacji/narzędzia</h2><br>
 Aplikacja zawiera też opcję logowania, dzięki któremu zapisują się na koncie użytkownika dane takie, jak przypomnienia, lista to do czy notatki. <br>
 <br>
 
+/----**Do zrobienia**----/
 Jak widzicie dalszy rozwój Waszego rozwiązania?
 (W jaki sposób Wasz projekt mógłby zostać wdrożony lub rozwijany? Jacy partnerzy mogliby się zaangażować w jego rozwój?)
 
