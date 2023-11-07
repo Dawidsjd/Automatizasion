@@ -1,35 +1,35 @@
-<h1>HackHeroes 2k23</h1>
+<h1>HackHeroes 2023</h1>
 
-<h2>Nazwa projektu</h2>
+_**Nazwa projektu**_
 <p>FlowVue</p>
 
-<h2>Nazwa Drużyny</h2>
+_**Nazwa Drużyny**_
 <p>FlowVue</p>
 
-<h2>Skład drużyny</h2>
+_**Skład drużyny**_
 Dawid Buszta – Backend Developer<br>
 Radosław Marek - Frontend Developer<br>
 Rafał Buczkowski – Frontend Developer<br>
 Michał Kociołek – Frontend Developer<br>
 Maciej Nowicki –  Dokumentacja<br>
 
-<h2>Link do pracy</h2>
+_**Link do pracy**_
 https://flowvue.vercel.app
 
-<h2>Link do kodu źródłowego</h2>
+_**Link do kodu źródłowego**_
 https://github.com/Dawidsjd/Automatizasion
 
-<h2>Na jakie potrzeby/problem odpowiada Wasze rozwiązanie? W jaki sposób wpisuje się w temat Hack Heroes 2023?
-</h2>
+_**Na jakie potrzeby/problem odpowiada Wasze rozwiązanie? W jaki sposób wpisuje się w temat Hack Heroes 2023?**_
+
 Program FlowVue ma za zadanie pomóc nam w zarządzaniu swoim czasem oraz ułatwia organizację naszego życia. Zamiast szukać wielu podstawowych narzędzi, czy informacji po internecie, można je szybko i wygodnie znaleźć poprzez naszą aplikację.
 
-<h2>W jakich językach programowania, jakich technologiach powstała aplikacja/narzędzie?</h2>
+_**W jakich językach programowania, jakich technologiach powstała aplikacja/narzędzie?**_
 JavaScript(React)
 
-<h2>W jaki sposób działa Wasza aplikacja? Co może dzięki niej osiągnąć użytkownik? Jaką ma funkcjonalność?
-Opisz działanie Waszej aplikacji/narzędzia</h2><br>
+**_W jaki sposób działa Wasza aplikacja? Co może dzięki niej osiągnąć użytkownik? Jaką ma funkcjonalność?
+Opisz działanie Waszej aplikacji/narzędzia_**<br>
 
-**Aplikacja dzieli się na dwie części:**<br>
+**_Aplikacja dzieli się na dwie części:_**<br>
 **a)Domową, w której znajdziemy:<br>**
 	-Cooking Assistant: Wyszukuje w bazie danych przepisy według filtrów wyszukiwań np: po wpisaniu słowa Chicken, wyszukuje nam wszystkie dostępne przepisy związane z kurczakiem,<br>
 	-To do list: Jest to typowa lista To-Do, dzięki której nie zapominimy zrobić tego, co mamy zapisane. Dane z listy zapisuje dopiero, gdy użytkownik będzie zalogowany, <br>
