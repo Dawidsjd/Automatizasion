@@ -14,6 +14,7 @@ _**Skład drużyny**_ <br>
 <li><b>Michał Kociołek</b> – Frontend Developer</li><br>
 <li><b>Maciej Nowicki</b> –  Dokumentacja</li><br>
 </ul>
+
 _**Link do pracy**_ <br>
 https://flowvue.vercel.app
 
