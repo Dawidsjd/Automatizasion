@@ -6,24 +6,24 @@ _**Nazwa projektu**_
 _**Nazwa Drużyny**_
 <p>FlowVue</p>
 
-_**Skład drużyny**_
+_**Skład drużyny**_ <br>
 Dawid Buszta – Backend Developer<br>
 Radosław Marek - Frontend Developer<br>
 Rafał Buczkowski – Frontend Developer<br>
 Michał Kociołek – Frontend Developer<br>
 Maciej Nowicki –  Dokumentacja<br>
 
-_**Link do pracy**_
+_**Link do pracy**_ <br>
 https://flowvue.vercel.app
 
-_**Link do kodu źródłowego**_
+_**Link do kodu źródłowego**_ <br>
 https://github.com/Dawidsjd/Automatizasion
 
 _**Na jakie potrzeby/problem odpowiada Wasze rozwiązanie? W jaki sposób wpisuje się w temat Hack Heroes 2023?**_
 
 Program FlowVue ma za zadanie pomóc nam w zarządzaniu swoim czasem oraz ułatwia organizację naszego życia. Zamiast szukać wielu podstawowych narzędzi, czy informacji po internecie, można je szybko i wygodnie znaleźć poprzez naszą aplikację.
 
-_**W jakich językach programowania, jakich technologiach powstała aplikacja/narzędzie?**_
+_**W jakich językach programowania, jakich technologiach powstała aplikacja/narzędzie?**_ <br>
 JavaScript(React)
 
 **_W jaki sposób działa Wasza aplikacja? Co może dzięki niej osiągnąć użytkownik? Jaką ma funkcjonalność?
