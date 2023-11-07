@@ -2,9 +2,11 @@
 
 _**Nazwa projektu**_
 <p>FlowVue</p>
+<br>
 
 _**Nazwa Drużyny**_
 <p>FlowVue</p>
+<br>
 
 _**Skład drużyny**_ <br>
 <ul>
@@ -18,8 +20,12 @@ _**Skład drużyny**_ <br>
 _**Link do pracy**_ <br>
 https://flowvue.vercel.app
 
+<br>
+
 _**Link do kodu źródłowego**_ <br>
 https://github.com/Dawidsjd/Automatizasion
+
+<br>
 
 _**Na jakie potrzeby/problem odpowiada Wasze rozwiązanie? W jaki sposób wpisuje się w temat Hack Heroes 2023?**_
 
