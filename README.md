@@ -1,4 +1,4 @@
-<h1>HackHeroes 2023</h1>
+<h1 align="center">HackHeroes 2023</h1>
 
 _**Nazwa projektu**_
 <p>FlowVue</p>
@@ -27,15 +27,53 @@ https://github.com/Dawidsjd/Automatizasion
 
 <br>
 
+<h3>
+
 _**Na jakie potrzeby/problem odpowiada Wasze rozwiązanie? W jaki sposób wpisuje się w temat Hack Heroes 2023?**_
+
+</h3>
 
 Program FlowVue ma za zadanie pomóc nam w zarządzaniu swoim czasem oraz ułatwia organizację naszego życia. Zamiast szukać wielu podstawowych narzędzi, czy informacji po internecie, można je szybko i wygodnie znaleźć poprzez naszą aplikację.
 
+<br>
+
+<h3>
+
 _**W jakich językach programowania, jakich technologiach powstała aplikacja/narzędzie?**_ <br>
-JavaScript(React)
+
+</h3>
+
+<ul>
+<li>
+
+_React.JS_
+
+</li>
+<li>
+
+_Node.JS_
+
+</li>
+<li>
+
+_Three.JS_
+
+</li>
+<li>
+
+_Firebase_
+
+</li>
+</ul>
+
+<br>
+
+<h3>
 
 **_W jaki sposób działa Wasza aplikacja? Co może dzięki niej osiągnąć użytkownik? Jaką ma funkcjonalność?
 Opisz działanie Waszej aplikacji/narzędzia_**<br>
+
+</h3>
 
 **_Aplikacja dzieli się na dwie części:_**<br>
 **a)Domową, w której znajdziemy:<br>**
@@ -51,13 +89,31 @@ Opisz działanie Waszej aplikacji/narzędzia_**<br>
 Aplikacja zawiera też opcję logowania, dzięki któremu zapisują się na koncie użytkownika dane takie, jak przypomnienia, lista to do czy notatki. <br>
 <br>
 
+<h3>
+
 **_Jak widzicie dalszy rozwój Waszego rozwiązania?_** <br>
+
+</h3>
+
 FlowVue ma potencjał do rozwoju poprzez integracje z innymi aplikacjami, rozbudowę funkcjonalności szkolnych, personalizację interfejsu oraz współpracę z lokalnymi instytucjami. <br><br>
 
+
+<h3>
+
 **_Jakie widzicie zagrożenia/ryzyka dla Waszego rozwiązania?_** <br>
+
+</h3>
+
+
 Możliwe zagrożenia obejmują problemy technologiczne, ryzyko związane z bezpieczeństwem danych, akceptację przez użytkowników oraz wymagania regulacyjne i zgodność z przepisami. <br><br>
 
+
+<h3>
+
 **_Dlaczego akurat Wy powinniście wygrać?_**<br>
+
+</h3>
+
 FlowVue wyróżnia się innowacyjnym podejściem do automatyzacji w domu i szkole. Kompleksowe funkcjonalności, intuicyjny interfejs i możliwość personalizacji sprawiają, że jest to wyjątkowe narzędzie. Dodatkowo, wykorzystujemy nowoczesne technologie, co zapewnia szybką i wydajną pracę. Wierzymy, że nasze rozwiązanie ma potencjał do znaczącej poprawy życia wielu osób.
 
 
