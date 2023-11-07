@@ -7,12 +7,13 @@ _**Nazwa Drużyny**_
 <p>FlowVue</p>
 
 _**Skład drużyny**_ <br>
-Dawid Buszta – Backend Developer<br>
-Radosław Marek - Frontend Developer<br>
-Rafał Buczkowski – Frontend Developer<br>
-Michał Kociołek – Frontend Developer<br>
-Maciej Nowicki –  Dokumentacja<br>
-
+<ul>
+<li><b>Dawid Buszta</b> – Backend Developer</li><br>
+<li><b>Radosław Marek</b> - Frontend Developer</li><br>
+<li><b>Rafał Buczkowski</b> – Frontend Developer</li><br>
+<li><b>Michał Kociołek</b> – Frontend Developer</li><br>
+<li><b>Maciej Nowicki</b> –  Dokumentacja</li><br>
+</ul>
 _**Link do pracy**_ <br>
 https://flowvue.vercel.app
 
